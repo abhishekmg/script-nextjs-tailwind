@@ -16,6 +16,8 @@ module.exports = {
 
         // black
         'scriptbox-black' : '#343434',
+        'scriptbox-black-1' : '#181818',
+
       }
     },
   },
