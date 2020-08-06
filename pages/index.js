@@ -1,3 +1,4 @@
+import { useState } from "react"
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Layout from "./components/layout"
@@ -5,6 +6,7 @@ import Link from 'next/link'
 import { useQuery } from "react-query"
 import axios from "axios"
 import useFundsList from "./apiHooks/useFundsList"
+import Pagination from "react-js-pagination";
 
 
 const FilterCheckBox = ({
@@ -25,13 +27,21 @@ const FilterCheckBox = ({
 }
 
 FilterCheckBox.defaultProps = {
-  checked: false
+  checked: false,
+  limit: 20
 }
 
 const Home = (props) => {
-  console.log("prop", props)
-  const [text, setText] = React.useState("")
-  const [filter, setFilter] = React.useState(['Equity'])
+
+  const [text, setText] = useState("")
+  const [filter, setFilter] = useState(['Equity'])
+
+  const [state, setState] = useState({
+    offset: 0,
+    limit: 20,
+    currentPage: 1,
+    subAssetFilter: []
+  })
 
 
   // const { data, isLoading } = useQuery("fundsList", async () => {
@@ -46,9 +56,10 @@ const Home = (props) => {
   //   return data;
   // });
 
-  const { data, isLoading } = useFundsList(text, filter)
+  const { data, isLoading, resolvedData, latestData } = useFundsList(state.offset, text, filter, state.subAssetFilter)
 
-  console.log("data", data, isLoading)
+  console.log("off", state.offset)
+
 
   const FundsCard = ({
     figure,
@@ -82,16 +93,62 @@ const Home = (props) => {
       return "Loading..."
     } else {
       return (
-        <>
-          {data.results.map(item => <div>{item._source.fund_name}</div>)}
-        </>
+        <div className="">
+          {resolvedData.results.map((item, index) => (
+            <a
+              key={index}
+              href="#"
+              className={`block transition ease-in-out duration-200  ${styles.fund_list_item}`}
+            >
+              <div className={`py-4 flex items-center justify-between ${styles.list_div}`}>
+                {/* left side */}
+                <div className="flex items-center">
+                  <div className={`bg-scriptbox-orange w-1 h-12 ${styles.orange_bar}`} />
+                  <figure className="mx-3">
+                    <img
+                      src={item._source.amc_logo_url}
+                      className=" w-8 h-8"
+                    />
+                  </figure>
+                  <div>
+                    <h4
+                      className=" text-scriptbox-black-1 text-base font-semibold"
+                    >
+                      {item._source.fund_name}
+                    </h4>
+                    <div className="pt-3 flex items-center space-x-1">
+                      <p className="text-sm font-normal text-scriptbox-gray-5">Large cap</p>
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Scripbox Recommended") && <p className={`text-sm font-normal rounded bg-scriptbox-orange-3 text-scriptbox-orange  ${styles.recommended_badge}`}>Recommended</p>}
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Top Ranked") && <p className={`text-sm font-normal rounded text-scriptbox-green  ${styles.topranked_badge}`}>Top Ranked</p>}
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Not Recommended") && <p className={`text-sm font-normal rounded text-scriptbox-red`}>Not Recommended</p>}
+
+                    </div>
+                  </div>
+                </div>
+                {/* right side */}
+                <div className="px-2 flex items-center">
+                  <div className="mr-6">
+                    <p className="font-normal text-sm text-scriptbox-black pb-3">{item._source.first_investment_amount} cr</p>
+                    <p className="text-sm text-scriptbox-gray-5 font-normal">Fund size</p>
+                  </div>
+                  <div>
+                    <svg class="sparkline-growth" width="64" height="13" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"><path class="sparkline--fill" d="M4 4.86 L 4 4.86 L 5.6 4.84 L 7.2 4.91 L 8.8 4.54 L 10.4 4.68 L 12 4.57 L 13.600000000000001 4.39 L 15.200000000000001 4.7 L 16.8 4.85 L 18.4 4.7 L 20 4.74 L 21.6 4.83 L 23.200000000000003 4.54 L 24.8 4.35 L 26.400000000000002 4.55 L 28 4.66 L 29.6 4.58 L 31.200000000000003 4.51 L 32.8 4.54 L 34.400000000000006 4.57 L 36 4.15 L 37.6 4.19 L 39.2 4 L 40.800000000000004 4.03 L 42.400000000000006 4.46 L 44 4.64 L 45.6 4.48 L 47.2 4.22 L 48.800000000000004 4.2 L 50.400000000000006 4.18 L 52 4.49 L 53.6 4.75 L 55.2 5.81 L 56.800000000000004 5.45 L 58.400000000000006 5.29 L 60 5.07 V 13 L 4 13 Z" stroke="none"></path><path class="sparkline--line" d="M4 4.86 L 4 4.86 L 5.6 4.84 L 7.2 4.91 L 8.8 4.54 L 10.4 4.68 L 12 4.57 L 13.600000000000001 4.39 L 15.200000000000001 4.7 L 16.8 4.85 L 18.4 4.7 L 20 4.74 L 21.6 4.83 L 23.200000000000003 4.54 L 24.8 4.35 L 26.400000000000002 4.55 L 28 4.66 L 29.6 4.58 L 31.200000000000003 4.51 L 32.8 4.54 L 34.400000000000006 4.57 L 36 4.15 L 37.6 4.19 L 39.2 4 L 40.800000000000004 4.03 L 42.400000000000006 4.46 L 44 4.64 L 45.6 4.48 L 47.2 4.22 L 48.800000000000004 4.2 L 50.400000000000006 4.18 L 52 4.49 L 53.6 4.75 L 55.2 5.81 L 56.800000000000004 5.45 L 58.400000000000006 5.29 L 60 5.07" fill="none"></path><line class="sparkline--cursor" x1="-1000" x2="-1000" y1="0" y2="13" stroke-width="2"></line><circle class="sparkline--spot" cx="-1000" cy="4.86" r="2"></circle></svg>
+                    <p className="text-sm text-scriptbox-gray-5 font-normal pt-3">5Y eturns</p>
+                  </div>
+                </div>
+
+
+              </div>
+            </a>
+          ))}
+
+        </div>
       )
     }
   }
 
 
 
-  console.log("fil", filter)
 
   return (
     <Layout>
@@ -153,7 +210,7 @@ const Home = (props) => {
             </Link>
           </div>
         </section>
-        <section className="px-2 lg:px-0 max-w-screen-lg mx-auto bg-scriptbox-gray-1">
+        <section className="px-2 pt-4 pb-20 lg:px-0 max-w-screen-lg mx-auto bg-scriptbox-gray-1">
 
           <div className="flex">
             <div className="w-1/3">
@@ -213,6 +270,64 @@ const Home = (props) => {
 
 
                   </div>
+                </div>
+
+                <div className="py-4">
+                  <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Sub Category</p>
+                  <div>
+
+                    <FilterCheckBox
+                      name="Large Cap"
+                      value="Large Cap"
+                      onChange={(value) => {
+                        if (state.subAssetFilter.includes(value)) {
+                          setState({...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value)})
+                        } else {
+                          setState({...state, subAssetFilter: state.subAssetFilter.concat(value)})
+
+                        }
+                      }}
+                    />
+                    <FilterCheckBox
+                      name="Mid Cap"
+                      value="Mid Cap"
+                      onChange={(value) => {
+                        if (state.subAssetFilter.includes(value)) {
+                          setState({...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value)})
+                        } else {
+                          setState({...state, subAssetFilter: state.subAssetFilter.concat(value)})
+
+                        }
+                      }}
+                    />
+                    <FilterCheckBox
+                      name="Small Cap"
+                      value="Small Cap"
+                      onChange={(value) => {
+                        if (state.subAssetFilter.includes(value)) {
+                          setState({...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value)})
+                        } else {
+                          setState({...state, subAssetFilter: state.subAssetFilter.concat(value)})
+
+                        }
+                      }}
+                    />
+                    <FilterCheckBox
+                      name="Sectoral / Thematic"
+                      value="Sectoral / Thematic - BFSI"
+                      onChange={(value) => {
+                        if (state.subAssetFilter.includes(value)) {
+                          setState({...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value)})
+                        } else {
+                          setState({...state, subAssetFilter: state.subAssetFilter.concat(value)})
+
+                        }
+                      }}
+                    />
+
+
+                  </div>
+
 
                 </div>
 
@@ -227,9 +342,55 @@ const Home = (props) => {
 
 
             </div>
-            <div>
-              <h3 className="text-lg font-semibold">Funds List :</h3>
-              {renderFundsList()}
+
+            {/* funds list section */}
+            <div className="w-full">
+              <div className="pb-3">
+                <p className="font-medium text-base text-scriptbox-gray-2">Showing {resolvedData && resolvedData.results && resolvedData.results.length} of {resolvedData && resolvedData.total && resolvedData.total} funds</p>
+              </div>
+              <div className={`py-2 px-6 bg-white rounded-lg ${styles.funds_list_div}`}>
+                {renderFundsList()}
+              </div>
+              <div className="flex justify-between mt-6">
+
+                <button
+                  className={`py-2 px-4 bg-white rounded-md hover:bg-scriptbox-gray-4 text-scriptbox-gray-2 text-sm ${styles.pagination_button}`}
+                  onClick={() => setState({ ...state, offset: state.offset - state.limit, currentPage: state.currentPage - 1 })}
+                >
+                  Previous
+                </button>
+                <Pagination
+                  innerClass={styles.pagination_div}
+                  activeClass={styles.pagination_active}
+                  itemClass={styles.pagination_item}
+                  itemClassFirst="rounded-l-md"
+                  itemClassLast="rounded-r-md"
+                  itemClassPrev="hidden"
+                  itemClassNext="hidden"
+                  activePage={state.currentPage}
+                  itemsCountPerPage={state.limit}
+                  totalItemsCount={resolvedData && resolvedData.total && resolvedData.total}
+                  pageRangeDisplayed={5}
+                  onChange={(page) => {
+                    if (page === 1) {
+                      setState({ ...state, offset: 0, currentPage: 1 })
+                    } else {
+                      setState({
+                        ...state,
+                        offset: (page - 1) * state.limit,
+                        currentPage: page
+                      })
+                    }
+                  }}
+                />
+
+                <button
+                  className={`py-2 px-4 bg-white rounded-md hover:bg-scriptbox-gray-4 text-scriptbox-gray-2 text-sm ${styles.pagination_button}`}
+                  onClick={() => setState({ ...state, offset: state.offset + state.limit, currentPage: state.currentPage + 1 })}
+                >
+                  Next
+                </button>
+              </div>
             </div>
           </div>
 
