@@ -17,6 +17,7 @@ const getFundsList = async (_, offset, bodyData) => {
   // (!isEmpty(bodyData.subAssetFilter)) && {...body.filter, "filter": {"sub_asset_class": bodyData.subAssetFilter}}
   // )
 
+
   const bodyfunc = () => {
     if (!isEmpty(bodyData.subAssetFilter)) {
       return {
@@ -24,18 +25,35 @@ const getFundsList = async (_, offset, bodyData) => {
         "from": offset,
         "size": 20,
         "filter": {
-          "asset_class": bodyData.filters,
           "sub_asset_class": bodyData.subAssetFilter
         }
       }
-    } else {
+    } else if (!isEmpty(bodyData.filters)) {
       return {
         "q": bodyData.search,
         "from": offset,
         "size": 20,
         "filter": {
-          "asset_class": bodyData.filters
+          "asset_class": bodyData.filters,
         }
+      }
+    } else if (!isEmpty(bodyData.filters) && !isEmpty(bodyData.subAssetFilter)) {
+      return {
+          "q": bodyData.search,
+          "from": offset,
+          "size": 20,
+          "filter": {
+            "asset_class": bodyData.filters,
+            "sub_asset_class": bodyData.subAssetFilter
+          }
+      }
+    }
+    
+    else {
+      return {
+        "q": bodyData.search,
+        "from": offset,
+        "size": 20,
       }
     }
   }

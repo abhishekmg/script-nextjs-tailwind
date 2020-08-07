@@ -14,6 +14,9 @@ module.exports = {
         'scriptbox-gray-3' : '#404040',
         'scriptbox-gray-4' : '#f2f2f2',
         'scriptbox-gray-5' : '#737373',
+        'scriptbox-gray-6' : '#e6e6e6',
+
+        
         // black
         'scriptbox-black' : '#343434',
         'scriptbox-black-1' : '#181818',
