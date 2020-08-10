@@ -23,7 +23,7 @@ const Home = (props) => {
     currentPage: 1,
     subAssetFilter: [],
     moreFilters: false,
-    isFilterModalOpen: true,
+    isFilterModalOpen: false,
     isFilterModalBasic: true
   })
 
