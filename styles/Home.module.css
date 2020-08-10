@@ -204,3 +204,7 @@
   overflow: scroll;
   height: calc(100vh - 180px);
 }
+
+.add_filter {
+  bottom: 20px;
+}

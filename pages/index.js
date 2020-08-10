@@ -657,7 +657,7 @@ const Home = (props) => {
 
           </div>
           <button 
-            className=" lg:hidden p-3 rounded bg-gray-900 text-white fixed bottom-1.25 left-45p"
+            className={`lg:hidden p-3 rounded bg-gray-900 text-white fixed left-45p ${styles.add_filter}`}
             onClick={() => setState({...state, isFilterModalOpen: true})}
           >
             Add Filter
