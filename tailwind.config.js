@@ -1,6 +1,11 @@
 module.exports = {
   
   theme: {
+    inset: {
+      '0' : '0',
+      '1.25': '1.25rem',
+      '45p': '45%'
+    },
     extend: {
       colors: {
         // orange
@@ -20,11 +25,15 @@ module.exports = {
         // black
         'scriptbox-black' : '#343434',
         'scriptbox-black-1' : '#181818',
+
         // green
         'scriptbox-green' : '#0fac85',
         
         // red
         'scriptbox-red' : '#f56565',
+
+        //blue
+        'scriptbox-blue' : '#1971e4',
 
 
         
@@ -32,6 +41,7 @@ module.exports = {
       }
     },
   },
+
   variants: {},
   plugins: [],
 }

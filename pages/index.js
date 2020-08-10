@@ -7,6 +7,7 @@ import { useQuery } from "react-query"
 import axios from "axios"
 import useFundsList from "./apiHooks/useFundsList"
 import Pagination from "react-js-pagination";
+import ReactModal from 'react-modal';
 
 
 
@@ -21,7 +22,9 @@ const Home = (props) => {
     limit: 20,
     currentPage: 1,
     subAssetFilter: [],
-    moreFilters: false
+    moreFilters: false,
+    isFilterModalOpen: true,
+    isFilterModalBasic: true
   })
 
 
@@ -136,369 +139,373 @@ const Home = (props) => {
     }
   }
 
+  const renderBasicFilters = () => (
+    <>
+    <div className="py-4">
+      <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Scripbox Verdict</p>
+      <div>
+
+        <FilterCheckBox
+          name="Recommended"
+          value="Recommended"
+        // onChange={(value) => {
+        //   if (filter.includes(value)) {
+        //     setFilter(filter.filter(item => item !== value))
+        //   } else {
+        //     setFilter(filter.concat(value))
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="Top Ranked"
+          value="Top Ranked"
+        // onChange={(value) => {
+        //   if (filter.includes(value)) {
+        //     setFilter(filter.filter(item => item !== value))
+        //   } else {
+        //     setFilter(filter.concat(value))
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="Not Recommended"
+          value="Not Recommended"
+        // onChange={(value) => {
+        //   if (filter.includes(value)) {
+        //     setFilter(filter.filter(item => item !== value))
+        //   } else {
+        //     setFilter(filter.concat(value))
+        //   }
+        // }}
+        />
+      </div>
+    </div>
+    <div className="py-4">
+      <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Fund Category</p>
+      <div>
+
+        <FilterCheckBox
+          name="Equity"
+          value="Equity"
+          onChange={(value) => {
+            if (filter.includes(value)) {
+              setFilter(filter.filter(item => item !== value))
+            } else {
+              setFilter(filter.concat(value))
+            }
+          }}
+        />
+        <FilterCheckBox
+          name="Dept"
+          value="Dept"
+          onChange={(value) => {
+            if (filter.includes(value)) {
+              setFilter(filter.filter(item => item !== value))
+            } else {
+              setFilter(filter.concat(value))
+            }
+          }}
+        />
+        <FilterCheckBox
+          name="Hybrid"
+          value="Hybrid"
+          onChange={(value) => {
+            if (filter.includes(value)) {
+              setFilter(filter.filter(item => item !== value))
+            } else {
+              setFilter(filter.concat(value))
+            }
+          }}
+        />
+        <FilterCheckBox
+          name="International Equity"
+          value="International Equity"
+          onChange={(value) => {
+            if (filter.includes(value)) {
+              setFilter(filter.filter(item => item !== value))
+            } else {
+              setFilter(filter.concat(value))
+            }
+          }}
+        />
+
+
+      </div>
+    </div>
+    <div className="py-4">
+      <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Fund House</p>
+      <div>
+
+        <FilterCheckBox
+          name="Aditya Birla Mutual Fund"
+          value="Aditya Birla Mutual Fund"
+        // onChange={(value) => {
+        //   if (filter.includes(value)) {
+        //     setFilter(filter.filter(item => item !== value))
+        //   } else {
+        //     setFilter(filter.concat(value))
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="HDFC Mutual Fund"
+          value="HDFC Mutual Fund"
+        // onChange={(value) => {
+        //   if (filter.includes(value)) {
+        //     setFilter(filter.filter(item => item !== value))
+        //   } else {
+        //     setFilter(filter.concat(value))
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="Birla Mutual Fund"
+          value="Birla Mutual Fund"
+        // onChange={(value) => {
+        //   if (filter.includes(value)) {
+        //     setFilter(filter.filter(item => item !== value))
+        //   } else {
+        //     setFilter(filter.concat(value))
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="Aditya Birla Mutual Fund"
+          value="Aditya Birla Mutual Fund"
+        // onChange={(value) => {
+        //   if (filter.includes(value)) {
+        //     setFilter(filter.filter(item => item !== value))
+        //   } else {
+        //     setFilter(filter.concat(value))
+        //   }
+        // }}
+        />
+
+      </div>
+    </div>
+  </>  
+  )
+
+  const renderAdvancedFilters = () => (
+    <>
+    <div className="py-4">
+      <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Risk Level</p>
+      <div>
+
+        <FilterCheckBox
+          name="Low"
+          value="Low"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="Medium"
+          value="Medium"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="High"
+          value="High"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+
+
+
+      </div>
+
+
+    </div>
+    <div className="py-4">
+      <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Fund Option</p>
+      <div>
+
+        <FilterCheckBox
+          name="Divided Payout"
+          value="Divided Payout"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="Divided Reinvestment"
+          value="Divided Reinvestment"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="Reinventment"
+          value="Reinventment"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+
+
+
+      </div>
+
+
+    </div>
+    <div className="py-4">
+      <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Sub Category</p>
+      <div>
+
+        <FilterCheckBox
+          name="Large Cap"
+          value="Large Cap"
+          onChange={(value) => {
+            if (state.subAssetFilter.includes(value)) {
+              setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+            } else {
+              setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+            }
+          }}
+        />
+        <FilterCheckBox
+          name="Mid Cap"
+          value="Mid Cap"
+          onChange={(value) => {
+            if (state.subAssetFilter.includes(value)) {
+              setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+            } else {
+              setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+            }
+          }}
+        />
+        <FilterCheckBox
+          name="Small Cap"
+          value="Small Cap"
+          onChange={(value) => {
+            if (state.subAssetFilter.includes(value)) {
+              setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+            } else {
+              setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+            }
+          }}
+        />
+        <FilterCheckBox
+          name="Sectoral / Thematic"
+          value="Sectoral / Thematic - BFSI"
+          onChange={(value) => {
+            if (state.subAssetFilter.includes(value)) {
+              setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+            } else {
+              setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+            }
+          }}
+        />
+
+
+      </div>
+
+
+    </div>
+    <div className="py-4">
+      <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Fund Size</p>
+      <div>
+
+        <FilterCheckBox
+          name="Below 500 Crores"
+          value="Below 500 Crores"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="500 - 1000 Crores"
+          value="500 - 1000 Crores"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+        <FilterCheckBox
+          name="Above 1000 Crores"
+          value="Above 1000 Crores"
+        // onChange={(value) => {
+        //   if (state.subAssetFilter.includes(value)) {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
+        //   } else {
+        //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
+
+        //   }
+        // }}
+        />
+
+
+
+      </div>
+
+
+    </div>
+
+    <div className="py-4">
+      <input
+        className={`h-8 shadow-xs rounded-md ${styles.search_funds} p-1 mr-3`}
+        placeholder="search"
+        onChange={(e) => setText(e.target.value)}
+      />
+    </div>
+  </>
+  )
+
   const renderFundsFilter = () => {
     if (!state.moreFilters) {
       // show first set  filters
-      return (
-        <>
-          <div className="py-4">
-            <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Scripbox Verdict</p>
-            <div>
-
-              <FilterCheckBox
-                name="Recommended"
-                value="Recommended"
-              // onChange={(value) => {
-              //   if (filter.includes(value)) {
-              //     setFilter(filter.filter(item => item !== value))
-              //   } else {
-              //     setFilter(filter.concat(value))
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="Top Ranked"
-                value="Top Ranked"
-              // onChange={(value) => {
-              //   if (filter.includes(value)) {
-              //     setFilter(filter.filter(item => item !== value))
-              //   } else {
-              //     setFilter(filter.concat(value))
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="Not Recommended"
-                value="Not Recommended"
-              // onChange={(value) => {
-              //   if (filter.includes(value)) {
-              //     setFilter(filter.filter(item => item !== value))
-              //   } else {
-              //     setFilter(filter.concat(value))
-              //   }
-              // }}
-              />
-            </div>
-          </div>
-          <div className="py-4">
-            <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Fund Category</p>
-            <div>
-
-              <FilterCheckBox
-                name="Equity"
-                value="Equity"
-                onChange={(value) => {
-                  if (filter.includes(value)) {
-                    setFilter(filter.filter(item => item !== value))
-                  } else {
-                    setFilter(filter.concat(value))
-                  }
-                }}
-              />
-              <FilterCheckBox
-                name="Dept"
-                value="Dept"
-                onChange={(value) => {
-                  if (filter.includes(value)) {
-                    setFilter(filter.filter(item => item !== value))
-                  } else {
-                    setFilter(filter.concat(value))
-                  }
-                }}
-              />
-              <FilterCheckBox
-                name="Hybrid"
-                value="Hybrid"
-                onChange={(value) => {
-                  if (filter.includes(value)) {
-                    setFilter(filter.filter(item => item !== value))
-                  } else {
-                    setFilter(filter.concat(value))
-                  }
-                }}
-              />
-              <FilterCheckBox
-                name="International Equity"
-                value="International Equity"
-                onChange={(value) => {
-                  if (filter.includes(value)) {
-                    setFilter(filter.filter(item => item !== value))
-                  } else {
-                    setFilter(filter.concat(value))
-                  }
-                }}
-              />
-
-
-            </div>
-          </div>
-          <div className="py-4">
-            <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Fund House</p>
-            <div>
-
-              <FilterCheckBox
-                name="Aditya Birla Mutual Fund"
-                value="Aditya Birla Mutual Fund"
-              // onChange={(value) => {
-              //   if (filter.includes(value)) {
-              //     setFilter(filter.filter(item => item !== value))
-              //   } else {
-              //     setFilter(filter.concat(value))
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="HDFC Mutual Fund"
-                value="HDFC Mutual Fund"
-              // onChange={(value) => {
-              //   if (filter.includes(value)) {
-              //     setFilter(filter.filter(item => item !== value))
-              //   } else {
-              //     setFilter(filter.concat(value))
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="Birla Mutual Fund"
-                value="Birla Mutual Fund"
-              // onChange={(value) => {
-              //   if (filter.includes(value)) {
-              //     setFilter(filter.filter(item => item !== value))
-              //   } else {
-              //     setFilter(filter.concat(value))
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="Aditya Birla Mutual Fund"
-                value="Aditya Birla Mutual Fund"
-              // onChange={(value) => {
-              //   if (filter.includes(value)) {
-              //     setFilter(filter.filter(item => item !== value))
-              //   } else {
-              //     setFilter(filter.concat(value))
-              //   }
-              // }}
-              />
-
-            </div>
-          </div>
-        </>
-      )
+      return renderBasicFilters()
 
     } else {
       // show second set  filters
-      return (
-        <>
-          <div className="py-4">
-            <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Risk Level</p>
-            <div>
-
-              <FilterCheckBox
-                name="Low"
-                value="Low"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="Medium"
-                value="Medium"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="High"
-                value="High"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-
-
-
-            </div>
-
-
-          </div>
-          <div className="py-4">
-            <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Fund Option</p>
-            <div>
-
-              <FilterCheckBox
-                name="Divided Payout"
-                value="Divided Payout"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="Divided Reinvestment"
-                value="Divided Reinvestment"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="Reinventment"
-                value="Reinventment"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-
-
-
-            </div>
-
-
-          </div>
-          <div className="py-4">
-            <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Sub Category</p>
-            <div>
-
-              <FilterCheckBox
-                name="Large Cap"
-                value="Large Cap"
-                onChange={(value) => {
-                  if (state.subAssetFilter.includes(value)) {
-                    setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-                  } else {
-                    setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-                  }
-                }}
-              />
-              <FilterCheckBox
-                name="Mid Cap"
-                value="Mid Cap"
-                onChange={(value) => {
-                  if (state.subAssetFilter.includes(value)) {
-                    setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-                  } else {
-                    setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-                  }
-                }}
-              />
-              <FilterCheckBox
-                name="Small Cap"
-                value="Small Cap"
-                onChange={(value) => {
-                  if (state.subAssetFilter.includes(value)) {
-                    setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-                  } else {
-                    setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-                  }
-                }}
-              />
-              <FilterCheckBox
-                name="Sectoral / Thematic"
-                value="Sectoral / Thematic - BFSI"
-                onChange={(value) => {
-                  if (state.subAssetFilter.includes(value)) {
-                    setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-                  } else {
-                    setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-                  }
-                }}
-              />
-
-
-            </div>
-
-
-          </div>
-          <div className="py-4">
-            <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">Fund Size</p>
-            <div>
-
-              <FilterCheckBox
-                name="Below 500 Crores"
-                value="Below 500 Crores"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="500 - 1000 Crores"
-                value="500 - 1000 Crores"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-              <FilterCheckBox
-                name="Above 1000 Crores"
-                value="Above 1000 Crores"
-              // onChange={(value) => {
-              //   if (state.subAssetFilter.includes(value)) {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.filter(item => item !== value) })
-              //   } else {
-              //     setState({ ...state, subAssetFilter: state.subAssetFilter.concat(value) })
-
-              //   }
-              // }}
-              />
-
-
-
-            </div>
-
-
-          </div>
-
-          <div className="py-4">
-            <input
-              className={`h-8 shadow-xs rounded-md ${styles.search_funds} p-1 mr-3`}
-              placeholder="search"
-              onChange={(e) => setText(e.target.value)}
-            />
-          </div>
-        </>
-      )
+      return renderAdvancedFilters()
     }
   }
 
@@ -565,10 +572,11 @@ const Home = (props) => {
             </Link>
           </div>
         </section>
+        {/* funds section */}
         <section className="px-2 pt-4 pb-20 lg:px-0 max-w-screen-lg mx-auto bg-scriptbox-gray-1">
-
           <div className="flex">
-            <div className="w-1/3">
+           {/* funds filters */}
+            <div className=" hidden lg:block w-1/3">
               <div className="mr-12 divide-y">
                 <div className="pb-4 flex items-center justify-between">
                   <p className="text-base font-medium text-scriptbox-gray-2">Filters</p>
@@ -576,7 +584,7 @@ const Home = (props) => {
                     className="p-1 bg-scriptbox-gray-4 hover:bg-scriptbox-gray-6 rounded-md text-xs text-scriptbox-gray-3"
                     onClick={() => {
                       setFilter([])
-                      setState({...state, subAssetFilter: []})
+                      setState({ ...state, subAssetFilter: [] })
                     }}
                   >
                     Reset
@@ -604,7 +612,7 @@ const Home = (props) => {
               <div className={`py-2 px-6 bg-white rounded-lg ${styles.funds_list_div}`}>
                 {renderFundsList()}
               </div>
-              <div className="flex justify-between mt-6">
+              <div className="flex justify-between mt-6 overflow-x-scroll">
 
                 <button
                   className={`py-2 px-4 bg-white rounded-md hover:bg-scriptbox-gray-4 text-scriptbox-gray-2 text-sm ${styles.pagination_button}`}
@@ -645,11 +653,83 @@ const Home = (props) => {
                 </button>
               </div>
             </div>
+
+
           </div>
+          <button 
+            className=" lg:hidden p-3 rounded bg-gray-900 text-white fixed bottom-1.25 left-45p"
+            onClick={() => setState({...state, isFilterModalOpen: true})}
+          >
+            Add Filter
+          </button>
 
         </section>
       </div>
 
+
+      <ReactModal
+        isOpen={state.isFilterModalOpen}
+        style={{
+          content: {
+            height: "100vh",
+            width: "100vw",        
+            top: "0",
+            left: "0",
+            right: "0",
+            bottom: "0",    
+            padding: "0",
+            border: "0",
+            borderRadius: "0",
+            overflow: "hidden"
+          }
+        }}
+      >
+        <header className=" flex items-center justify-between px-4 py-2 bg-scriptbox-black">
+          <button
+            className={`${styles.filter_modal_back}`}
+            onClick={() => setState({ ...state, isFilterModalOpen: false })}
+          />
+
+          <h2 className="text-white font-semibold text-base">Filter Results</h2>
+
+          <button 
+            className="text-white bg-scriptbox-gray-3 px-1 text-sm rounded-md"
+          >
+            Reset
+          </button>
+
+        </header>
+        <div className="flex items-center">
+          <div 
+            className={`cursor-pointer w-1/2 py-3 text-center ${state.isFilterModalBasic ? "border-b border-scriptbox-blue text-scriptbox-blue" : "border-b text-scriptbox-gray-5"} font-semibold`}
+            onClick={() => setState({...state, isFilterModalBasic: true}) }
+          >
+            Basic
+          </div>
+       
+          <div 
+            className={`cursor-pointer w-1/2 py-3 text-center ${!state.isFilterModalBasic ? "border-b border-scriptbox-blue text-scriptbox-blue" : "border-b text-scriptbox-gray-5"} font-semibold`}
+            onClick={() => setState({...state, isFilterModalBasic: false}) }
+
+          >
+            Advanced
+          </div>
+        </div>
+        <div className={`${styles.filter_modal_body} px-4`}>
+          {state.isFilterModalBasic ? renderBasicFilters() : renderAdvancedFilters()}
+        </div>
+
+        <div className="fixed bottom-1.25 w-full px-4">
+        <button 
+          className="text-white font-semibold text-base rounded-md p-4 bg-scriptbox-black w-full"
+          onClick={() => setState({...state, isFilterModalOpen: false})}  
+        >
+          Showing {resolvedData && resolvedData.results && resolvedData.results.length} of {resolvedData && resolvedData.total && resolvedData.total} funds
+        </button>
+        </div>
+    
+
+      </ReactModal>
     </Layout>
   )
 }

@@ -188,3 +188,19 @@
   left: 2px;
   top: 8px;
 }
+
+.filter_modal_back:before {
+  content: "";
+  position: absolute;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/back-arrow.svg);
+  width: 16px;
+  height: 14px;
+  background-repeat: none;
+  top: 13px;
+  z-index: 1000;
+}
+
+.filter_modal_body {
+  overflow: scroll;
+  height: calc(100vh - 180px);
+}
