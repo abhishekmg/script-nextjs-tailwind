@@ -208,3 +208,12 @@
 .add_filter {
   bottom: 20px;
 }
+
+.funds_filter_div {
+  min-width: 330px;
+  max-width: 330px;
+}
+
+.funds_list_item_name {
+  width: 400px;
+}
