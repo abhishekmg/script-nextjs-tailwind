@@ -214,6 +214,20 @@
   max-width: 330px;
 }
 
-.funds_list_item_name {
-  width: 400px;
+.section_two_tab {
+  width: 240px;
+}
+
+.section_two_tab_active {
+  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.1), 0px 2px 3px rgba(0, 0, 0, 0.07)
+}
+
+.section_two_img {
+  top: -42px;
+  right: -19px;
+}
+
+.section_three_card {
+  min-width: 256px;
+  max-width: 256px;
 }

@@ -35,6 +35,12 @@ module.exports = {
         //blue
         'scriptbox-blue' : '#1971e4',
         'scriptbox-blue-1' : '#ebf8ff',
+        'scriptbox-blue-2' : '#cbe3f6',
+
+        // yellow
+        'scriptbox-yellow' : '#fbe5bb',
+
+
 
         
 
