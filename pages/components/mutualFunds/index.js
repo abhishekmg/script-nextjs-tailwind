@@ -11,6 +11,10 @@ import Pagination from "react-js-pagination";
 import ReactModal from 'react-modal';
 import SectionTwo from "./sectionTwo"
 import SectionThree from "./sectionThree"
+import SectionFour from "./sectionFour"
+import SectionFive from "./sectionFive"
+
+
 
 
 
@@ -673,6 +677,9 @@ const Home = (props) => {
         
         <SectionTwo />
         <SectionThree />
+        <SectionFour />
+        <SectionFive />
+
 
       </div>
 

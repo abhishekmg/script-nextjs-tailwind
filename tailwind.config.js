@@ -6,6 +6,11 @@ module.exports = {
       '1.25': '1.25rem',
       '45p': '45%'
     },
+    minWidth: {
+      '32' : '32rem',
+      '36' : '36rem'
+
+    },
     extend: {
       colors: {
         // orange
@@ -39,6 +44,10 @@ module.exports = {
 
         // yellow
         'scriptbox-yellow' : '#fbe5bb',
+
+        // brown
+        'scriptbox-brown' : '#f9f8f3',
+
 
 
 
