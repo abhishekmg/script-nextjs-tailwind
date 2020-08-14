@@ -4,6 +4,7 @@ import Pagination from "react-js-pagination";
 
 import useFundsList from "../../apiHooks/useFundsList"
 import ReactModal from 'react-modal';
+import axios from "axios"
 
 
 const SectionOne = ({initialFundsList}) => {
