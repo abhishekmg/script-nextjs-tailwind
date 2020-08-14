@@ -14,6 +14,7 @@ const Layout = ({
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="scriptbox" />
       </Head>
 
       <Navbar />

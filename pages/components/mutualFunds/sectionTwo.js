@@ -106,6 +106,8 @@ const SectionTwo = props => {
           <img 
             src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg"
             className={`absolute ${styles.section_two_img}`}
+            alt="scriptbox"
+
           />
         </div>
 
@@ -149,6 +151,8 @@ const SectionTwo = props => {
                   <img
                     className="w-4 h-4 mr-2"
                     src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg"
+                    alt="scriptbox"
+                  
                   />
                 Recommended
               </p>
@@ -160,6 +164,8 @@ const SectionTwo = props => {
                 <p className="flex items-center">
                   <img
                     className="w-4 h-4 mr-2"
+                  alt="scriptbox"
+
                     src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg"
                   />
                 Recommended
@@ -174,6 +180,8 @@ const SectionTwo = props => {
                 <p className="flex items-center">
                   <img
                     className="w-4 h-4 mr-2"
+                  alt="scriptbox"
+
                     src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/start-circled.svg"
                   />
                 Top Ranked
@@ -186,6 +194,8 @@ const SectionTwo = props => {
                 <p className="flex items-center">
                   <img
                     className="w-4 h-4 mr-2"
+                  alt="scriptbox"
+
                     src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/star-circled.svg"
                   />
                 Top Ranked
@@ -199,6 +209,8 @@ const SectionTwo = props => {
                 <p className="flex items-center">
                   <img
                     className="w-4 h-4 mr-2"
+                  alt="scriptbox"
+
                     src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/not-recommended.svg"
                   />
                 Not Recommended
@@ -212,6 +224,8 @@ const SectionTwo = props => {
                 <p className="flex items-center">
                   <img
                     className="w-4 h-4 mr-2"
+                  alt="scriptbox"
+
                     src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/not-recommended.svg"
                   />
                 Not Recommended

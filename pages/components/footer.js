@@ -396,6 +396,7 @@ const Footer = props => {
                 Contacts
                 <img
                   src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
                 />
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -409,6 +410,8 @@ const Footer = props => {
                 Who we are
                 <img
                   src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
                 />
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -422,6 +425,8 @@ const Footer = props => {
                 What we do
                 <img
                   src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
                 />
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -435,6 +440,8 @@ const Footer = props => {
                 Terms and Conditions
                 <img
                   src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
                 />
               </AccordionItemButton>
 
@@ -472,6 +479,9 @@ const Footer = props => {
                 Calculators
                 <img
                   src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
+                
                 />
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -485,6 +495,8 @@ const Footer = props => {
                 Learn
                 <img
                   src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
                 />
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -498,6 +510,8 @@ const Footer = props => {
                 Recommended Funds
                 <img
                   src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
                 />
               </AccordionItemButton>
             </AccordionItemHeading>
@@ -511,6 +525,8 @@ const Footer = props => {
                 Amcs
                 <img
                   src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
                 />
               </AccordionItemButton>
             </AccordionItemHeading>

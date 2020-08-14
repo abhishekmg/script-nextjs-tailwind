@@ -11,6 +11,8 @@ const SectionFive = props => {
               <img
                 src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/mark.svg"
                 className="w-12 h-12"
+                alt="scriptbox"
+
               />
             </figure>
             <span className="text-scriptbox-orange py-1 px-4 bg-white rounded-full font-semibold">

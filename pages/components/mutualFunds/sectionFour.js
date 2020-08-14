@@ -25,6 +25,7 @@ const SectionFour = props => {
           <div className="mt-8 lg:mt-0">
             <figure>
               <iframe
+                title="scriptbox youtube"
                 loading="lazy"
                 src="https://www.youtube.com/embed/G8_zxdLM1Ao"
                 className={`rounded-md ${styles.section_four_video}`}

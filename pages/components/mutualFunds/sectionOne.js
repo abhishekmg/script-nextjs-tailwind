@@ -70,6 +70,8 @@ const SectionOne = ({initialFundsList}) => {
                     <img
                       src={item._source.amc_logo_url}
                       className=" w-8 h-8"
+                  alt="scriptbox"
+
                     />
                   </figure>
                   <div>
