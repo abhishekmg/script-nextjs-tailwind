@@ -21,7 +21,7 @@ const SectionThree = props => {
 
 
   return (
-    <section className="pt-20 pb-24 max-w-screen-lg mx-auto"> 
+    <section className="pt-20 pb-24 max-w-screen-lg mx-auto lg:px-4"> 
       <h2 className="text-scriptbox-black-1 font-bold text-2xl sm:text-3xl text-center pb-3">
         How to invest in best mutual funds with Scripbox
       </h2>
@@ -30,7 +30,7 @@ const SectionThree = props => {
                         do is follow the below steps and start investing.
       </p>
       {/* card part */}
-      <div className="pt-12 space-x-6 flex items-center overflow-y-scroll lg:overflow-visible px-3 lg:px-0 pb-2">
+      <div className="pt-12 space-x-6 flex items-center overflow-y-scroll  px-3 lg:px-0 pb-2">
         {renderSingleCard()}
         {renderSingleCard()}
         {renderSingleCard()}

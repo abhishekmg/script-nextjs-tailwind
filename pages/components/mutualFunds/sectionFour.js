@@ -3,7 +3,7 @@ import styles from '../../../styles/Home.module.css'
 
 const SectionFour = props => {
   return (
-    <section className="pt-32 pb-24 bg-white ">
+    <section className="pt-32 pb-24 lg:px-4 bg-white ">
       <div className="max-w-screen-lg mx-auto px-4 lg:px-0">
         <h2 className="text-scriptbox-black-1 text-3xl font-bold text-center">
           What are Best Equity Mutual Funds?
@@ -25,6 +25,7 @@ const SectionFour = props => {
           <div className="mt-8 lg:mt-0">
             <figure>
               <iframe
+                loading="lazy"
                 src="https://www.youtube.com/embed/G8_zxdLM1Ao"
                 className={`rounded-md ${styles.section_four_video}`}
               />

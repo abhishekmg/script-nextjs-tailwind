@@ -223,7 +223,7 @@ const SectionTwo = props => {
 
   // MAIN RETURN
   return (
-    <section className="px-2  pt-24 pb-20  bg-scriptbox-blue-1">
+    <section className="px-2  pt-24 pb-20 lg:px-4 bg-scriptbox-blue-1">
       <div className=" hidden lg:grid max-w-screen-lg mx-auto grid-cols-2 gap-24">
         <div>
           {renderHeading()}

@@ -11,6 +11,10 @@ module.exports = {
       '36' : '36rem'
 
     },
+    maxWidth: {
+      'screen-lg' : '71.25rem',
+      'lg' : '33.5rem'
+    },
     extend: {
       colors: {
         // orange
