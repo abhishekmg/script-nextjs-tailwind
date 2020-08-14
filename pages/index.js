@@ -6,7 +6,7 @@ import MutualFunds from "./components/mutualFunds"
 
 
 const Home = (props) => {
-  return <MutualFunds />
+  return <MutualFunds initialFundsList={props.initialFundsList}/>
 }
 
 export async function getStaticProps() {

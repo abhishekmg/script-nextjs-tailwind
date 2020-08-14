@@ -19,10 +19,11 @@ import SectionFive from "./sectionFive"
 
 
 
-const Home = (props) => {
+const Home = ({initialFundsList}) => {
+
 
   const [text, setText] = useState("")
-  const [filter, setFilter] = useState(['Equity'])
+  const [filter, setFilter] = useState([])
 
   const [state, setState] = useState({
     offset: 0,
@@ -35,7 +36,7 @@ const Home = (props) => {
   })
 
 
-  const { data, isLoading, resolvedData, latestData } = useFundsList(state.offset, text, filter, state.subAssetFilter)
+  const { data, isLoading, resolvedData, latestData } = useFundsList(state.offset, text, filter, state.subAssetFilter, initialFundsList)
 
 
 
@@ -95,7 +96,7 @@ const Home = (props) => {
     } else {
       return (
         <div className="">
-          {resolvedData.results.map((item, index) => (
+          {resolvedData && resolvedData.results && resolvedData.results.map((item, index) => (
             <a
               key={index}
               href="#"
@@ -522,6 +523,7 @@ const Home = (props) => {
 
 
 
+
   return (
     <Layout>
       <div className="bg-scriptbox-gray-1">
@@ -751,26 +753,6 @@ const Home = (props) => {
   )
 }
 
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const { data } = await await axios.post(
-    `https://apus.scripbox.com/api/v1/search`,
-    {
-      "q": "",
-      "from": 0,
-      "size": 20
-    }
-  );
-  const initialFundsList = await data
 
-  // By returning { props: posts }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      initialFundsList,
-    },
-  }
-}
 
 export default Home

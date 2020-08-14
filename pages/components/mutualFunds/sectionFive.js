@@ -40,7 +40,7 @@ const SectionFive = props => {
             <div>
               <h3 className="font-semibold md:pt-4 md:px-3">
                 Fund Selection
-            </h3>
+              </h3>
               <p className="text-scriptbox-gray-5 text-sm">
                 You'll never have to worry about what funds to choose. We'll suggest what's best for you.
             </p>

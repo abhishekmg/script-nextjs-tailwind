@@ -1,6 +1,10 @@
 import React from 'react';
 import Head from 'next/head'
 import Navbar from "./navbar"
+import Footer from "./footer"
+
+
+
 
 const Layout = ({
   children
@@ -17,6 +21,8 @@ const Layout = ({
       <main>
         {children}
       </main>
+
+      <Footer />
     </div>
   );
 };
