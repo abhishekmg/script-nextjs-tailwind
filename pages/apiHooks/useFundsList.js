@@ -69,7 +69,7 @@ const getFundsList = async (_, offset, bodyData, initialData) => {
 };
 
 export default function useFundsList(offset, searchText, filters, subAssetFilter, initialData) {
-  console.log("get funds list")
+  console.log("get funds list", initialData)
   return usePaginatedQuery(["fundsList", offset, { search: searchText, filters, subAssetFilter }, initialData], getFundsList ,
   {
     initialData: initialData

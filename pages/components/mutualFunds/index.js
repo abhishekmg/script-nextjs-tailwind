@@ -21,7 +21,7 @@ import SectionFive from "./sectionFive"
 
 
 
-const Home = () => {
+const Home = ({initialFundsList}) => {
 
   
   const FundsCard = ({
@@ -112,7 +112,7 @@ const Home = () => {
             </Link>
           </div>
         </section>
-        <SectionOne />
+        <SectionOne initialFundsList={initialFundsList}/>
 
         <SectionTwo />
         <SectionThree />

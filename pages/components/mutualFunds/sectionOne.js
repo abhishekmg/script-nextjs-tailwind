@@ -23,6 +23,7 @@ const SectionOne = ({initialFundsList}) => {
   })
 
 
+
   const { data, isLoading, resolvedData, latestData } = useFundsList(state.offset, text, filter, state.subAssetFilter, initialFundsList)
 
   const FilterCheckBox = ({
@@ -641,27 +642,8 @@ const SectionOne = ({initialFundsList}) => {
   );
 };
 
-export async function getStaticProps() {
-  // Call an external API endpoint to get posts.
-  // You can use any data fetching library
-  const { data } = await await axios.post(
-    `https://apus.scripbox.com/api/v1/search`,
-    {
-      "q": "",
-      "from": 0,
-      "size": 20
-    }
-  );
-  const initialFundsList = await data
 
-  // By returning { props: posts }, the Blog component
-  // will receive `posts` as a prop at build time
-  return {
-    props: {
-      initialFundsList,
-    },
-  }
-}
 
 
 export default SectionOne;
+
