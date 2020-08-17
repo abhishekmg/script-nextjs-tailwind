@@ -33,9 +33,8 @@ const SectionOne = ({initialFundsList}) => {
     checked
   }) => {
     return (
-      <div className="flex items-center space-x-2 pb-1 rounded-md hover:bg-scriptbox-gray-4 pl-1 -ml-1 pt-1 cursor-pointer">
+      <div onClick={() => onChange(value)} className="flex items-center space-x-2 pb-1 rounded-md hover:bg-scriptbox-gray-4 pl-1 -ml-1 pt-1 cursor-pointer">
         <input type="checkbox"
-          onChange={() => onChange(value)}
           defaultChecked={checked}
           name={name}
           checked={filter.includes(value) || state.subAssetFilter.includes(value)}
@@ -47,7 +46,8 @@ const SectionOne = ({initialFundsList}) => {
 
   FilterCheckBox.defaultProps = {
     checked: false,
-    limit: 20
+    limit: 20,
+    onChange: () => {}
   }
 
   const renderFundsList = () => {
@@ -76,7 +76,7 @@ const SectionOne = ({initialFundsList}) => {
                   </figure>
                   <div>
                     <h4
-                      className={` truncate w-24 md:w-full md:max-w-sm text-scriptbox-black-1 text-sm md:text-base font-semibold`}
+                      className={` truncate   w-24 sm:w-40 md:w-22.1 lg:w-30 text-scriptbox-black-1 text-sm md:text-base font-semibold`}
                     >
                       {item._source.fund_name}
                     </h4>
@@ -568,7 +568,7 @@ const SectionOne = ({initialFundsList}) => {
 
     </div>
     <button
-      className={`lg:hidden p-3 rounded bg-gray-900 text-white fixed left-45p ${styles.add_filter}`}
+      className={`lg:hidden p-3 rounded bg-gray-900 text-white fixed left-39p sm:left-45p ${styles.add_filter}`}
       onClick={() => setState({ ...state, isFilterModalOpen: true })}
     >
       Add Filter

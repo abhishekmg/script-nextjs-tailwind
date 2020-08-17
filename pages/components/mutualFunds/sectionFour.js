@@ -8,7 +8,7 @@ const SectionFour = props => {
         <h2 className="text-scriptbox-black-1 text-3xl font-bold text-center">
           What are Best Equity Mutual Funds?
         </h2>
-        <div className="flex flex-col lg:flex-row items-center pt-12">
+        <div className="flex flex-col lg:flex-row pt-12">
           <div className="mr-0 sm:mr-20">
             <h3 className="text-xl text-scriptbox-black-1 font-bold pb-3">
               Why invest in mutual funds?
@@ -28,7 +28,7 @@ const SectionFour = props => {
                 title="scriptbox youtube"
                 loading="lazy"
                 src="https://www.youtube.com/embed/G8_zxdLM1Ao"
-                className={`rounded-md ${styles.section_four_video}`}
+                className={`rounded-md  w-22.1 md:w-27 ${styles.section_four_video}`}
               />
             </figure>
 
