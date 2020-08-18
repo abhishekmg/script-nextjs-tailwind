@@ -76,7 +76,7 @@ const SectionOne = ({initialFundsList}) => {
                   </figure>
                   <div>
                     <h4
-                      className={` truncate   w-24 sm:w-40 md:w-22.1 lg:w-30 text-scriptbox-black-1 text-sm md:text-base font-semibold`}
+                      className={` truncate   w-24 sm:w-40 md:w-22-1 lg:w-30 text-scriptbox-black-1 text-sm md:text-base font-semibold`}
                     >
                       {item._source.fund_name}
                     </h4>
@@ -627,7 +627,7 @@ const SectionOne = ({initialFundsList}) => {
           {state.isFilterModalBasic ? renderBasicFilters() : renderAdvancedFilters()}
         </div>
 
-        <div className="fixed bottom-1.25 w-full px-4">
+        <div className="fixed bottom-1 w-full px-4">
           <button
             className="text-white font-semibold text-base rounded-md p-4 bg-scriptbox-black w-full"
             onClick={() => setState({ ...state, isFilterModalOpen: false })}

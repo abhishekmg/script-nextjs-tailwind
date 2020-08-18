@@ -28,7 +28,7 @@ const SectionFour = props => {
                 title="scriptbox youtube"
                 loading="lazy"
                 src="https://www.youtube.com/embed/G8_zxdLM1Ao"
-                className={`rounded-md  w-22.1 md:w-27 ${styles.section_four_video}`}
+                className={`rounded-md  w-22-1 md:w-27 ${styles.section_four_video}`}
               />
             </figure>
 
