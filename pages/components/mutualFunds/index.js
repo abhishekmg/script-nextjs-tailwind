@@ -38,7 +38,7 @@ const Home = ({ initialFundsList }) => {
   return (
     <Layout>
       <div className="bg-scriptbox-gray-1">
-        <section className="pt-16 px-2 lg:px-4 max-w-screen-lg mx-auto bg-scriptbox-gray-1">
+        <section className="pt-16 px-4 xl:px-0 lg:px-4 max-w-screen-lg mx-auto bg-scriptbox-gray-1">
           <ul className="flex items-center">
             <li className={`${styles.breadcrumb_list_item} flex relative pr-6`}>
               <Link href="/">
@@ -58,12 +58,12 @@ const Home = ({ initialFundsList }) => {
             </li>
           </ul>
           <h1 className="text-4xl font-bold py-3">Mutual Funds</h1>
-          <p className="text-lg text-scriptbox-gray-2 max-w-lg font-normal leading-7">
+          <p className=" hidden sm:block text-lg text-scriptbox-gray-2 max-w-lg font-normal leading-7">
             Invest in the best mutual funds recommended by Scripbox that are
             algorithmically selected that best suit your needs.
           </p>
           {/* funds card */}
-          <div className="pt-6 pb-4 hidden sm:flex items-center overflow-x-scroll pl-1">
+          <div className="pt-6 pb-4 hidden sm:flex items-center overflow-x-scroll xl:overflow-visible left-50p xl:left-0 relative w-screen xl:w-full -ml-50vw xl:ml-0 pl-4 xl:pl-0">
             <FundsCard
               figure={
                 <svg
@@ -272,9 +272,10 @@ const Home = ({ initialFundsList }) => {
                 </div>
               </a>
             </Link>
+            <div className="xl:hidden min-w-0.0625 h-3"></div>
           </div>
         </section>
-        <SectionOne initialFundsList={initialFundsList} />
+        {/* <SectionOne initialFundsList={initialFundsList} /> */}
 
         <SectionTwo />
         <SectionThree />

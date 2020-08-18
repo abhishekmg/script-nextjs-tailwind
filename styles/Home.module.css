@@ -225,6 +225,24 @@
 
 /* section2 */
 
+.section_two_right:after {
+  content: "";
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
+    top: -23px;
+    right: -16px;
+}
+
+.section_two_parent_grid {
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+
+}
+
 .section_two_top_left_div:after {
   height: 84px;
   width: 2px;
@@ -265,6 +283,23 @@
 }
 
 /* section 3 */
+
+@media (max-width: 576px) { 
+  .section_three_header:after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: -5px;
+    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 57px;
+    height: 57px;
+  }
+ }
+
+
+
 .section_three_card {
   min-width: 256px;
   max-width: 256px;
