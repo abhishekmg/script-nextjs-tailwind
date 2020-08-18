@@ -5,27 +5,35 @@
   color: #343434;
 }
 
-.fund_filters_card {
-
-  max-width: 192px;
-  min-width: 192px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+.breadcrumb_list_item:after {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/right-arrow.svg);
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 5px;
+  height: 8px;
 }
 
-.fund_filters_card_last {
-  max-width: 192px;
-  min-width: 192px;
+.funds_card_label:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 8px solid #ffffff;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
 }
 
-.funds_card_badge {
-  top: 12px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.2;
-  padding: 5px 6px 5px 16px;
-  color: #54894A;
-  background-color: #E2F4D7;
+.fund_card_container:hover .funds_card_label:before {
+  border-left-color: #f2f2f2;
 }
+
 
 .search_funds {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5);
@@ -214,8 +222,55 @@
   max-width: 330px;
 }
 
+
+/* section2 */
+
+.section_two_right:after {
+  content: "";
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
+    top: -23px;
+    right: -16px;
+}
+
+.section_two_parent_grid {
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+
+}
+
+.section_two_top_left_div:after {
+  height: 84px;
+  width: 2px;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/vertical-line.svg);
+  right: -1px;
+  bottom: -42px;
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+.section_two_top_right_div:after {
+  height: 2px;
+  width: 84px;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/horizantal-line.svg);
+  left: -42px;
+  bottom: -1px;
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
 .section_two_tab {
-  width: 244px;
+  width: 238px;
 }
 
 .section_two_tab_active {
@@ -226,6 +281,24 @@
   top: -42px;
   right: -19px;
 }
+
+/* section 3 */
+
+@media (max-width: 576px) { 
+  .section_three_header:after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: -5px;
+    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 57px;
+    height: 57px;
+  }
+ }
+
+
 
 .section_three_card {
   min-width: 256px;
@@ -263,20 +336,20 @@
 
 .section_four_li:before {
   position: absolute;
-    counter-increment: section;
-    content: counters(section, ".") " ";
-    font-size: 14px;
-    width: 28px;
-    height: 28px;
-    line-height: 1.2;
-    border-radius: 50%;
-    background-color: #b6f1e0;
-    color: #22543d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: -4px;
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  line-height: 1.2;
+  border-radius: 50%;
+  background-color: #b6f1e0;
+  color: #22543d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: -4px;
 }
 
 .section_four_li:after {
@@ -302,20 +375,20 @@
 
 .section_four_li_last:before {
   position: absolute;
-    counter-increment: section;
-    content: counters(section, ".") " ";
-    font-size: 14px;
-    width: 28px;
-    height: 28px;
-    line-height: 1.2;
-    border-radius: 50%;
-    background-color: #b6f1e0;
-    color: #22543d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: -4px;
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  line-height: 1.2;
+  border-radius: 50%;
+  background-color: #b6f1e0;
+  color: #22543d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: -4px;
 }
 
 .section_five_logo {
@@ -327,7 +400,7 @@
   max-width: 1126px;
 }
 
-.footer_acc_border { 
+.footer_acc_border {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
