@@ -19,7 +19,7 @@ import SectionFive from "./sectionFive";
 const Home = ({ initialFundsList }) => {
   const FundsCard = ({ figure, title, description, label }) => (
     <Link href="/">
-      <a className="mr-8">
+      <a className="mr-2.25">
         <div
           className={`${styles.fund_card_container} relative p-3 bg-white rounded-lg hover:bg-scriptbox-gray-4 max-w-12 min-w-12 shadow-1`}
         >

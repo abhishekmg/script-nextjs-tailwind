@@ -222,8 +222,37 @@
   max-width: 330px;
 }
 
+
+/* section2 */
+
+.section_two_top_left_div:after {
+  height: 84px;
+  width: 2px;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/vertical-line.svg);
+  right: -1px;
+  bottom: -42px;
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+.section_two_top_right_div:after {
+  height: 2px;
+  width: 84px;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/horizantal-line.svg);
+  left: -42px;
+  bottom: -1px;
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
 .section_two_tab {
-  width: 244px;
+  width: 238px;
 }
 
 .section_two_tab_active {
@@ -235,6 +264,7 @@
   right: -19px;
 }
 
+/* section 3 */
 .section_three_card {
   min-width: 256px;
   max-width: 256px;
