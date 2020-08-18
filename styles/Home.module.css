@@ -18,27 +18,18 @@
   height: 8px;
 }
 
-.fund_filters_card {
-
-  max-width: 192px;
-  min-width: 192px;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5);
+.funds_card_label:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 8px solid #ffffff;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
 }
 
-.fund_filters_card_last {
-  max-width: 192px;
-  min-width: 192px;
-}
-
-.funds_card_badge {
-  top: 12px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 1.2;
-  padding: 5px 6px 5px 16px;
-  color: #54894A;
-  background-color: #E2F4D7;
-}
 
 .search_funds {
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5);

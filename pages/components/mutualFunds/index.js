@@ -17,20 +17,20 @@ import SectionFour from "./sectionFour";
 import SectionFive from "./sectionFive";
 
 const Home = ({ initialFundsList }) => {
-  const FundsCard = ({ figure, title, description }) => (
+
+  const FundsCard = ({ figure, title, description, label }) => (
     <Link href="/">
       <a className="mr-8">
         <div
-          className={`relative p-3 bg-white rounded-lg hover:bg-scriptbox-gray-4 ${styles.fund_filters_card}`}
+          className={`relative p-3 bg-white rounded-lg hover:bg-scriptbox-gray-4 max-w-12 min-w-12 shadow-1`}
         >
           <figure>{figure}</figure>
           <h4 className="pt-3 pb-1 text-base font-semibold">{title}</h4>
           <p className="text-scriptbox-gray-3 text-sm font-normal leading-normal">
             {description}
           </p>
-          <div className={`absolute right-0 ${styles.funds_card_badge}`}>
-            <p>5+ years</p>
-          </div>
+  
+          {label}
         </div>
       </a>
     </Link>
@@ -92,6 +92,13 @@ const Home = ({ initialFundsList }) => {
               }
               title="Long term funds"
               description="Top equity mutual funds for long-term goals"
+              label={(
+                <div 
+                  className={`absolute right-0 bg-scriptbox-green-3 text-scriptbox-green-2 text-xs font-medium top-0.75 py-0.31 pr-0.375 pl-4  leading-1.2 ${styles.funds_card_label}`}
+                >
+                  <p>5+ years</p>
+                </div>
+              )}
             />
             <FundsCard
               figure={
@@ -131,6 +138,13 @@ const Home = ({ initialFundsList }) => {
               }
               title="Short term funds"
               description="Beat FD returns with the best debt mutual funds"
+              label={(
+                <div
+                  className={`absolute right-0 bg-scriptbox-brown-1 text-scriptbox-brown-2 text-xs font-medium top-0.75 py-0.31 pr-0.375 pl-4  leading-1.2 ${styles.funds_card_label}`}
+                >
+                  <p>1-5 years</p>
+                </div>
+              )}
             />
             <FundsCard
               figure={
@@ -172,6 +186,13 @@ const Home = ({ initialFundsList }) => {
               }
               title="Tax Saving Funds"
               description="Top ELSS funds to save tax the smart way"
+              label={(
+                <div 
+                className={`absolute right-0 bg-scriptbox-blue-5 text-scriptbox-blue-4 text-xs font-medium top-0.75 py-0.31 pr-0.375 pl-4  leading-1.2 ${styles.funds_card_label}`}
+              >
+                <p>Lowest lock-in</p>
+              </div>
+              )}
             />
             <FundsCard
               figure={
@@ -212,12 +233,19 @@ const Home = ({ initialFundsList }) => {
               }
               title=" Emergency Funds"
               description="Top liquid funds for life's surprise expenses"
+              label={(
+                <div 
+                className={`absolute right-0 bg-scriptbox-red-2 text-scriptbox-red-1 text-xs font-medium top-0.75 py-0.31 pr-0.375 pl-4  leading-1.2 ${styles.funds_card_label}`}
+              >
+                <p>Under 1 year</p>
+              </div>
+              )}
             />
 
             <Link href="/">
               <a className="mr-8">
                 <div
-                  className={`p-3 rounded-lg bg-scriptbox-gray-4 ${styles.fund_filters_card_last}`}
+                  className={`p-3 rounded-lg bg-scriptbox-gray-4 max-w-12 min-w-12`}
                 >
                   <figure>
                     <svg
