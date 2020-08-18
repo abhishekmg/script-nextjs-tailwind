@@ -5,6 +5,19 @@
   color: #343434;
 }
 
+.breadcrumb_list_item:after {
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/right-arrow.svg);
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 5px;
+  height: 8px;
+}
+
 .fund_filters_card {
 
   max-width: 192px;
@@ -263,20 +276,20 @@
 
 .section_four_li:before {
   position: absolute;
-    counter-increment: section;
-    content: counters(section, ".") " ";
-    font-size: 14px;
-    width: 28px;
-    height: 28px;
-    line-height: 1.2;
-    border-radius: 50%;
-    background-color: #b6f1e0;
-    color: #22543d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: -4px;
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  line-height: 1.2;
+  border-radius: 50%;
+  background-color: #b6f1e0;
+  color: #22543d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: -4px;
 }
 
 .section_four_li:after {
@@ -302,20 +315,20 @@
 
 .section_four_li_last:before {
   position: absolute;
-    counter-increment: section;
-    content: counters(section, ".") " ";
-    font-size: 14px;
-    width: 28px;
-    height: 28px;
-    line-height: 1.2;
-    border-radius: 50%;
-    background-color: #b6f1e0;
-    color: #22543d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    left: 0;
-    top: -4px;
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  line-height: 1.2;
+  border-radius: 50%;
+  background-color: #b6f1e0;
+  color: #22543d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: -4px;
 }
 
 .section_five_logo {
@@ -327,7 +340,7 @@
   max-width: 1126px;
 }
 
-.footer_acc_border { 
+.footer_acc_border {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
