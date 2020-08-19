@@ -275,7 +275,7 @@ const Home = ({ initialFundsList }) => {
             <div className="xl:hidden min-w-0.0625 h-3"></div>
           </div>
         </section>
-        {/* <SectionOne initialFundsList={initialFundsList} /> */}
+        <SectionOne initialFundsList={initialFundsList} />
 
         <SectionTwo />
         <SectionThree />
