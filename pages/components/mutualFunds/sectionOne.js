@@ -174,8 +174,8 @@ const SectionOne = ({initialFundsList}) => {
             }}
           />
           <FilterCheckBox
-            name="Dept"
-            value="Dept"
+            name="Debt"
+            value="Debt"
             onChange={(value) => {
               if (filter.includes(value)) {
                 setFilter(filter.filter(item => item !== value))
