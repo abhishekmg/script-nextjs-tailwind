@@ -33,8 +33,10 @@ const SectionOne = ({initialFundsList}) => {
     checked
   }) => {
     return (
-      <div onClick={() => onChange(value)} className="flex items-center space-x-2 pb-1 rounded-md hover:bg-scriptbox-gray-4 pl-1 -ml-1 pt-1 cursor-pointer">
-        <input type="checkbox"
+      <div onClick={() => onChange(value)} className="flex items-center space-x-2 rounded-md hover:bg-scriptbox-gray-4  cursor-pointer -ml-0375 -mr-0375 p-0375 leading-1-2">
+        <input 
+          type="checkbox"
+          className="w-4 h-4 form-checkbox text-scriptbox-blue-6 shadow-3 border-scriptbox-gray-8"
           defaultChecked={checked}
           name={name}
           checked={filter.includes(value) || state.subAssetFilter.includes(value)}
@@ -55,16 +57,16 @@ const SectionOne = ({initialFundsList}) => {
       return "Loading..."
     } else {
       return (
-        <div className="">
+        <>
           {resolvedData && resolvedData.results && resolvedData.results.map((item, index) => (
             <a
               key={index}
               href="#"
               className={`block transition ease-in-out duration-200  ${styles.fund_list_item}`}
             >
-              <div className={`py-4 flex items-center justify-between ${styles.list_div}`}>
+              <div className={`px-2 sm:px-0 py-4 flex items-center justify-between ${styles.list_div} min-w-0`}>
                 {/* left side */}
-                <div className="flex items-center">
+                <div className="flex items-center min-w-0 flex-my1">
                   <div className={`bg-scriptbox-orange w-1 h-12 ${styles.orange_bar}`} />
                   <figure className="mx-3">
                     <img
@@ -74,24 +76,24 @@ const SectionOne = ({initialFundsList}) => {
 
                     />
                   </figure>
-                  <div>
+                  <div className="min-w-0 flex-my1">
                     <h4
-                      className={` truncate   w-24 sm:w-40 md:w-22-1 lg:w-30 text-scriptbox-black-1 text-sm md:text-base font-semibold`}
+                      className={`truncate text-scriptbox-black-1 text-sm md:text-base font-semibold`}
                     >
                       {item._source.fund_name}
                     </h4>
                     <div className="pt-3 flex items-center space-x-1">
                       <p className="text-sm font-normal text-scriptbox-gray-5">Large cap</p>
-                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Scripbox Recommended") && <p className={`text-sm font-normal rounded bg-scriptbox-orange-3 text-scriptbox-orange  ${styles.recommended_badge}`}>Recommended</p>}
-                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Top Ranked") && <p className={`text-sm font-normal rounded text-scriptbox-green  ${styles.topranked_badge}`}>Top Ranked</p>}
-                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Not Recommended") && <p className={`text-sm font-normal rounded text-scriptbox-red`}>Not Recommended</p>}
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Scripbox Recommended") && <p className={`text-sm font-normal rounded bg-scriptbox-orange-3 text-scriptbox-orange ${styles.recommended_badge} ${styles.badge_atom}`}>Recommended</p>}
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Top Ranked") && <p className={`text-sm font-normal rounded text-scriptbox-green  ${styles.topranked_badge} ${styles.badge_atom}`}>Top Ranked</p>}
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Not Recommended") && <p className={`text-sm font-normal rounded text-scriptbox-red ${styles.notRecommended_badge} ${styles.badge_atom}`}>Not Recommended</p>}
 
                     </div>
                   </div>
                 </div>
                 {/* right side */}
                 <div className="px-2 flex items-center">
-                  <div className="mr-6">
+                  <div className="hidden sm:block mr-6">
                     <p className="font-normal text-sm text-scriptbox-black pb-3">{item._source.first_investment_amount} cr</p>
                     <p className="text-sm text-scriptbox-gray-5 font-normal">Fund size</p>
                   </div>
@@ -106,7 +108,7 @@ const SectionOne = ({initialFundsList}) => {
             </a>
           ))}
 
-        </div>
+        </>
       )
     }
   }
@@ -483,22 +485,28 @@ const SectionOne = ({initialFundsList}) => {
 
 
   return (
-    <section className="px-2 pt-4 pb-20 lg:px-4 max-w-screen-lg mx-auto bg-scriptbox-gray-1">
+    <section className="sm:mx-auto sm:px-2 sm:pt-4 pb-20 lg:px-4 max-w-screen-lg  bg-scriptbox-gray-1">
     <div className="flex">
       {/* funds filters */}
-      <div className={`hidden lg:block w-full ${styles.funds_filter_div}`}>
-        <div className="sticky top-0 mr-12 divide-y">
+      <div className={`hidden lg:block mr-12 max-w-17-62 min-w-15 w-full`}>
+        <div className="sticky top-0  divide-y ">
           <div className="pb-4 pt-2 flex items-center justify-between">
             <p className="text-base font-medium text-scriptbox-gray-2">Filters</p>
-            <button
-              className="p-1 bg-scriptbox-gray-4 hover:bg-scriptbox-gray-6 rounded-md text-xs text-scriptbox-gray-3"
+  
+            <div 
+              className="relative"
               onClick={() => {
                 setFilter([])
                 setState({ ...state, subAssetFilter: [] })
-              }}
+              }}  
             >
-              Reset
-            </button>
+              <span className="bg-scriptbox-gray-4 py-2 pl-2 pr-8 text-xs font-medium rounded-md text-scriptbox-gray-3 leading-1-2">
+                Reset Filters
+              </span>
+              <span className="absolute top-0-3125 right-0-25 text-scriptbox-gray-3 bg-scriptbox-gray-6 font-medium text-xs py-0-125 px-0375 rounded-md leading-1-2">
+                {filter.length + state.subAssetFilter.length}
+              </span>
+            </div>
           </div>
           {renderFundsFilter()}
           <div className="py-4">
@@ -515,52 +523,53 @@ const SectionOne = ({initialFundsList}) => {
       </div>
 
       {/* funds list section */}
-      <div className="w-full pt-2">
-        <div className="pb-3">
-          <p className="font-medium text-base text-scriptbox-gray-2">Showing {resolvedData && resolvedData.results && resolvedData.results.length} of {resolvedData && resolvedData.total && resolvedData.total} funds</p>
-        </div>
-        <div className={`py-2 px-6 bg-white rounded-lg ${styles.funds_list_div}`}>
+      <div className="w-full pt-2 lg:max-w-48-75">
+        <p className="hidden sm:block sm:pb-3 font-medium text-base text-scriptbox-gray-2">Showing {resolvedData && resolvedData.results && resolvedData.results.length} of {resolvedData && resolvedData.total && resolvedData.total} funds</p>
+        <div className={`sm:py-2 sm:px-6 bg-white sm:rounded-lg sm:shadow-4`}>
           {renderFundsList()}
         </div>
-        <div className="flex justify-between mt-6 overflow-x-scroll">
+        <div className="px-4 sm:px-0 flex justify-between mt-6 overflow-x-scroll">
 
-          <button
-            className={`py-2 px-4 bg-white rounded-md hover:bg-scriptbox-gray-4 text-scriptbox-gray-2 text-sm ${styles.pagination_button}`}
-            onClick={() => setState({ ...state, offset: state.offset - state.limit, currentPage: state.currentPage - 1 })}
-            disabled={state.offset === 0}
-          >
-            Previous
+            <button
+              className={`py-2 px-4 bg-white rounded-md hover:bg-scriptbox-gray-4 text-scriptbox-gray-2 text-sm ${styles.pagination_button}`}
+              onClick={() => setState({ ...state, offset: state.offset - state.limit, currentPage: state.currentPage - 1 })}
+              disabled={state.offset === 0}
+            >
+              Previous
           </button>
-          <Pagination
-            innerClass={styles.pagination_div}
-            activeClass={styles.pagination_active}
-            itemClass={styles.pagination_item}
-            itemClassFirst="rounded-l-md"
-            itemClassLast="rounded-r-md"
-            itemClassPrev="hidden"
-            itemClassNext="hidden"
-            activePage={state.currentPage}
-            itemsCountPerPage={state.limit}
-            totalItemsCount={resolvedData && resolvedData.total && resolvedData.total}
-            pageRangeDisplayed={5}
-            onChange={(page) => {
-              if (page === 1) {
-                setState({ ...state, offset: 0, currentPage: 1 })
-              } else {
-                setState({
-                  ...state,
-                  offset: (page - 1) * state.limit,
-                  currentPage: page
-                })
-              }
-            }}
-          />
+            <span className="hidden sm:block">
+              <Pagination
+                innerClass={styles.pagination_div}
+                activeClass={styles.pagination_active}
+                itemClass={styles.pagination_item}
+                itemClassFirst="rounded-l-md"
+                itemClassLast="rounded-r-md"
+                itemClassPrev="hidden"
+                itemClassNext="hidden"
+                activePage={state.currentPage}
+                itemsCountPerPage={state.limit}
+                totalItemsCount={resolvedData && resolvedData.total && resolvedData.total}
+                pageRangeDisplayed={5}
+                onChange={(page) => {
+                  if (page === 1) {
+                    setState({ ...state, offset: 0, currentPage: 1 })
+                  } else {
+                    setState({
+                      ...state,
+                      offset: (page - 1) * state.limit,
+                      currentPage: page
+                    })
+                  }
+                }}
+              />
+            </span>
 
-          <button
-            className={`py-2 px-4 bg-white rounded-md hover:bg-scriptbox-gray-4 text-scriptbox-gray-2 text-sm ${styles.pagination_button}`}
-            onClick={() => setState({ ...state, offset: state.offset + state.limit, currentPage: state.currentPage + 1 })}
-          >
-            Next
+
+            <button
+              className={`py-2 px-4 bg-white rounded-md hover:bg-scriptbox-gray-4 text-scriptbox-gray-2 text-sm ${styles.pagination_button}`}
+              onClick={() => setState({ ...state, offset: state.offset + state.limit, currentPage: state.currentPage + 1 })}
+            >
+              Next
           </button>
         </div>
       </div>

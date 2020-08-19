@@ -58,7 +58,7 @@ const SectionTwo = props => {
 
   const renderTab = () => (
     <div className={`xl:max-w-31-875`}>
-      <div className="w-0-1875 mx-auto cursor-pointer mt-4 flex items-center bg-scriptbox-blue-2 rounded-md text-sm">
+      <div className="w-14-875 mx-auto cursor-pointer mt-4 flex items-center bg-scriptbox-blue-2 rounded-md text-sm">
         <div
           className="p-0-1875"
           onClick={() => setState({ ...state, sectionTwoActiveTab: 0 })}

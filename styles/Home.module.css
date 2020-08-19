@@ -39,9 +39,6 @@
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5);
 }
 
-.funds_list_div {
-  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2);
-}
 
 .list_div {
   box-shadow: 0px 1px 0px #e2e8f0;
@@ -56,6 +53,8 @@
   display: block;
   position: relative;
 }
+
+
 
 .fund_list_item:before {
   opacity: 0;
@@ -121,13 +120,12 @@
   background-color: #f2f2f2
 }
 
-.recommended_badge {
+.badge_atom {
   padding: 2px 6px 2px 1.375rem;
   position: relative;
 }
 
-.recommended_badge:before {
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg);
+.badge_atom:before {
   position: absolute;
   content: "";
   width: 12px;
@@ -135,25 +133,24 @@
   background-repeat: no-repeat;
   background-size: contain;
   left: 6px;
-  top: 3.5px;
+  top: 3px;
 }
 
-.topranked_badge {
-  padding: 2px 6px 2px 1.375rem;
-  position: relative;
+
+.recommended_badge:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg);
 }
 
 .topranked_badge:before {
   background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/star-circled.svg);
-  position: absolute;
-  content: "";
-  width: 12px;
-  height: 12px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  left: 6px;
-  top: 3.5px;
+
 }
+
+.notRecommended_badge:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/not-recommended.svg);
+
+}
+
 
 .advanced_filters {
   font-size: 14px;
@@ -215,11 +212,6 @@
 
 .add_filter {
   bottom: 20px;
-}
-
-.funds_filter_div {
-  min-width: 330px;
-  max-width: 330px;
 }
 
 
@@ -284,19 +276,7 @@
 
 /* section 3 */
 
-@media (max-width: 576px) { 
-  .section_three_header:after {
-    content: "";
-    position: absolute;
-    right: -15px;
-    top: -5px;
-    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 57px;
-    height: 57px;
-  }
- }
+
 
 
 
@@ -409,3 +389,27 @@
   min-width: 490px;
   width: 100%;
 }
+
+
+
+@media (max-width: 576px) { 
+  .section_three_header:after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: -5px;
+    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 57px;
+    height: 57px;
+  }
+
+  .fund_list_item:before {
+    display: none;
+  }
+
+  /* .fund_list_item:hover .list_div {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.07);
+  } */
+ }
