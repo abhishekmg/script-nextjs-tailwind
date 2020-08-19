@@ -30,7 +30,8 @@ const SectionOne = ({initialFundsList}) => {
     name,
     value,
     onChange,
-    checked
+    checked,
+    renderLabel
   }) => {
     return (
       <div onClick={() => onChange(value)} className="flex items-center space-x-2 rounded-md hover:bg-scriptbox-gray-4  cursor-pointer -ml-0375 -mr-0375 p-0375 leading-1-2">
@@ -41,7 +42,7 @@ const SectionOne = ({initialFundsList}) => {
           name={name}
           checked={filter.includes(value) || state.subAssetFilter.includes(value)}
         />
-        <label for={name} className=" cursor-pointer text-sm text-scriptbox-gray-2">{name}</label>
+        {renderLabel ? renderLabel : <label for={name} className=" cursor-pointer text-sm text-scriptbox-gray-2">{name}</label>}
       </div>
     )
   }
@@ -122,6 +123,7 @@ const SectionOne = ({initialFundsList}) => {
           <FilterCheckBox
             name="Recommended"
             value="Recommended"
+            renderLabel={(<p className={`text-sm font-normal rounded bg-scriptbox-orange-3 text-scriptbox-orange ${styles.recommended_badge} ${styles.badge_atom}`}>Recommended</p>)}
           // onChange={(value) => {
           //   if (filter.includes(value)) {
           //     setFilter(filter.filter(item => item !== value))
@@ -133,6 +135,7 @@ const SectionOne = ({initialFundsList}) => {
           <FilterCheckBox
             name="Top Ranked"
             value="Top Ranked"
+            renderLabel={(<p className={`text-sm font-normal rounded text-scriptbox-green  ${styles.topranked_badge} ${styles.badge_atom}`}>Top Ranked</p>)}
           // onChange={(value) => {
           //   if (filter.includes(value)) {
           //     setFilter(filter.filter(item => item !== value))
@@ -144,6 +147,7 @@ const SectionOne = ({initialFundsList}) => {
           <FilterCheckBox
             name="Not Recommended"
             value="Not Recommended"
+            renderLabel={(<p className={`text-sm font-normal rounded text-scriptbox-red ${styles.notRecommended_badge} ${styles.badge_atom}`}>Not Recommended</p>)}
           // onChange={(value) => {
           //   if (filter.includes(value)) {
           //     setFilter(filter.filter(item => item !== value))
