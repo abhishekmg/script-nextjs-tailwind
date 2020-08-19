@@ -39,13 +39,6 @@
   box-shadow: unset;
 }
 
-.fund_list_item {
-  display: block;
-  position: relative;
-}
-
-
-
 .fund_list_item:before {
   opacity: 0;
   content: "";
@@ -65,8 +58,198 @@
   opacity: 1;
 }
 
-.orange_bar {
-  border-radius: 27px;
+.badge_atom {
+  padding: 2px 6px 2px 1.375rem;
+  position: relative;
+}
+
+.badge_atom:before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 6px;
+  top: 3px;
+}
+
+
+.recommended_badge:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg);
+}
+
+.topranked_badge:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/star-circled.svg);
+
+}
+
+.notRecommended_badge:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/not-recommended.svg);
+
+}
+
+
+
+.advanced_filters:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/union-blue.svg);
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 10px;
+  top: 8px;
+}
+
+
+.back_filters:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/arrow-left-blue.svg);
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  left: 10px;
+  top: 7px;
+}
+
+.filter_modal_back:before {
+  content: "";
+  position: absolute;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/back-arrow.svg);
+  width: 16px;
+  height: 14px;
+  background-repeat: none;
+  top: 13px;
+  z-index: 1000;
+}
+
+.filter_modal_body {
+  height: calc(100vh - 180px);
+}
+
+/* section2 */
+
+.section_two_right:after {
+  content: "";
+    position: absolute;
+    width: 57px;
+    height: 57px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
+    top: -23px;
+    right: -16px;
+}
+
+.section_two_parent_grid {
+  grid-auto-rows: minmax(min-content, max-content);
+  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
+
+}
+
+.section_two_top_left_div:after {
+  height: 84px;
+  width: 2px;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/vertical-line.svg);
+  right: -1px;
+  bottom: -42px;
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+.section_two_top_right_div:after {
+  height: 2px;
+  width: 84px;
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/horizantal-line.svg);
+  left: -42px;
+  bottom: -1px;
+  position: absolute;
+  content: "";
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 1;
+}
+
+.section_two_tab {
+  width: 238px;
+}
+.section_two_img {
+  top: -42px;
+  right: -19px;
+}
+
+/* section 4 */
+.section_four_shadow {
+  counter-reset: section;
+}
+
+.section_four_li:before {
+  position: absolute;
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  line-height: 1.2;
+  border-radius: 50%;
+  background-color: #b6f1e0;
+  color: #22543d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: -4px;
+}
+
+.section_four_li:after {
+  content: "";
+  position: absolute;
+  width: 1px;
+  height: calc(100% - 32px);
+  top: 26px;
+  left: 14px;
+  bottom: 0;
+  background-color: #e6e6e6;
+}
+
+.section_four_li_last:before {
+  position: absolute;
+  counter-increment: section;
+  content: counters(section, ".") " ";
+  font-size: 14px;
+  width: 28px;
+  height: 28px;
+  line-height: 1.2;
+  border-radius: 50%;
+  background-color: #b6f1e0;
+  color: #22543d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  top: -4px;
+}
+
+.section_five_logo {
+  top: -22px;
+  right: 46%;
+}
+
+.footer_acc_border {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fund_name {
+  max-width: 490px;
+  min-width: 490px;
+  width: 100%;
 }
 
 .pagination_button {
@@ -118,278 +301,6 @@
 .pagination_item:hover {
   background-color: #f2f2f2
 }
-
-.badge_atom {
-  padding: 2px 6px 2px 1.375rem;
-  position: relative;
-}
-
-.badge_atom:before {
-  position: absolute;
-  content: "";
-  width: 12px;
-  height: 12px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  left: 6px;
-  top: 3px;
-}
-
-
-.recommended_badge:before {
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg);
-}
-
-.topranked_badge:before {
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/star-circled.svg);
-
-}
-
-.notRecommended_badge:before {
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/not-recommended.svg);
-
-}
-
-
-.advanced_filters {
-  font-size: 14px;
-  color: #1971e4;
-  font-weight: 500;
-  padding: 2px 6px 2px 1.375rem;
-  position: relative;
-}
-
-.advanced_filters:before {
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/union-blue.svg);
-  position: absolute;
-  content: "";
-  width: 12px;
-  height: 12px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  left: 2px;
-  top: 8px;
-}
-
-
-
-.back_filters {
-  font-size: 14px;
-  color: #1971e4;
-  font-weight: 500;
-  padding: 2px 6px 2px 1.375rem;
-  position: relative;
-}
-
-.back_filters:before {
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/arrow-left-blue.svg);
-  position: absolute;
-  content: "";
-  width: 12px;
-  height: 12px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  left: 2px;
-  top: 8px;
-}
-
-.filter_modal_back:before {
-  content: "";
-  position: absolute;
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/back-arrow.svg);
-  width: 16px;
-  height: 14px;
-  background-repeat: none;
-  top: 13px;
-  z-index: 1000;
-}
-
-.filter_modal_body {
-  overflow: scroll;
-  height: calc(100vh - 180px);
-}
-
-.add_filter {
-  bottom: 20px;
-}
-
-
-/* section2 */
-
-.section_two_right:after {
-  content: "";
-    position: absolute;
-    width: 57px;
-    height: 57px;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
-    top: -23px;
-    right: -16px;
-}
-
-.section_two_parent_grid {
-  grid-auto-rows: minmax(min-content, max-content);
-  grid-template-columns: minmax(min-content, max-content) minmax(min-content, max-content);
-
-}
-
-.section_two_top_left_div:after {
-  height: 84px;
-  width: 2px;
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/vertical-line.svg);
-  right: -1px;
-  bottom: -42px;
-  position: absolute;
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 1;
-}
-
-.section_two_top_right_div:after {
-  height: 2px;
-  width: 84px;
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/horizantal-line.svg);
-  left: -42px;
-  bottom: -1px;
-  position: absolute;
-  content: "";
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 1;
-}
-
-.section_two_tab {
-  width: 238px;
-}
-
-.section_two_tab_active {
-  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.1), 0px 2px 3px rgba(0, 0, 0, 0.07)
-}
-
-.section_two_img {
-  top: -42px;
-  right: -19px;
-}
-
-/* section 3 */
-
-
-
-
-
-.section_three_card {
-  min-width: 256px;
-  max-width: 256px;
-}
-
-.section_four_video {
-  /* width: 100%; */
-  height: 100%;
-  min-height: 251px;
-  max-height: 251px;
-  /* max-width: 446px;
-  min-width: 446px; */
-}
-
-.section_four_orange_div {
-  width: 83px;
-  height: 2px;
-}
-
-.section_four_shadow {
-  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2);
-  counter-reset: section;
-}
-
-.section_four_li {
-  font-size: 1rem;
-  color: #181818;
-  font-weight: 600;
-  padding-bottom: 1.625rem;
-  position: relative;
-  padding-left: 2.75rem;
-  line-height: 1.15;
-}
-
-.section_four_li:before {
-  position: absolute;
-  counter-increment: section;
-  content: counters(section, ".") " ";
-  font-size: 14px;
-  width: 28px;
-  height: 28px;
-  line-height: 1.2;
-  border-radius: 50%;
-  background-color: #b6f1e0;
-  color: #22543d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 0;
-  top: -4px;
-}
-
-.section_four_li:after {
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: calc(100% - 32px);
-  top: 26px;
-  left: 14px;
-  bottom: 0;
-  background-color: #e6e6e6;
-}
-
-.section_four_li_last {
-  font-size: 1rem;
-  color: #181818;
-  font-weight: 600;
-  padding-bottom: 1.625rem;
-  position: relative;
-  padding-left: 2.75rem;
-  line-height: 1.15;
-}
-
-.section_four_li_last:before {
-  position: absolute;
-  counter-increment: section;
-  content: counters(section, ".") " ";
-  font-size: 14px;
-  width: 28px;
-  height: 28px;
-  line-height: 1.2;
-  border-radius: 50%;
-  background-color: #b6f1e0;
-  color: #22543d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  left: 0;
-  top: -4px;
-}
-
-.section_five_logo {
-  top: -22px;
-  right: 46%;
-}
-
-.section_five_parent_div {
-  max-width: 1126px;
-}
-
-.footer_acc_border {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.fund_name {
-  max-width: 490px;
-  min-width: 490px;
-  width: 100%;
-}
-
-
 
 @media (max-width: 576px) { 
   .section_three_header:after {

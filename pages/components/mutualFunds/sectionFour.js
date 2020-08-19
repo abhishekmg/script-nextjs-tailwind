@@ -9,7 +9,7 @@ const SectionFour = props => {
           What are Best Equity Mutual Funds?
         </h2>
         <div className="flex flex-col lg:flex-row pt-12">
-          <div className="mr-0 sm:mr-20">
+          <div className="mr-0 sm:mr-20 flex-my1">
             <h3 className="text-xl text-scriptbox-black-1 font-bold pb-3">
               Why invest in mutual funds?
             </h3>
@@ -23,15 +23,15 @@ const SectionFour = props => {
             </p>
           </div>
           <div className="mt-8 lg:mt-0">
-            <figure>
+            <figure className="max-w-full sm:max-w-27-875 lg:min-w-27-875 w-full sm:mx-auto">
               <iframe
                 title="scriptbox youtube"
                 loading="lazy"
                 src="https://www.youtube.com/embed/G8_zxdLM1Ao"
-                className={`rounded-md  w-22-1 md:w-27 ${styles.section_four_video}`}
+                // className={`rounded-md w-22-1 md:w-27 h-full max-h-15-68 min-h-15-68`}
+                className="rounded-md min-h-15-68 max-h-15-68 max-w-full w-full h-full"
               />
             </figure>
-
           </div>
         </div>
 
@@ -120,7 +120,7 @@ const SectionFour = props => {
         {/* how to select */}
         <div className="pt-12">
           <div className="pb-16 sm:max-w-xl ">
-            <div className={`bg-scriptbox-orange ${styles.section_four_orange_div}`} />
+            <div className={`bg-scriptbox-orange w-10 h-0-125`} />
             <h4 className="text-scriptbox-black-1 text-xl font-bold pt-6 pb-3">
               How to Select the Top Performing Mutual Funds In India in 2020?
             </h4>
@@ -194,7 +194,7 @@ const SectionFour = props => {
 
         {/* how to invest in top fund */}
         <div className="pt-16">
-         <div className={`bg-scriptbox-orange ${styles.section_four_orange_div} mb-6`} />
+         <div className={`bg-scriptbox-orange w-10 h-0-125 mb-6`} />
 
          <div className="flex flex-col lg:flex-row">
           <div className="mr-8  lg:max-w-xl lg:min-w-36 w-full">
@@ -213,20 +213,20 @@ const SectionFour = props => {
           </div>
           <div className="w-full pt-8 lg:pt-0">
 
-            <ul className={` max-w-lg mx-auto rounded-md py-8 px-6 ${styles.section_four_shadow }`}>
-              <li className={`${styles.section_four_li}`}>
+            <ul className={` max-w-lg mx-auto rounded-md py-8 px-6 ${styles.section_four_shadow } shadow-4`}>
+              <li className={`${styles.section_four_li} text-base text-scriptbox-black-1 font-semibold relative leading-1-15 pl-2p pb-6`}>
                 Sign in at scripbox.com
               </li>
-              <li className={`${styles.section_four_li}`}>
+              <li className={`${styles.section_four_li} text-base text-scriptbox-black-1 font-semibold relative leading-1-15 pl-2p pb-6`}>
               Enter your personal details like dob, gender
               </li>
-              <li className={`${styles.section_four_li}`}>
+              <li className={`${styles.section_four_li} text-base text-scriptbox-black-1 font-semibold relative leading-1-15 pl-2p pb-6`}>
               Complete your KYC
               </li>
-              <li className={`${styles.section_four_li}`}>
+              <li className={`${styles.section_four_li} text-base text-scriptbox-black-1 font-semibold relative leading-1-15 pl-2p pb-6`}>
               Add your bank details
               </li>
-              <li className={`${styles.section_four_li_last}`}>
+              <li className={`${styles.section_four_li_last} text-base text-scriptbox-black-1 font-semibold relative leading-1-15 pl-2p pb-6`}>
               Create a new plan and start investing
               </li>
             </ul>

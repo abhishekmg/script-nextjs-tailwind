@@ -4,7 +4,7 @@ import styles from '../../../styles/Home.module.css'
 const SectionFive = props => {
   return (
     <section className="bg-white pb-20  px-0 md:px-8 lg:px-0 ">
-      <div className={`${styles.section_five_parent_div} mx-auto px-4 lg:px-0 bg-scriptbox-brown rounded-lg`}>
+      <div className={`max-w-70-375 mx-auto px-4 lg:px-0 bg-scriptbox-brown rounded-lg`}>
         <div className="flex justify-center">
           <div className="pt-10 text-center max-w-lg relative">
             <figure className={`absolute ${styles.section_five_logo}`}>

@@ -285,7 +285,7 @@ const Footer = props => {
   )
 
   return (
-    <footer className="bg-scriptbox-black-2  pt-4 sm:pt-16 pb-12">
+    <footer className="bg-scriptbox-black-2 px-4  pt-4 sm:pt-16 pb-12">
       <div className="max-w-screen-lg mx-auto px-4 lg:px-0">
         {/* first part */}
         <div className={`hidden sm:grid sm:grid-cols-3 lg:grid-cols-6 pb-12 ${styles.footer_acc_border}`}>

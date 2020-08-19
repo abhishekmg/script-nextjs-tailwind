@@ -62,12 +62,12 @@ const SectionOne = ({initialFundsList}) => {
             <a
               key={index}
               href="#"
-              className={`block transition ease-in-out duration-200  ${styles.fund_list_item}`}
+              className={`block transition ease-in-out duration-200  ${styles.fund_list_item} relative block`}
             >
               <div className={`px-2 sm:px-0 py-4 flex items-center justify-between ${styles.list_div} min-w-0`}>
                 {/* left side */}
                 <div className="flex items-center min-w-0 flex-my1">
-                  <div className={`bg-scriptbox-orange w-1 h-12 ${styles.orange_bar}`} />
+                  <div className={`bg-scriptbox-orange w-1 h-12 rounded-1`} />
                   <figure className="mx-3">
                     <img
                       src={item._source.amc_logo_url}
@@ -485,23 +485,24 @@ const SectionOne = ({initialFundsList}) => {
 
 
   return (
-    <section className="sm:mx-auto sm:px-2 sm:pt-4 pb-20 lg:px-4 max-w-screen-lg  bg-scriptbox-gray-1">
-    <div className="flex">
-      {/* funds filters */}
-      <div className={`hidden lg:block mr-12 max-w-17-62 min-w-15 w-full`}>
-        <div className="sticky top-0  divide-y ">
-          <div className="pb-4 pt-2 flex items-center justify-between">
-            <p className="text-base font-medium text-scriptbox-gray-2">Filters</p>
-  
-            <div 
-              className="relative"
-              onClick={() => {
-                setFilter([])
-                setState({ ...state, subAssetFilter: [] })
-              }}  
-            >
-              <span className="bg-scriptbox-gray-4 py-2 pl-2 pr-8 text-xs font-medium rounded-md text-scriptbox-gray-3 leading-1-2">
-                Reset Filters
+    <section className="sm:mx-auto sm:px-2 lg:px-4 xl:px-4 sm:pt-4 pb-20 max-w-screen-lg bg-scriptbox-gray-1">
+
+      <div className="flex">
+        {/* funds filters */}
+        <div className={`hidden lg:block mr-12 max-w-17-62 min-w-15 w-full`}>
+          <div className="sticky top-0  divide-y ">
+            <div className="pb-4 pt-2 flex items-center justify-between">
+              <p className="text-base font-medium text-scriptbox-gray-2">Filters</p>
+
+              <div
+                className="relative"
+                onClick={() => {
+                  setFilter([])
+                  setState({ ...state, subAssetFilter: [] })
+                }}
+              >
+                <span className="bg-scriptbox-gray-4 py-2 pl-2 pr-8 text-xs font-medium rounded-md text-scriptbox-gray-3 leading-1-2">
+                  Reset Filters
               </span>
               <span className="absolute top-0-3125 right-0-25 text-scriptbox-gray-3 bg-scriptbox-gray-6 font-medium text-xs py-0-125 px-0375 rounded-md leading-1-2">
                 {filter.length + state.subAssetFilter.length}
@@ -511,7 +512,7 @@ const SectionOne = ({initialFundsList}) => {
           {renderFundsFilter()}
           <div className="py-4">
             <p
-              className={`${!state.moreFilters ? styles.advanced_filters : styles.back_filters} hover:bg-scriptbox-gray-4 rounded-md cursor-pointer`}
+              className={`relative -mx-0375 py-0-125 pr-0375 pl-8 ${!state.moreFilters ? styles.advanced_filters : styles.back_filters} text-sm text-scriptbox-blue font-medium relative hover:bg-scriptbox-gray-4 rounded-md cursor-pointer`}
               onClick={() => setState({ ...state, moreFilters: !state.moreFilters })}
             >
               {!state.moreFilters ? "Show Advanced Filters" : "Back To Basic Filters"}
@@ -523,7 +524,7 @@ const SectionOne = ({initialFundsList}) => {
       </div>
 
       {/* funds list section */}
-      <div className="w-full pt-2 lg:max-w-48-75">
+      <div className="w-full pt-2 lg:max-w-48-75 min-w-0">
         <p className="hidden sm:block sm:pb-3 font-medium text-base text-scriptbox-gray-2">Showing {resolvedData && resolvedData.results && resolvedData.results.length} of {resolvedData && resolvedData.total && resolvedData.total} funds</p>
         <div className={`sm:py-2 sm:px-6 bg-white sm:rounded-lg sm:shadow-4`}>
           {renderFundsList()}
@@ -577,7 +578,7 @@ const SectionOne = ({initialFundsList}) => {
 
     </div>
     <button
-      className={`lg:hidden p-3 rounded bg-gray-900 text-white fixed left-39p sm:left-45p ${styles.add_filter}`}
+      className={`lg:hidden p-3 rounded bg-gray-900 text-white fixed left-39p sm:left-45p bottom-1`}
       onClick={() => setState({ ...state, isFilterModalOpen: true })}
     >
       Add Filter
@@ -632,7 +633,7 @@ const SectionOne = ({initialFundsList}) => {
             Advanced
           </div>
         </div>
-        <div className={`${styles.filter_modal_body} px-4`}>
+        <div className={`${styles.filter_modal_body} px-4 overflow-scroll`}>
           {state.isFilterModalBasic ? renderBasicFilters() : renderAdvancedFilters()}
         </div>
 
