@@ -1,9 +1,3 @@
-.breadcrum {
-  padding: 2px 8px;
-  background: #ffffff;
-  border-radius: 1.9375rem;
-  color: #343434;
-}
 
 .breadcrumb_list_item:after {
   position: absolute;
@@ -34,10 +28,6 @@
   border-left-color: #f2f2f2;
 }
 
-
-.search_funds {
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5);
-}
 
 
 .list_div {
@@ -112,6 +102,15 @@
   line-height: 1.2;
   padding: 11px 16px;
   box-shadow: inset -1px 0px 0px #d9d9d9;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pagination_last {
+  cursor: pointer;
+  line-height: 1.2;
+  padding: 11px 16px;
+  box-shadow: unset;
   font-size: 14px;
   font-weight: 500;
 }

@@ -459,14 +459,14 @@ const Footer = props => {
             <AccordionItemPanel className={`px-2 py-2 flex items-center`}>
               <a
                 href="#"
-                className="flex items-center text-white text-sm py-3  px-12 bg-scriptbox-gray-9 rounded-md mr-3"
+                className="flex items-center text-white text-sm py-3 w-full justify-center bg-scriptbox-gray-9 rounded-md mr-3"
               >
                 <svg className="w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" id="app-store-button"><g clip-path="url(#amclip0)" fill="#fff"><path d="M14.236 11.017a2.408 2.408 0 01-1.556-2.113c-.066-.942.395-1.778 1.234-2.237l.697-.382-.498-.62C13.277 4.623 12.08 4 10.911 4c-.81 0-1.372.212-1.824.383-.318.12-.57.215-.846.215-.314 0-.625-.11-.985-.238C6.784 4.192 6.249 4 5.563 4c-1.327 0-2.665.793-3.492 2.066-1.234 1.9-.895 5.156.806 7.744.674 1.026 1.618 2.204 2.956 2.216h.026c1.096 0 1.336-.584 2.399-.591 1.161.055 1.308.595 2.393.588 1.307-.012 2.25-1.18 2.999-2.323.443-.671.614-1.022.959-1.785l.292-.647-.665-.251zM10.067 2.3c.433-.556.762-1.34.642-2.143-.708.049-1.534.499-2.018 1.086-.438.532-.8 1.322-.66 2.09.772.024 1.572-.438 2.036-1.033z"></path></g></svg>
                 Apple Store
               </a>
               <a
                 href="#"
-                className="flex items-center text-white text-sm py-3 px-12 bg-scriptbox-gray-9 rounded-md"
+                className="flex items-center text-white text-sm py-3 w-full justify-center bg-scriptbox-gray-9 rounded-md"
               >
                 <svg className="w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 16" id="play-store-button"><g clip-path="url(#egclip0)"><path d="M0 1.064v13.6c0 .246.018.428.054.545l7-7.315L0 .604v.46zm7.636 6.83L9.975 5.31l.058.061 2.859 1.723c.816.493.816 1.293 0 1.785l-2.917 1.662-2.339-2.647zm-.305.35l-7.04 7.343c.292.308.7.308 1.226.062l8.1-4.902L7.33 8.243zm2.285-3.17L1.516.202C.993-.106.584-.044.293.264l7.046 7.24 2.278-2.43z" fill="#fff"></path></g></svg>
                 Play Store

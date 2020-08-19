@@ -160,6 +160,8 @@ module.exports = {
         '0-1875': '0.1875rem',
         '14-875' : '14.875rem',
         '0-125': '0.125rem',
+        '0-0625': '0.0625rem',
+
 
       },
       lineHeight: {
@@ -172,7 +174,8 @@ module.exports = {
         '1' : '0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5)',
         '2' : '0px 0.5px 2px rgba(0, 0, 0, 0.1), 0px 2px 3px rgba(0, 0, 0, 0.07)',
         '3' : '0px 0.5px 2px rgba(0, 0, 0, 0.1)',
-        '4' : '0px 2px 7px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2)'
+        '4' : '0px 2px 7px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2)',
+        '6' :'0px 1px 0px #e2e8f0'
       },
       fontSize: {
         'my1' : '1.75rem'

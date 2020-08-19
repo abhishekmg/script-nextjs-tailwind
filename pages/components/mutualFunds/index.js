@@ -51,7 +51,7 @@ const Home = ({ initialFundsList }) => {
             </li>
             <li className={`flex relative pr-6`}>
               <span
-                className={`text-sm text-scriptbox-black bg-white ${styles.breadcrum}`}
+                className={`text-sm py-0-125 px-2 bg-white rounded-full text-scriptbox-black`}
               >
                 Mutual funds
               </span>

@@ -78,7 +78,7 @@ const SectionOne = ({initialFundsList}) => {
                   </figure>
                   <div className="min-w-0 flex-my1">
                     <h4
-                      className={`truncate text-scriptbox-black-1 text-sm md:text-base font-semibold`}
+                      className={`leading-1-2 truncate text-scriptbox-black-1 text-sm md:text-base font-semibold`}
                     >
                       {item._source.fund_name}
                     </h4>
@@ -464,7 +464,7 @@ const SectionOne = ({initialFundsList}) => {
 
       <div className="py-4">
         <input
-          className={`h-8 shadow-xs rounded-md ${styles.search_funds} p-1 mr-3`}
+          className={`h-8 rounded-md shadow-1 p-1 mr-3`}
           placeholder="search"
           onChange={(e) => setText(e.target.value)}
         />
@@ -543,7 +543,7 @@ const SectionOne = ({initialFundsList}) => {
                 activeClass={styles.pagination_active}
                 itemClass={styles.pagination_item}
                 itemClassFirst="rounded-l-md"
-                itemClassLast="rounded-r-md"
+                itemClassLast={`rounded-r-md ${styles.pagination_last}`}
                 itemClassPrev="hidden"
                 itemClassNext="hidden"
                 activePage={state.currentPage}
