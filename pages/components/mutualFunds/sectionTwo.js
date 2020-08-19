@@ -58,12 +58,12 @@ const SectionTwo = props => {
 
   const renderTab = () => (
     <div className={`xl:max-w-31-875`}>
-      <div className="w-0-1875 mx-auto cursor-pointer mt-4 flex items-center bg-scriptbox-blue-2 rounded-md text-sm">
+      <div className="w-14-875 mx-auto cursor-pointer mt-4 flex items-center bg-scriptbox-blue-2 rounded-md text-sm">
         <div
           className="p-0-1875"
           onClick={() => setState({ ...state, sectionTwoActiveTab: 0 })}
         >
-          <p className={`leading-1-35 py-1 px-4 ${!state.sectionTwoActiveTab ? `bg-white rounded-md ${styles.section_two_tab_active}` : ""}`}>
+          <p className={`leading-1-35 py-1 px-4 ${!state.sectionTwoActiveTab ? `bg-white rounded-md shadow-2` : ""}`}>
             Equity Funds
         </p>
 
@@ -73,7 +73,7 @@ const SectionTwo = props => {
           onClick={() => setState({ ...state, sectionTwoActiveTab: 1 })}
 
         >
-          <p className={`leading-1-35 py-1 px-4 ${state.sectionTwoActiveTab ? `bg-white rounded-md ${styles.section_two_tab_active}` : ""}`}>
+          <p className={`leading-1-35 py-1 px-4 ${state.sectionTwoActiveTab ? `bg-white rounded-md shadow-2` : ""}`}>
             Dept Funds
         </p>
 
@@ -238,8 +238,8 @@ const SectionTwo = props => {
 
   // MAIN RETURN
   return (
-    <section className="px-2  pt-24 pb-20 lg:px-4 bg-scriptbox-blue-1">
-      <div className={`hidden lg:grid max-w-screen-lg mx-auto grid-cols-2 ${styles.section_two_parent_grid} gap-0-1 xl:gap-0-10`}>
+    <section className="px-4 pt-24 pb-20 lg:px-4 bg-scriptbox-blue-1">
+      <div className={`hidden lg:px-4 lg:grid max-w-screen-lg mx-auto grid-cols-2 ${styles.section_two_parent_grid} gap-0-1 xl:gap-0-10`}>
         <div className="max-w-23-75">
           {renderHeading()}
 

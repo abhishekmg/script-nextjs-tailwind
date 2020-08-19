@@ -1,9 +1,3 @@
-.breadcrum {
-  padding: 2px 8px;
-  background: #ffffff;
-  border-radius: 1.9375rem;
-  color: #343434;
-}
 
 .breadcrumb_list_item:after {
   position: absolute;
@@ -35,13 +29,6 @@
 }
 
 
-.search_funds {
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1), 0px 0px 1.5px rgba(0, 0, 0, 0.5);
-}
-
-.funds_list_div {
-  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2);
-}
 
 .list_div {
   box-shadow: 0px 1px 0px #e2e8f0;
@@ -50,11 +37,6 @@
 
 .fund_list_item:hover .list_div {
   box-shadow: unset;
-}
-
-.fund_list_item {
-  display: block;
-  position: relative;
 }
 
 .fund_list_item:before {
@@ -76,58 +58,12 @@
   opacity: 1;
 }
 
-.orange_bar {
-  border-radius: 27px;
-}
-
-.pagination_button {
-  border: 1px solid #d9d9d9;
-  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.1);
-}
-
-.pagination_div {
-  color: #595959;
-
-  display: flex;
-  align-items: center;
-  border: 1px solid #d9d9d9;
-  box-sizing: border-box;
-  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-  background-color: #ffffff;
-
-}
-
-.pagination_active {
-  background-color: #1971e4;
-  color: #ffffff;
-}
-
-.pagination_active:hover {
-  background-color: #1971e4 !important;
-  color: #ffffff !important;
-}
-
-.pagination_item {
-  cursor: pointer;
-  line-height: 1.2;
-  padding: 11px 16px;
-  box-shadow: inset -1px 0px 0px #d9d9d9;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.pagination_item:hover {
-  background-color: #f2f2f2
-}
-
-.recommended_badge {
+.badge_atom {
   padding: 2px 6px 2px 1.375rem;
   position: relative;
 }
 
-.recommended_badge:before {
-  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg);
+.badge_atom:before {
   position: absolute;
   content: "";
   width: 12px;
@@ -135,33 +71,25 @@
   background-repeat: no-repeat;
   background-size: contain;
   left: 6px;
-  top: 3.5px;
+  top: 3px;
 }
 
-.topranked_badge {
-  padding: 2px 6px 2px 1.375rem;
-  position: relative;
+
+.recommended_badge:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg);
 }
 
 .topranked_badge:before {
   background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/star-circled.svg);
-  position: absolute;
-  content: "";
-  width: 12px;
-  height: 12px;
-  background-repeat: no-repeat;
-  background-size: contain;
-  left: 6px;
-  top: 3.5px;
+
 }
 
-.advanced_filters {
-  font-size: 14px;
-  color: #1971e4;
-  font-weight: 500;
-  padding: 2px 6px 2px 1.375rem;
-  position: relative;
+.notRecommended_badge:before {
+  background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/not-recommended.svg);
+
 }
+
+
 
 .advanced_filters:before {
   background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/union-blue.svg);
@@ -171,19 +99,10 @@
   height: 12px;
   background-repeat: no-repeat;
   background-size: contain;
-  left: 2px;
+  left: 10px;
   top: 8px;
 }
 
-
-
-.back_filters {
-  font-size: 14px;
-  color: #1971e4;
-  font-weight: 500;
-  padding: 2px 6px 2px 1.375rem;
-  position: relative;
-}
 
 .back_filters:before {
   background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/arrow-left-blue.svg);
@@ -193,8 +112,8 @@
   height: 12px;
   background-repeat: no-repeat;
   background-size: contain;
-  left: 2px;
-  top: 8px;
+  left: 10px;
+  top: 7px;
 }
 
 .filter_modal_back:before {
@@ -209,19 +128,8 @@
 }
 
 .filter_modal_body {
-  overflow: scroll;
   height: calc(100vh - 180px);
 }
-
-.add_filter {
-  bottom: 20px;
-}
-
-.funds_filter_div {
-  min-width: 330px;
-  max-width: 330px;
-}
-
 
 /* section2 */
 
@@ -272,66 +180,14 @@
 .section_two_tab {
   width: 238px;
 }
-
-.section_two_tab_active {
-  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.1), 0px 2px 3px rgba(0, 0, 0, 0.07)
-}
-
 .section_two_img {
   top: -42px;
   right: -19px;
 }
 
-/* section 3 */
-
-@media (max-width: 576px) { 
-  .section_three_header:after {
-    content: "";
-    position: absolute;
-    right: -15px;
-    top: -5px;
-    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: 57px;
-    height: 57px;
-  }
- }
-
-
-
-.section_three_card {
-  min-width: 256px;
-  max-width: 256px;
-}
-
-.section_four_video {
-  /* width: 100%; */
-  height: 100%;
-  min-height: 251px;
-  max-height: 251px;
-  /* max-width: 446px;
-  min-width: 446px; */
-}
-
-.section_four_orange_div {
-  width: 83px;
-  height: 2px;
-}
-
+/* section 4 */
 .section_four_shadow {
-  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1), 0px 0px 2px rgba(0, 0, 0, 0.2);
   counter-reset: section;
-}
-
-.section_four_li {
-  font-size: 1rem;
-  color: #181818;
-  font-weight: 600;
-  padding-bottom: 1.625rem;
-  position: relative;
-  padding-left: 2.75rem;
-  line-height: 1.15;
 }
 
 .section_four_li:before {
@@ -363,16 +219,6 @@
   background-color: #e6e6e6;
 }
 
-.section_four_li_last {
-  font-size: 1rem;
-  color: #181818;
-  font-weight: 600;
-  padding-bottom: 1.625rem;
-  position: relative;
-  padding-left: 2.75rem;
-  line-height: 1.15;
-}
-
 .section_four_li_last:before {
   position: absolute;
   counter-increment: section;
@@ -396,10 +242,6 @@
   right: 46%;
 }
 
-.section_five_parent_div {
-  max-width: 1126px;
-}
-
 .footer_acc_border {
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -409,3 +251,75 @@
   min-width: 490px;
   width: 100%;
 }
+
+.pagination_button {
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pagination_div {
+  color: #595959;
+
+  display: flex;
+  align-items: center;
+  border: 1px solid #d9d9d9;
+  box-sizing: border-box;
+  box-shadow: 0px 0.5px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+  background-color: #ffffff;
+
+}
+
+.pagination_active {
+  background-color: #1971e4;
+  color: #ffffff;
+}
+
+.pagination_active:hover {
+  background-color: #1971e4 !important;
+  color: #ffffff !important;
+}
+
+.pagination_item {
+  cursor: pointer;
+  line-height: 1.2;
+  padding: 11px 16px;
+  box-shadow: inset -1px 0px 0px #d9d9d9;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pagination_last {
+  cursor: pointer;
+  line-height: 1.2;
+  padding: 11px 16px;
+  box-shadow: unset;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.pagination_item:hover {
+  background-color: #f2f2f2
+}
+
+@media (max-width: 576px) { 
+  .section_three_header:after {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: -5px;
+    background-image: url(https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/multi-start.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 57px;
+    height: 57px;
+  }
+
+  .fund_list_item:before {
+    display: none;
+  }
+
+  /* .fund_list_item:hover .list_div {
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.07);
+  } */
+ }

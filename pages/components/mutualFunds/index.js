@@ -38,8 +38,8 @@ const Home = ({ initialFundsList }) => {
   return (
     <Layout>
       <div className="bg-scriptbox-gray-1">
-        <section className="pt-16 px-4 xl:px-0 lg:px-4 max-w-screen-lg mx-auto bg-scriptbox-gray-1">
-          <ul className="flex items-center">
+        <section className="sm:pt-16 px-4 max-w-screen-lg mx-auto bg-scriptbox-gray-1">
+          <ul className="hidden sm:flex items-center">
             <li className={`${styles.breadcrumb_list_item} flex relative pr-6`}>
               <Link href="/">
                 <a>
@@ -51,13 +51,13 @@ const Home = ({ initialFundsList }) => {
             </li>
             <li className={`flex relative pr-6`}>
               <span
-                className={`text-sm text-scriptbox-black bg-white ${styles.breadcrum}`}
+                className={`text-sm py-0-125 px-2 bg-white rounded-full text-scriptbox-black`}
               >
                 Mutual funds
               </span>
             </li>
           </ul>
-          <h1 className="text-4xl font-bold py-3">Mutual Funds</h1>
+          <h1 className="text-2xl sm:text-4xl font-bold py-3">Mutual Funds</h1>
           <p className=" hidden sm:block text-lg text-scriptbox-gray-2 max-w-lg font-normal leading-7">
             Invest in the best mutual funds recommended by Scripbox that are
             algorithmically selected that best suit your needs.
@@ -272,10 +272,10 @@ const Home = ({ initialFundsList }) => {
                 </div>
               </a>
             </Link>
-            <div className="xl:hidden min-w-0.0625 h-3"></div>
+            <div className="xl:hidden min-w-0-0625 h-3"></div>
           </div>
         </section>
-        {/* <SectionOne initialFundsList={initialFundsList} /> */}
+        <SectionOne initialFundsList={initialFundsList} />
 
         <SectionTwo />
         <SectionThree />

@@ -11,7 +11,7 @@ const Navbar = props => {
   return (
     <>
       <header className="bg-scriptbox-orange w-full">
-        <div className="max-w-screen-lg mx-auto py-2 px-4 lg:px-0 flex justify-between items-center">
+        <div className="max-w-screen-lg mx-auto py-2 px-4 flex justify-between items-center">
           <div className="flex items-center">
             <div 
               className="block sm:hidden mr-2 cursor-pointer"
@@ -41,7 +41,7 @@ const Navbar = props => {
             <ul className="flex items-center space-x-2">
               <li>
                 <Link href="/">
-                  <a className="flex items-center font-semibold text-sm text-white py-2 px-3 rounded-md hover:bg-scriptbox-orange-2 transition duration-150 ease-in-out">
+                  <a className="leading-tight flex items-center font-semibold text-sm text-white py-2 px-3 rounded-md hover:bg-scriptbox-orange-2 transition duration-150 ease-in-out">
                     <figure>
                       <svg className="h-3 w-3 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" id="tel-icon"><path d="M2.294.737a1 1 0 011.413 0l2.577 2.58a.998.998 0 010 1.41l-1.96 1.958a.47.47 0 000 .665l4.33 4.325a.472.472 0 00.665 0l1.956-1.954a.999.999 0 011.415.002l2.575 2.589a.997.997 0 01-.002 1.41l-1.695 1.693a1.849 1.849 0 01-1.414.559C5.78 15.574.654 10.579.058 4.269c-.075-.792.258-1.557.821-2.12L2.294.738zM8 0c4.411 0 8 3.589 8 8h-2c0-3.309-2.691-6-6-6V0z" fill="#fff"></path></svg>
                     </figure>                    
