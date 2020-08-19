@@ -84,10 +84,10 @@ const SectionOne = ({initialFundsList}) => {
                       {item._source.fund_name}
                     </h4>
                     <div className="pt-3 flex items-center space-x-1">
-                      <p className="text-sm font-normal text-scriptbox-gray-5">Large cap</p>
-                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Scripbox Recommended") && <p className={`text-sm font-normal rounded bg-scriptbox-orange-3 text-scriptbox-orange ${styles.recommended_badge} ${styles.badge_atom}`}>Recommended</p>}
-                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Top Ranked") && <p className={`text-sm font-normal rounded text-scriptbox-green  ${styles.topranked_badge} ${styles.badge_atom}`}>Top Ranked</p>}
-                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Not Recommended") && <p className={`text-sm font-normal rounded text-scriptbox-red ${styles.notRecommended_badge} ${styles.badge_atom}`}>Not Recommended</p>}
+                      <p className="text-0-8125 sm:text-sm font-normal text-scriptbox-gray-5">Large cap</p>
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Scripbox Recommended") && <p className={` text-0-8125 sm:text-sm font-normal rounded bg-scriptbox-orange-3 text-scriptbox-orange ${styles.recommended_badge} ${styles.badge_atom}`}>Recommended</p>}
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Top Ranked") && <p className={`text-0-8125 sm:text-sm font-normal rounded text-scriptbox-green  ${styles.topranked_badge} ${styles.badge_atom}`}>Top Ranked</p>}
+                      {(item._source.sb_view_value !== null && item._source.sb_view_value === "Not Recommended") && <p className={`text-0-8125 sm:text-sm font-normal rounded text-scriptbox-red ${styles.notRecommended_badge} ${styles.badge_atom}`}>Not Recommended</p>}
 
                     </div>
                   </div>
@@ -100,7 +100,7 @@ const SectionOne = ({initialFundsList}) => {
                   </div>
                   <div>
                     <svg class="sparkline-growth" width="64" height="13" stroke-width="2" stroke="blue" fill="rgba(0, 0, 255, .2)"><path class="sparkline--fill" d="M4 4.86 L 4 4.86 L 5.6 4.84 L 7.2 4.91 L 8.8 4.54 L 10.4 4.68 L 12 4.57 L 13.600000000000001 4.39 L 15.200000000000001 4.7 L 16.8 4.85 L 18.4 4.7 L 20 4.74 L 21.6 4.83 L 23.200000000000003 4.54 L 24.8 4.35 L 26.400000000000002 4.55 L 28 4.66 L 29.6 4.58 L 31.200000000000003 4.51 L 32.8 4.54 L 34.400000000000006 4.57 L 36 4.15 L 37.6 4.19 L 39.2 4 L 40.800000000000004 4.03 L 42.400000000000006 4.46 L 44 4.64 L 45.6 4.48 L 47.2 4.22 L 48.800000000000004 4.2 L 50.400000000000006 4.18 L 52 4.49 L 53.6 4.75 L 55.2 5.81 L 56.800000000000004 5.45 L 58.400000000000006 5.29 L 60 5.07 V 13 L 4 13 Z" stroke="none"></path><path class="sparkline--line" d="M4 4.86 L 4 4.86 L 5.6 4.84 L 7.2 4.91 L 8.8 4.54 L 10.4 4.68 L 12 4.57 L 13.600000000000001 4.39 L 15.200000000000001 4.7 L 16.8 4.85 L 18.4 4.7 L 20 4.74 L 21.6 4.83 L 23.200000000000003 4.54 L 24.8 4.35 L 26.400000000000002 4.55 L 28 4.66 L 29.6 4.58 L 31.200000000000003 4.51 L 32.8 4.54 L 34.400000000000006 4.57 L 36 4.15 L 37.6 4.19 L 39.2 4 L 40.800000000000004 4.03 L 42.400000000000006 4.46 L 44 4.64 L 45.6 4.48 L 47.2 4.22 L 48.800000000000004 4.2 L 50.400000000000006 4.18 L 52 4.49 L 53.6 4.75 L 55.2 5.81 L 56.800000000000004 5.45 L 58.400000000000006 5.29 L 60 5.07" fill="none"></path><line class="sparkline--cursor" x1="-1000" x2="-1000" y1="0" y2="13" stroke-width="2"></line><circle class="sparkline--spot" cx="-1000" cy="4.86" r="2"></circle></svg>
-                    <p className="text-sm text-scriptbox-gray-5 font-normal pt-3">5Y eturns</p>
+                    <p className="text-sm text-scriptbox-gray-5 font-normal pt-3">5Y returns</p>
                   </div>
                 </div>
 
