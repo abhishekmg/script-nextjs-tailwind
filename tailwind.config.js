@@ -194,7 +194,8 @@ module.exports = {
         '6' :'0px 1px 0px #e2e8f0',
       },
       fontSize: {
-        'my1' : '1.75rem'
+        'my1' : '1.75rem',
+        '0-8125' : '0.8125rem'
       },
       margin: {
         '-50vw' : '-50vw' 
