@@ -29,7 +29,7 @@ const SectionFour = props => {
                 title="scriptbox youtube"
                 loading="lazy"
                 src="https://www.youtube.com/embed/G8_zxdLM1Ao"
-                // className="rounded-md min-h-15-68 max-h-15-68 max-w-full w-full h-full"
+                className="rounded-md min-h-15-68 max-h-15-68 max-w-full w-full h-full"
               />
             </figure>
           </div>
