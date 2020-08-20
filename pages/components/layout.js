@@ -19,7 +19,7 @@ const Layout = ({
 
       <Navbar />
 
-      <main>
+      <main className="antialiased">
         {children}
       </main>
 
