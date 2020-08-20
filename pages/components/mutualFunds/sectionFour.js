@@ -23,13 +23,13 @@ const SectionFour = props => {
             </p>
           </div>
           <div className="mt-8 lg:mt-0">
-            
+
             <figure className="max-w-full sm:max-w-27-875 lg:min-w-27-875 w-full sm:mx-auto">
               <iframe
                 title="scriptbox youtube"
                 loading="lazy"
                 src="https://www.youtube.com/embed/G8_zxdLM1Ao"
-                className="rounded-md min-h-15-68 max-h-15-68 max-w-full w-full h-full"
+                // className="rounded-md min-h-15-68 max-h-15-68 max-w-full w-full h-full"
               />
             </figure>
           </div>
