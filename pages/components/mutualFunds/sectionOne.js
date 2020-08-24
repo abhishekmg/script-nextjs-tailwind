@@ -638,7 +638,7 @@ const SectionOne = ({ initialFundsList }) => {
           </div>
 
           {/* funds list section */}
-          <div className="w-full pt-2 lg:max-w-48-75 min-w-0">
+          <div className="w-full pt-2 max-w-48-75 lg:max-w-full min-w-0">
             <p className="sm:hidden block sm:pb-0 pb-3 font-medium text-base text-scriptbox-gray-2">
               Showing{" "}
               {resolvedData &&
@@ -648,7 +648,7 @@ const SectionOne = ({ initialFundsList }) => {
               funds
             </p>
             <div
-              className={`sm:py-0 py-2 sm:px-0 px-6 bg-white sm:rounded-lg sm:shadow-4`}
+              className={`sm:py-0 py-2 sm:px-0 px-6 bg-white rounded-lg shadow-4 sm:shadow-none`}
             >
               {renderFundsList()}
             </div>
