@@ -16,7 +16,7 @@ const Navbar = props => {
         <div className={`${containerStyles.container} mx-auto py-2 flex justify-between items-center`}>
           <div className="flex items-center">
             <div 
-              className="block sm:hidden mr-2 cursor-pointer"
+              className="sm:block hidden mr-2 cursor-pointer"
               onClick={() => setState({...state, showResponsiveNav: !state.showResponsiveNav})}
             >
               <figure>
@@ -33,13 +33,13 @@ const Navbar = props => {
             </Link>
           </div>
 
-          <div className="block sm:hidden">
+          <div className="sm:block hidden">
             <figure>
               <svg className="h-4 w-4 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" id="tel-icon"><path d="M2.294.737a1 1 0 011.413 0l2.577 2.58a.998.998 0 010 1.41l-1.96 1.958a.47.47 0 000 .665l4.33 4.325a.472.472 0 00.665 0l1.956-1.954a.999.999 0 011.415.002l2.575 2.589a.997.997 0 01-.002 1.41l-1.695 1.693a1.849 1.849 0 01-1.414.559C5.78 15.574.654 10.579.058 4.269c-.075-.792.258-1.557.821-2.12L2.294.738zM8 0c4.411 0 8 3.589 8 8h-2c0-3.309-2.691-6-6-6V0z" fill="#fff"></path></svg>
             </figure>
           </div>
 
-          <nav className="hidden sm:block">
+          <nav className="sm:hidden block">
             <ul className="flex items-center space-x-2">
               <li>
                 <Link href="/">
@@ -80,7 +80,7 @@ const Navbar = props => {
         </div>
       </header>
       {state.showResponsiveNav && 
-      <nav className="w-full absolute sm:hidden bg-scriptbox-orange p-4">
+      <nav className="w-full absolute hidden sm:block bg-scriptbox-orange p-4">
         <ul className="space-y-1">
           <li className="w-full text-center py-1">
             <Link href="/">

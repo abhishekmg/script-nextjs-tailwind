@@ -13,18 +13,30 @@ module.exports = {
 
     //   },
     // }),
+    // screens: {
+    //   'sm': '576px',
+    //   // => @media (min-width: 640px) { ... }
+
+    //   'md': '768px',
+    //   // => @media (min-width: 1024px) { ... }
+
+    //   'lg': '992px',
+    //   // => @media (min-width: 1280px) { ... }
+    //   'xl': '1200px' 
+    // },
     screens: {
-      'sm': '576px',
-      // => @media (min-width: 640px) { ... }
+      'xl': {'max': '1200px'},
+      // => @media (max-width: 1279px) { ... }
 
-      'md': '768px',
-      // => @media (min-width: 1024px) { ... }
+      'lg': {'max': '992px'},
+      // => @media (max-width: 1023px) { ... }
 
-      'lg': '992px',
-      // => @media (min-width: 1280px) { ... }
-      'xl': '1200px' 
+      'md': {'max': '768px'},
+      // => @media (max-width: 767px) { ... }
+
+      'sm': {'max': '576px'},
+      // => @media (max-width: 639px) { ... }
     },
-
     inset: {
       '0' : '0',
       '0-25' : '0.25rem',
