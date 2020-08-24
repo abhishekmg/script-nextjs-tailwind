@@ -9,6 +9,10 @@ const SectionFour = props => {
         <h2 className="text-scriptbox-black-1 text-3xl font-bold text-center">
           What are Best Equity Mutual Funds?
         </h2>
+        
+
+
+        <div className="sm:px-4">
         <div className="flex lg:flex-col flex-row pt-12">
           <div className="sm:mr-0 mr-20 flex-my1">
             <h3 className="text-xl text-scriptbox-black-1 font-bold pb-3">
@@ -48,8 +52,6 @@ const SectionFour = props => {
             </figure>
           </div>
         </div>
-
-
         {/* invest now */}
         <div className="pt-8">
           <h4 className="text-scriptbox-black-1 text-xl font-bold">
@@ -250,6 +252,9 @@ const SectionFour = props => {
          </div>
 
         </div>
+        </div>
+
+
       </div>
 
 

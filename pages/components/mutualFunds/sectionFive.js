@@ -8,8 +8,8 @@ const SectionFive = (props) => {
       <div
         className={`${containerStyles.container} mx-auto `}
       >
-        <div className="bg-scriptbox-brown rounded-lg -mx-10">
-          <div className="flex justify-center">
+        <div className="bg-scriptbox-brown rounded-lg xl:mx-0 -mx-10">
+          <div className="flex justify-center sm:px-4">
             <div className="pt-10 text-center max-w-lg relative">
               <figure className={`absolute ${styles.section_five_logo}`}>
                 <img
@@ -34,9 +34,9 @@ const SectionFive = (props) => {
             </div>
           </div>
 
-          <div className="pt-12 pb-16 md:px-4 grid grid-cols-1 gap-5  md:grid-cols-2 md:gap-6  lg:grid-cols-4 lg:gap-0">
-            <div className="flex flex-row md:flex-col md:text-center md:px-4">
-              <figure className="flex justify-center mr-4 md:mr-0">
+          <div className="pt-12 pb-16 md:px-4 px-4 grid md:grid-cols-1 md:gap-5  lg:grid-cols-2 lg:gap-6  grid-cols-4 gap-0">
+            <div className="flex md:flex-row flex-col md:text-left text-center md:px-0 px-4">
+              <figure className="flex justify-center md:mr-4 mr-0">
                 <svg
                   className="w-10 h-10"
                   xmlns="http://www.w3.org/2000/svg"
@@ -67,15 +67,15 @@ const SectionFive = (props) => {
                 </svg>
               </figure>
               <div>
-                <h3 className="font-semibold md:pt-4 md:px-3">Fund Selection</h3>
+                <h3 className="font-semibold md:pt-0 pt-4 md:px-0 px-3">Fund Selection</h3>
                 <p className="text-scriptbox-gray-5 text-sm">
                   You'll never have to worry about what funds to choose. We'll
                   suggest what's best for you.
               </p>
               </div>
             </div>
-            <div className="flex flex-row md:flex-col md:text-center md:px-4">
-              <figure className="flex justify-center mr-4 md:mr-0">
+            <div className="flex md:flex-row flex-col md:text-left  text-center md:px-0 px-4">
+              <figure className="flex justify-center md:mr-4 mr-0">
                 <svg
                   className="w-10 h-10"
                   xmlns="http://www.w3.org/2000/svg"
@@ -116,7 +116,7 @@ const SectionFive = (props) => {
                 </svg>
               </figure>
               <div>
-                <h3 className="font-semibold md:pt-4 md:px-3">Fund Selection</h3>
+                <h3 className="font-semibold md:pt-0 pt-4 md:px-0 px-3">Fund Selection</h3>
                 <p className="text-scriptbox-gray-5 text-sm">
                   {
                     "  We will track our recommendations and suggest changes & fund exists whenever required."
@@ -124,8 +124,8 @@ const SectionFive = (props) => {
                 </p>
               </div>
             </div>
-            <div className="flex flex-row md:flex-col md:text-center md:px-4">
-              <figure className="flex justify-center mr-4 md:mr-0">
+            <div className="flex md:flex-row flex-col md:text-left text-center md:px-0 px-4">
+              <figure className="flex justify-center md:mr-4 mr-0">
                 <svg
                   className="w-10 h-10"
                   xmlns="http://www.w3.org/2000/svg"
@@ -164,7 +164,7 @@ const SectionFive = (props) => {
                 </svg>
               </figure>
               <div>
-                <h3 className="font-semibold md:pt-4 md:px-3">
+                <h3 className="font-semibold md:pt-0 pt-4 md:px-0 px-3">
                   All week call assistance
               </h3>
                 <p className="text-scriptbox-gray-5 text-sm">
@@ -173,8 +173,8 @@ const SectionFive = (props) => {
               </p>
               </div>
             </div>
-            <div className="flex flex-row md:flex-col md:text-center md:px-4">
-              <figure className="flex justify-center mr-4 md:mr-0">
+            <div className="flex md:flex-row flex-col md:text-left  text-center md:px-0 px-4">
+              <figure className="flex justify-center md:mr-4 mr-0">
                 <svg
                   className="w-10 h-10"
                   xmlns="http://www.w3.org/2000/svg"
@@ -228,7 +228,7 @@ const SectionFive = (props) => {
                 </svg>
               </figure>
               <div>
-                <h3 className="font-semibold md:pt-4 md:px-3">Fund Selection</h3>
+                <h3 className="font-semibold md:pt-0 pt-4 md:px-0 px-3">Fund Selection</h3>
                 <p className="text-scriptbox-gray-5 text-sm">
                   We review your investments and make course corrections every
                   year to make the best out of your investments

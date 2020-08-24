@@ -385,7 +385,7 @@ const SectionTwo = (props) => {
           duration={500}
           height={state.activeAccordianElement !== 0 ? 50 : "auto"} // see props documentation below
         >
-          <div >
+          <div>
             <div
               onClick={() => onAccordianElementClick(0)}
               className={` cursor-pointer ${
@@ -451,7 +451,7 @@ const SectionTwo = (props) => {
           duration={500}
           height={state.activeAccordianElement !== 2 ? 50 : "auto"} // see props documentation below
         >
-          <div className="border-t"> 
+          <div className="border-t">
             <div
               onClick={() => onAccordianElementClick(2)}
               className={` cursor-pointer ${
@@ -483,42 +483,44 @@ const SectionTwo = (props) => {
     );
   };
 
-  
-
   // MAIN RETURN
   return (
     <section className="pt-24 pb-20 bg-scriptbox-blue-1">
       <div className={`mx-auto ${containerStyles.container}`}>
-      <div
-        className={`lg:hidden grid grid-cols-2 ${styles.section_two_parent_grid} xl:gap-0-1 gap-0-10`}
-      >
-        <div className="max-w-23-75">
-          {renderHeading()}
+        <div className="sm:px-2">
+        <div
+          className={`lg:hidden grid grid-cols-2 ${styles.section_two_parent_grid} xl:gap-0-1 gap-0-10`}
+        >
+          <div className="max-w-23-75">
+            {renderHeading()}
 
-          <div className="max-w-21-875"  style={{maxHeight: 266}}>{renderAccordian()}</div>
-        </div>
-        <div className={`${styles.section_two_right} relative`}>
-          {renderRightGrid()}
-          {renderTab()}
-        </div>
-      </div>
-
-      {/* non desktop */}
-      <div className="lg:block hidden max-w-2xl mx-auto">
-        <div>
-          {renderHeading()}
-          {renderTab()}
-          <div className="flex justify-center">{renderRightGrid()}</div>
-          <h6 className=" font-semibold text-sm py-5 text-scriptbox-black text-center">
-            What Scripbox recommendations mean?
-          </h6>
-          <div className="xl:max-w-33-5 max-w-full mx-auto">
-            {renderAccordian()}
+            <div className="max-w-21-875" style={{ maxHeight: 266 }}>
+              {renderAccordian()}
+            </div>
+          </div>
+          <div className={`${styles.section_two_right} relative`}>
+            {renderRightGrid()}
+            {renderTab()}
           </div>
         </div>
-      </div>
-      </div>
 
+        {/* non desktop */}
+        <div className="lg:block hidden max-w-2xl mx-auto">
+          <div>
+            {renderHeading()}
+            {renderTab()}
+            <div className="flex justify-center">{renderRightGrid()}</div>
+            <h6 className=" font-semibold text-sm py-5 text-scriptbox-black text-center">
+              What Scripbox recommendations mean?
+            </h6>
+            <div className="xl:max-w-33-5 max-w-full mx-auto">
+              {renderAccordian()}
+            </div>
+          </div>
+        </div>
+        </div>
+       
+      </div>
     </section>
   );
 };
