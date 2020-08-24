@@ -285,9 +285,9 @@ const Home = ({ initialFundsList }) => {
         <SectionOne initialFundsList={initialFundsList} />
 
         <SectionTwo />
-        {/* <SectionThree />
+        <SectionThree />
         <SectionFour />
-        <SectionFive /> */}
+        {/* <SectionFive /> */}
       </div>
     </Layout>
   );

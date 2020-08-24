@@ -4,21 +4,21 @@ import containerStyles from "../../../styles/customContainer.module.css";
 
 const SectionThree = (props) => {
   return (
-    <section className={`pt-10 sm:pt-20 pb-24 overflow-hidden`}>
+    <section className={`sm:pt-10 pt-20 pb-24 overflow-hidden`}>
       <div className={`mx-auto ${containerStyles.container}`}>
         <div className={`relative ${styles.section_three_header}`}>
-          <h2 className="ml-4 sm:ml-0 max-w-13-56 sm:max-w-full text-left sm:text-center text-scriptbox-black-1 font-bold text-xl sm:text-3xl pb-3">
+          <h2 className="sm:ml-4 ml-0 sm:max-w-13-56 max-w-full sm:text-left text-center text-scriptbox-black-1 font-bold sm:text-xl text-3xl pb-3">
             How to invest in best mutual funds with Scripbox
           </h2>
-          <p className="hidden sm:block text-base text-scriptbox-gray-5 text-center max-w-28-625 mx-auto">
+          <p className="sm:hidden block text-base text-scriptbox-gray-5 text-center max-w-28-625 mx-auto">
             Investing through Scripbox is made easy and paperless. All you need
             to do is follow the below steps and start investing.
           </p>
         </div>
         {/* card part */}
-        <div className="pt-6 sm:pt-12 space-x-6 flex items-center overflow-x-scroll xl:overflow-visible left-50p xl:left-0 relative w-screen xl:w-full -ml-50vw xl:ml-0 pb-2">
+        <div className="sm:pt-6 pt-12 space-x-6 flex items-center xl:overflow-x-scroll overflow-visible xl:left-50p left-0 relative xl:w-screen w-full xl:-ml-50vw ml-0 pb-2">
           <div
-            className={`ml-4 sm:ml-8 xl:ml-0 w-full rounded-md bg-white shadow-md max-w-16 min-w-16`}
+            className={`sm:ml-4 xl:ml-8 ml-0 w-full rounded-md bg-white shadow-md max-w-16 min-w-16`}
           >
             <figure className="bg-scriptbox-yellow flex justify-center rounded-t-md">
               <svg
@@ -268,7 +268,7 @@ const SectionThree = (props) => {
               </p>
             </div>
           </div>
-          <div className=" xl:hidden block h-1 min-w-0-0625"></div>
+          <div className=" hidden xl:block h-1 min-w-0-0625"></div>
         </div>
       </div>
     </section>
