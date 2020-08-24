@@ -96,7 +96,7 @@ const SectionFour = props => {
 
         {/* what are mutual funds */}
         <div className="pt-16 flex lg:flex-col flex-row">
-          <div className="mr-8 lg:max-w-none max-w-lg md:min-w-0 min-w-32 w-full md:pb-6 pb-0">
+          <div className="mr-8 lg:mr-0 lg:max-w-none max-w-lg md:min-w-0 min-w-32 w-full md:pb-6 pb-0">
             <h4 className="text-scriptbox-black-1 text-xl font-bold">
               What are mutual funds
             </h4>
@@ -110,7 +110,7 @@ const SectionFour = props => {
               Mutual fund investors are allocated units of the fund against the quantum of investment. These units can be re-invested or redeemed by investors on the maturity of the fund at the NAV.
             </p>
           </div>
-          <div className="lg:pt-4">
+          <div className="lg:pt-6">
             <div className="px-6 pt-6 pb-8 bg-scriptbox-blue-1 rounded-md flex">
               <figure className="h-6 w-6 mr-4 mt-1">
                 <svg className="h-6 w-6" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">

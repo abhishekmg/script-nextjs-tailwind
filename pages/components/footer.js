@@ -385,7 +385,7 @@ const Footer = props => {
 
 
       {/* for mobile */}
-      <div className="sm:block hidden px-4">
+      <div className="sm:block hidden sm:px-2 px-4">
         <figure className="mb-4">
           {scripboxLogo}
         </figure>
@@ -541,7 +541,7 @@ const Footer = props => {
 
 
       {/* last part */}
-      <div className="max-w-screen-lg mx-auto pt-6 sm:text-left text-center px-4">
+      <div className="max-w-screen-lg mx-auto pt-6 sm:text-left text-center px-4 sm:px-2 ">
         <p className=" text-scriptbox-gray-8 text-sm pb-2">
           Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Past performance is not an indicator of future returns.
         </p>
