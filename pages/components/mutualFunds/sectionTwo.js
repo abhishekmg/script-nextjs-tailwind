@@ -41,14 +41,14 @@ const SectionTwo = (props) => {
   );
 
   const renderHeading = () => (
-    <div className="text-center sm:text-left max-w-33-5 xl:max-w-full mx-auto">
+    <div className="sm:text-center text-left xl:max-w-33-5 max-w-full mx-auto">
       <h6 className="text-scriptbox-gray-2 text-sm font-medium">
         How does scriptbox rate funds ?
       </h6>
       <h2 className="text-scriptbox-black-1  text-my1 font-bold pt-3 pb-2 leading-tight">
         Proprietary 4-step system to rate mutual funds
       </h2>
-      <p className="text-scriptbox-gray-2 text-base lg:max-w-21-875 pb-6">
+      <p className="text-scriptbox-gray-2 text-base lg:max-w-none max-w-21-875 pb-6">
         We use a proprietary system to rate mutual funds and based on that make
         a recommendation or top ranking
       </p>
@@ -56,7 +56,7 @@ const SectionTwo = (props) => {
   );
 
   const renderTab = () => (
-    <div className={`xl:max-w-31-875`}>
+    <div className={`xl:max-w-none max-w-31-875`}>
       <div className="w-14-875 mx-auto cursor-pointer mt-4 flex items-center bg-scriptbox-blue-2 rounded-md text-sm">
         <div
           className="p-0-1875"
@@ -87,14 +87,14 @@ const SectionTwo = (props) => {
   );
 
   const renderRightGrid = () => (
-    <div className="mt-4  rounded-md max-w-lg lg:w-full">
+    <div className="mt-4  rounded-md max-w-lg w-full">
       {/* first row */}
       <div className="flex  items-center">
         <div
-          className={`rounded-tl-md p-4 md:p-6 bg-white shadow-2 max-w-15-9 w-full relative ${styles.section_two_top_left_div}`}
+          className={`rounded-tl-md md:p-4 p-6 bg-white shadow-2 max-w-15-9 w-full relative ${styles.section_two_top_left_div}`}
         >
           <svg
-            className="hidden sm:block h-8 w-8"
+            className="sm:hidden block h-8 w-8"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 32 31"
@@ -147,10 +147,10 @@ const SectionTwo = (props) => {
           </p>
         </div>
         <div
-          className={` rounded-tr-md p-4 md:p-6 bg-white relative max-w-17-815 w-full shadow-2 ${styles.section_two_top_right_div}`}
+          className={` rounded-tr-md md:p-4 p-6 bg-white relative max-w-17-815 w-full shadow-2 ${styles.section_two_top_right_div}`}
         >
           <svg
-            className="hidden sm:block  h-8 w-8"
+            className="sm:hidden block  h-8 w-8"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 32 32"
@@ -190,7 +190,7 @@ const SectionTwo = (props) => {
         <div className="rounded-bl-md p-4 md:p-6 bg-white  shadow-2 max-w-15-9 w-full ">
           {state.sectionTwoActiveTab ? (
             <svg
-              className="hidden sm:block  h-8 w-8"
+              className="sm:hidden block  h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 32 32"
@@ -219,7 +219,7 @@ const SectionTwo = (props) => {
             </svg>
           ) : (
             <svg
-              className="hidden sm:block  h-8 w-8"
+              className="sm:hidden block  h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 32 32"
@@ -269,7 +269,7 @@ const SectionTwo = (props) => {
         <div className="rounded-br-md p-4 md:p-6 bg-white shadow-2 max-w-17-815 w-full">
           {state.sectionTwoActiveTab ? (
             <svg
-              className="hidden sm:block  h-8 w-8"
+              className="sm:hidden block  h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 32 32"
@@ -301,7 +301,7 @@ const SectionTwo = (props) => {
             </svg>
           ) : (
             <svg
-              className="hidden sm:block  h-8 w-8"
+              className="sm:hidden block  h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 32 32"
@@ -488,8 +488,9 @@ const SectionTwo = (props) => {
   // MAIN RETURN
   return (
     <section className="pt-24 pb-20 bg-scriptbox-blue-1">
+      <div className={`mx-auto ${containerStyles.container}`}>
       <div
-        className={`hidden lg:grid ${containerStyles.container} mx-auto grid-cols-2 ${styles.section_two_parent_grid} gap-0-1 xl:gap-0-10`}
+        className={`lg:hidden grid grid-cols-2 ${styles.section_two_parent_grid} xl:gap-0-1 gap-0-10`}
       >
         <div className="max-w-23-75">
           {renderHeading()}
@@ -503,7 +504,7 @@ const SectionTwo = (props) => {
       </div>
 
       {/* non desktop */}
-      <div className="block lg:hidden max-w-2xl mx-auto">
+      <div className="lg:block hidden max-w-2xl mx-auto">
         <div>
           {renderHeading()}
           {renderTab()}
@@ -511,11 +512,13 @@ const SectionTwo = (props) => {
           <h6 className=" font-semibold text-sm py-5 text-scriptbox-black text-center">
             What Scripbox recommendations mean?
           </h6>
-          <div className="max-w-33-5 xl:max-w-full mx-auto">
+          <div className="xl:max-w-33-5 max-w-full mx-auto">
             {renderAccordian()}
           </div>
         </div>
       </div>
+      </div>
+
     </section>
   );
 };

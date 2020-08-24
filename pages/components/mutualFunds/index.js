@@ -39,9 +39,9 @@ const Home = ({ initialFundsList }) => {
   return (
     <Layout>
       <div className="bg-scriptbox-gray-1">
-        <section className={`sm:pt-16  bg-scriptbox-gray-1`}>
+        <section className={`sm:pt-0 pt-16  bg-scriptbox-gray-1`}>
           <div className={`${containerStyles.container} mx-auto`}>
-            <ul className="hidden sm:flex items-center">
+            <ul className="sm:hidden flex items-center">
               <li
                 className={`${styles.breadcrumb_list_item} flex relative pr-6`}
               >
@@ -61,15 +61,15 @@ const Home = ({ initialFundsList }) => {
                 </span>
               </li>
             </ul>
-            <h1 className="text-2xl sm:text-4xl font-bold py-3">
+            <h1 className="sm:text-2xl text-4xl font-bold py-3">
               Mutual Funds
             </h1>
-            <p className=" hidden sm:block text-lg text-scriptbox-gray-2 max-w-lg font-normal leading-7">
+            <p className=" sm:hidden block text-lg text-scriptbox-gray-2 max-w-lg font-normal leading-7">
               Invest in the best mutual funds recommended by Scripbox that are
               algorithmically selected that best suit your needs.
             </p>
             {/* funds card */}
-            <div className="pt-6 pb-4 hidden sm:flex items-center overflow-x-scroll xl:overflow-visible left-50p xl:left-0 relative w-screen xl:w-full -ml-50vw xl:ml-0 pl-4 xl:pl-0">
+            <div className="pt-6 pb-4 sm:hidden flex items-center xl:overflow-x-scroll overflow-visible xl:left-50p left-0 relative xl:w-screen w-full xl:-ml-50vw ml-0 xl:pl-4 pl-0">
               <FundsCard
                 figure={
                   <svg
@@ -278,16 +278,16 @@ const Home = ({ initialFundsList }) => {
                   </div>
                 </a>
               </Link>
-              <div className="xl:hidden min-w-0-0625 h-3"></div>
+              <div className="xl:block hidden min-w-0-0625 h-3"></div>
             </div>
           </div>
         </section>
         <SectionOne initialFundsList={initialFundsList} />
 
         <SectionTwo />
-        <SectionThree />
+        {/* <SectionThree />
         <SectionFour />
-        <SectionFive />
+        <SectionFive /> */}
       </div>
     </Layout>
   );

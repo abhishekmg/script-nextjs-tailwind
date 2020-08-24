@@ -79,7 +79,7 @@ const SectionOne = ({ initialFundsList }) => {
                 className={`block transition ease-in-out duration-200  ${styles.fund_list_item} relative block`}
               >
                 <div
-                  className={`px-2 sm:px-0 py-4 flex items-center justify-between ${styles.list_div} min-w-0`}
+                  className={`sm:px-2 px-0 py-4 flex items-center justify-between ${styles.list_div} min-w-0`}
                 >
                   {/* left side */}
                   <div className="flex items-center min-w-0 flex-my1">
@@ -93,19 +93,19 @@ const SectionOne = ({ initialFundsList }) => {
                     </figure>
                     <div className="min-w-0 flex-my1">
                       <h4
-                        className={`leading-1-2 truncate text-scriptbox-black-1 text-sm md:text-base font-semibold`}
+                        className={`leading-1-2 truncate text-scriptbox-black-1 md:text-sm text-base font-semibold`}
                       >
                         {item._source.fund_name}
                       </h4>
                       <div className="pt-3 flex items-center space-x-1">
-                        <p className="text-0-8125 sm:text-sm font-normal text-scriptbox-gray-5">
+                        <p className="sm:text-0-8125 text-sm font-normal text-scriptbox-gray-5">
                           Large cap
                         </p>
                         {item._source.sb_view_value !== null &&
                           item._source.sb_view_value ===
                             "Scripbox Recommended" && (
                             <p
-                              className={` text-0-8125 sm:text-sm font-normal rounded bg-scriptbox-orange-3 text-scriptbox-orange ${styles.recommended_badge} ${styles.badge_atom}`}
+                              className={` sm:text-0-8125 text-sm font-normal rounded bg-scriptbox-orange-3 text-scriptbox-orange ${styles.recommended_badge} ${styles.badge_atom}`}
                             >
                               Recommended
                             </p>
@@ -113,7 +113,7 @@ const SectionOne = ({ initialFundsList }) => {
                         {item._source.sb_view_value !== null &&
                           item._source.sb_view_value === "Top Ranked" && (
                             <p
-                              className={`text-0-8125 sm:text-sm font-normal rounded text-scriptbox-green  ${styles.topranked_badge} ${styles.badge_atom}`}
+                              className={`sm:text-0-8125 text-sm font-normal rounded text-scriptbox-green  ${styles.topranked_badge} ${styles.badge_atom}`}
                             >
                               Top Ranked
                             </p>
@@ -121,7 +121,7 @@ const SectionOne = ({ initialFundsList }) => {
                         {item._source.sb_view_value !== null &&
                           item._source.sb_view_value === "Not Recommended" && (
                             <p
-                              className={`text-0-8125 sm:text-sm font-normal rounded text-scriptbox-red ${styles.notRecommended_badge} ${styles.badge_atom}`}
+                              className={`sm:text-0-8125 text-sm font-normal rounded text-scriptbox-red ${styles.notRecommended_badge} ${styles.badge_atom}`}
                             >
                               Not Recommended
                             </p>
@@ -131,7 +131,7 @@ const SectionOne = ({ initialFundsList }) => {
                   </div>
                   {/* right side */}
                   <div className="px-2 flex items-center">
-                    <div className="hidden sm:block mr-6">
+                    <div className="sm:hidden block mr-6">
                       <p className="font-normal text-sm text-scriptbox-black pb-3">
                         {item._source.first_investment_amount} cr
                       </p>
@@ -591,11 +591,11 @@ const SectionOne = ({ initialFundsList }) => {
 
   return (
     // <section className={`sm:px-2 lg:px-4 xl:px-4 sm:pt-4 pb-20  bg-scriptbox-gray-1`}>
-    <section className={`sm:pt-4 pb-20  bg-scriptbox-gray-1`}>
+    <section className={`sm:pt-0 pt-4 pb-20  bg-scriptbox-gray-1`}>
       <div className={`mx-auto ${containerStyles.container}`}>
         <div className="flex">
           {/* funds filters */}
-          <div className={`hidden lg:block mr-12 max-w-17-62 min-w-15 w-full`}>
+          <div className={`lg:hidden block mr-12 max-w-17-62 min-w-15 w-full`}>
             <div className="sticky top-0  divide-y ">
               <div className="pb-4 pt-2 flex items-center justify-between">
                 <p className="text-base font-medium text-scriptbox-gray-2">
@@ -639,7 +639,7 @@ const SectionOne = ({ initialFundsList }) => {
 
           {/* funds list section */}
           <div className="w-full pt-2 lg:max-w-48-75 min-w-0">
-            <p className="hidden sm:block sm:pb-3 font-medium text-base text-scriptbox-gray-2">
+            <p className="sm:hidden block sm:pb-0 pb-3 font-medium text-base text-scriptbox-gray-2">
               Showing{" "}
               {resolvedData &&
                 resolvedData.results &&
@@ -648,11 +648,11 @@ const SectionOne = ({ initialFundsList }) => {
               funds
             </p>
             <div
-              className={`sm:py-2 sm:px-6 bg-white sm:rounded-lg sm:shadow-4`}
+              className={`sm:py-0 py-2 sm:px-0 px-6 bg-white sm:rounded-lg sm:shadow-4`}
             >
               {renderFundsList()}
             </div>
-            <div className="px-4 sm:px-0 flex justify-between mt-6 overflow-x-scroll">
+            <div className="sm:px-4 px-0 flex justify-between mt-6 overflow-x-scroll">
               <button
                 className={`py-2 px-4 bg-white rounded-md hover:bg-scriptbox-gray-4 text-scriptbox-gray-2 text-sm ${styles.pagination_button}`}
                 onClick={() =>
@@ -666,7 +666,7 @@ const SectionOne = ({ initialFundsList }) => {
               >
                 Previous
               </button>
-              <span className="hidden sm:block">
+              <span className="sm:hidden block">
                 <Pagination
                   innerClass={styles.pagination_div}
                   activeClass={styles.pagination_active}
@@ -711,7 +711,7 @@ const SectionOne = ({ initialFundsList }) => {
           </div>
         </div>
         <button
-          className={`lg:hidden p-3 rounded bg-gray-900 text-white fixed left-39p sm:left-45p bottom-1`}
+          className={`lg:block hidden p-3 rounded bg-gray-900 text-white fixed left-39p sm:left-45p bottom-1`}
           onClick={() => setState({ ...state, isFilterModalOpen: true })}
         >
           Add Filter
