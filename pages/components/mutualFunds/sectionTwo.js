@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import styles from "../../../styles/Home.module.css";
+import containerStyles from "../../../styles/customContainer.module.css";
+
 import AnimateHeight from "react-animate-height";
 
 const SectionTwo = (props) => {
@@ -39,14 +41,14 @@ const SectionTwo = (props) => {
   );
 
   const renderHeading = () => (
-    <div className="text-center sm:text-left max-w-33-5 xl:max-w-full mx-auto">
+    <div className="sm:text-center text-left xl:max-w-33-5 max-w-full mx-auto">
       <h6 className="text-scriptbox-gray-2 text-sm font-medium">
         How does scriptbox rate funds ?
       </h6>
       <h2 className="text-scriptbox-black-1  text-my1 font-bold pt-3 pb-2 leading-tight">
         Proprietary 4-step system to rate mutual funds
       </h2>
-      <p className="text-scriptbox-gray-2 text-base lg:max-w-21-875 pb-6">
+      <p className="text-scriptbox-gray-2 text-base lg:max-w-none max-w-21-875 pb-6">
         We use a proprietary system to rate mutual funds and based on that make
         a recommendation or top ranking
       </p>
@@ -54,7 +56,7 @@ const SectionTwo = (props) => {
   );
 
   const renderTab = () => (
-    <div className={`xl:max-w-31-875`}>
+    <div className={`xl:max-w-none max-w-31-875`}>
       <div className="w-14-875 mx-auto cursor-pointer mt-4 flex items-center bg-scriptbox-blue-2 rounded-md text-sm">
         <div
           className="p-0-1875"
@@ -85,14 +87,14 @@ const SectionTwo = (props) => {
   );
 
   const renderRightGrid = () => (
-    <div className="mt-4  rounded-md max-w-lg lg:w-full">
+    <div className="mt-4  rounded-md max-w-lg w-full">
       {/* first row */}
       <div className="flex  items-center">
         <div
-          className={`rounded-tl-md p-4 md:p-6 bg-white shadow-2 max-w-15-9 w-full relative ${styles.section_two_top_left_div}`}
+          className={`rounded-tl-md md:p-4 p-6 bg-white shadow-2 max-w-15-9 w-full relative ${styles.section_two_top_left_div}`}
         >
           <svg
-            className="hidden sm:block h-8 w-8"
+            className="sm:hidden block h-8 w-8"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 32 31"
@@ -145,10 +147,10 @@ const SectionTwo = (props) => {
           </p>
         </div>
         <div
-          className={` rounded-tr-md p-4 md:p-6 bg-white relative max-w-17-815 w-full shadow-2 ${styles.section_two_top_right_div}`}
+          className={` rounded-tr-md md:p-4 p-6 bg-white relative max-w-17-815 w-full shadow-2 ${styles.section_two_top_right_div}`}
         >
           <svg
-            className="hidden sm:block  h-8 w-8"
+            className="sm:hidden block  h-8 w-8"
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 32 32"
@@ -188,7 +190,7 @@ const SectionTwo = (props) => {
         <div className="rounded-bl-md p-4 md:p-6 bg-white  shadow-2 max-w-15-9 w-full ">
           {state.sectionTwoActiveTab ? (
             <svg
-              className="hidden sm:block  h-8 w-8"
+              className="sm:hidden block  h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 32 32"
@@ -217,7 +219,7 @@ const SectionTwo = (props) => {
             </svg>
           ) : (
             <svg
-              className="hidden sm:block  h-8 w-8"
+              className="sm:hidden block  h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 32 32"
@@ -267,7 +269,7 @@ const SectionTwo = (props) => {
         <div className="rounded-br-md p-4 md:p-6 bg-white shadow-2 max-w-17-815 w-full">
           {state.sectionTwoActiveTab ? (
             <svg
-              className="hidden sm:block  h-8 w-8"
+              className="sm:hidden block  h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 32 32"
@@ -299,7 +301,7 @@ const SectionTwo = (props) => {
             </svg>
           ) : (
             <svg
-              className="hidden sm:block  h-8 w-8"
+              className="sm:hidden block  h-8 w-8"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 32 32"
@@ -383,7 +385,7 @@ const SectionTwo = (props) => {
           duration={500}
           height={state.activeAccordianElement !== 0 ? 50 : "auto"} // see props documentation below
         >
-          <div >
+          <div>
             <div
               onClick={() => onAccordianElementClick(0)}
               className={` cursor-pointer ${
@@ -449,7 +451,7 @@ const SectionTwo = (props) => {
           duration={500}
           height={state.activeAccordianElement !== 2 ? 50 : "auto"} // see props documentation below
         >
-          <div className="border-t"> 
+          <div className="border-t">
             <div
               onClick={() => onAccordianElementClick(2)}
               className={` cursor-pointer ${
@@ -481,259 +483,43 @@ const SectionTwo = (props) => {
     );
   };
 
-  // const renderAccordian = () => {
-  //   return (
-  //     <>
-  // <AnimateHeight
-  //   id="example-panel"
-  //   duration={100}
-  //   height={state.activeAccordianElement !== 0 ? 50 : 0} // see props documentation below
-  // >
-  //   <AccordianActiveElement number={0}>
-  //     <p className="flex items-center">
-  //       <img
-  //         className="w-4 h-4 mr-2"
-  //         alt="scriptbox"
-  //         src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg"
-  //       />
-  //       Recommended
-  //     </p>
-  //   </AccordianActiveElement>
-  // </AnimateHeight>
-  //       <AnimateHeight
-  //         id="example-panel"
-  //         duration={500}
-  //         height={state.activeAccordianElement === 0 ? 166 : 0} // see props documentation below
-  //       >
-  //         <AccordianNonActiveElement number={0}>
-  //           <p className="flex items-center">
-  //             <img
-  //               className="w-4 h-4 mr-2"
-  //               src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg"
-  //               alt="scriptbox"
-  //             />
-  //             Recommended
-  //           </p>
-  //         </AccordianNonActiveElement>
-  //       </AnimateHeight>
-  //       <AnimateHeight
-  //         id="example-panel"
-  //         duration={100}
-  //         height={state.activeAccordianElement !== 1 ? 50 : 0} // see props documentation below
-  //       >
-  //             <AccordianActiveElement number={1}>
-  //         <p className="flex items-center">
-  //           <img
-  //             className="w-4 h-4 mr-2"
-  //             alt="scriptbox"
-  //             src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/star-circled.svg"
-  //           />
-  //           Top Ranked
-  //         </p>
-  //       </AccordianActiveElement>
-
-  //       </AnimateHeight>
-  //       <AnimateHeight
-  //         id="example-panel"
-  //         duration={500}
-  //         height={state.activeAccordianElement === 1 ? 166 : 0} // see props documentation below
-  //       >
-  //          <AccordianNonActiveElement number={1}>
-  //         <p className="flex items-center">
-  //           <img
-  //             className="w-4 h-4 mr-2"
-  //             alt="scriptbox"
-  //             src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/star-circled.svg"
-  //           />
-  //           Top Ranked
-  //         </p>
-  //       </AccordianNonActiveElement>
-  //       </AnimateHeight>
-  //       <AnimateHeight
-  //         id="example-panel"
-  //         duration={100}
-  //         height={state.activeAccordianElement !== 2 ? 50 : 0} // see props documentation below
-  //       >
-  //          <AccordianActiveElement number={2}>
-  // <p className="flex items-center">
-  //   <img
-  //     className="w-4 h-4 mr-2"
-  //     alt="scriptbox"
-  //     src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/not-recommended.svg"
-  //   />
-  //   Not Recommended
-  // </p>
-  //       </AccordianActiveElement>
-
-  //       </AnimateHeight>
-  //       <AnimateHeight
-  //         id="example-panel"
-  //         duration={500}
-  //         height={state.activeAccordianElement === 2 ? 166 : 0} // see props documentation below
-  //       >
-  //                <AccordianNonActiveElement number={2}>
-  //         <p className="flex items-center">
-  //           <img
-  //             className="w-4 h-4 mr-2"
-  //             alt="scriptbox"
-  //             src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/not-recommended.svg"
-  //           />
-  //           Not Recommended
-  //         </p>
-  //       </AccordianNonActiveElement>
-  //       </AnimateHeight>
-
-  //     </>
-  //   );
-  // };
-
-  // const renderAccordian = () => (
-  //   <>
-
-  // <AccordianActiveElement number={0}>
-  //   <p className="flex items-center">
-  //     <img
-  //       className="w-4 h-4 mr-2"
-  //       alt="scriptbox"
-  //       src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg"
-  //     />
-  //       Recommended
-  //     </p>
-  // </AccordianActiveElement>
-
-  //     <AnimateHeight
-  //       duration={500}
-  //       height={state.activeAccordianElement === 0 ? "200" : "0"}
-  //     >
-  //       <AccordianNonActiveElement
-  //         number={0}
-  //       >
-  //         <p className="flex items-center">
-  //           <img
-  //             className="w-4 h-4 mr-2"
-  //             src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg"
-  //             alt="scriptbox"
-  //           />
-  //               Recommended
-  //             </p>
-  //       </AccordianNonActiveElement>
-
-  //     </AnimateHeight>
-
-  //     {/* {state.activeAccordianElement === 0 ? (
-
-  //       <Collapse isOpened={state.activeAccordianElement === 0}>
-  //               <AccordianNonActiveElement
-  //             number={0}
-  //             style={{
-  //               ...transitionStyles[state],
-  //             }}
-  //           >
-  //             {console.log("trans" , state)}
-  //             <p className="flex items-center">
-  //               <img
-  //                 className="w-4 h-4 mr-2"
-  //                 src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg"
-  //                 alt="scriptbox"
-  //               />
-  //               Recommended
-  //             </p>
-  //           </AccordianNonActiveElement>
-
-  //       </Collapse>
-
-  //     ) : (
-  //         <AccordianActiveElement number={0}>
-  //           <p className="flex items-center">
-  //             <img
-  //               className="w-4 h-4 mr-2"
-  //               alt="scriptbox"
-  //               src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/mark.svg"
-  //             />
-  //           Recommended
-  //         </p>
-  //         </AccordianActiveElement>
-  //       )} */}
-
-  //     {state.activeAccordianElement === 1 ? (
-  //       <AccordianNonActiveElement number={1}>
-  //         <p className="flex items-center">
-  //           <img
-  //             className="w-4 h-4 mr-2"
-  //             alt="scriptbox"
-  //             src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/star-circled.svg"
-  //           />
-  //           Top Ranked
-  //         </p>
-  //       </AccordianNonActiveElement>
-  //     ) : (
-  //       <AccordianActiveElement number={1}>
-  //         <p className="flex items-center">
-  //           <img
-  //             className="w-4 h-4 mr-2"
-  //             alt="scriptbox"
-  //             src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/star-circled.svg"
-  //           />
-  //           Top Ranked
-  //         </p>
-  //       </AccordianActiveElement>
-  //     )}
-  //     {state.activeAccordianElement === 2 ? (
-  //       <AccordianNonActiveElement number={2}>
-  //         <p className="flex items-center">
-  //           <img
-  //             className="w-4 h-4 mr-2"
-  //             alt="scriptbox"
-  //             src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/not-recommended.svg"
-  //           />
-  //           Not Recommended
-  //         </p>
-  //       </AccordianNonActiveElement>
-  //     ) : (
-  //       <AccordianActiveElement number={2}>
-  //         <p className="flex items-center">
-  //           <img
-  //             className="w-4 h-4 mr-2"
-  //             alt="scriptbox"
-  //             src="https://deploy-preview-52--evergreen-gulp.netlify.app//assets/images/svg/not-recommended.svg"
-  //           />
-  //           Not Recommended
-  //         </p>
-  //       </AccordianActiveElement>
-  //     )}
-  //   </>
-  // );
-
   // MAIN RETURN
   return (
-    <section className="px-4 pt-24 pb-20 lg:px-4 bg-scriptbox-blue-1">
-      <div
-        className={`hidden lg:px-4 lg:grid max-w-screen-lg mx-auto grid-cols-2 ${styles.section_two_parent_grid} gap-0-1 xl:gap-0-10`}
-      >
-        <div className="max-w-23-75">
-          {renderHeading()}
+    <section className="pt-24 pb-20 bg-scriptbox-blue-1">
+      <div className={`mx-auto ${containerStyles.container}`}>
+        <div className="sm:px-2">
+        <div
+          className={`lg:hidden grid grid-cols-2 ${styles.section_two_parent_grid} xl:gap-0-1 gap-0-10`}
+        >
+          <div className="max-w-23-75">
+            {renderHeading()}
 
-          <div className="max-w-21-875"  style={{maxHeight: 266}}>{renderAccordian()}</div>
-        </div>
-        <div className={`${styles.section_two_right} relative`}>
-          {renderRightGrid()}
-          {renderTab()}
-        </div>
-      </div>
-
-      {/* non desktop */}
-      <div className="block lg:hidden max-w-2xl mx-auto">
-        <div>
-          {renderHeading()}
-          {renderTab()}
-          <div className="flex justify-center">{renderRightGrid()}</div>
-          <h6 className=" font-semibold text-sm py-5 text-scriptbox-black text-center">
-            What Scripbox recommendations mean?
-          </h6>
-          <div className="max-w-33-5 xl:max-w-full mx-auto">
-            {renderAccordian()}
+            <div className="max-w-21-875" style={{ maxHeight: 266 }}>
+              {renderAccordian()}
+            </div>
+          </div>
+          <div className={`${styles.section_two_right} relative`}>
+            {renderRightGrid()}
+            {renderTab()}
           </div>
         </div>
+
+        {/* non desktop */}
+        <div className="lg:block hidden max-w-2xl mx-auto">
+          <div>
+            {renderHeading()}
+            {renderTab()}
+            <div className="flex justify-center">{renderRightGrid()}</div>
+            <h6 className=" font-semibold text-sm py-5 text-scriptbox-black text-center">
+              What Scripbox recommendations mean?
+            </h6>
+            <div className="xl:max-w-33-5 max-w-full mx-auto">
+              {renderAccordian()}
+            </div>
+          </div>
+        </div>
+        </div>
+       
       </div>
     </section>
   );

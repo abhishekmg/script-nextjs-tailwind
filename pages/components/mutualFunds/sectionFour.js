@@ -1,15 +1,20 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.css'
+import containerStyles from "../../../styles/customContainer.module.css";
 
 const SectionFour = props => {
   return (
-    <section className="pt-32 pb-24 lg:px-4 bg-white ">
-      <div className="max-w-screen-lg mx-auto px-4 lg:px-0">
+    <section className="pt-32 pb-24 bg-white ">
+      <div className={`${containerStyles.container} mx-auto`}>
         <h2 className="text-scriptbox-black-1 text-3xl font-bold text-center">
           What are Best Equity Mutual Funds?
         </h2>
-        <div className="flex flex-col lg:flex-row pt-12">
-          <div className="mr-0 sm:mr-20 flex-my1">
+        
+
+
+        <div className="sm:px-4">
+        <div className="flex lg:flex-col flex-row pt-12">
+          <div className="sm:mr-0 mr-20 flex-my1">
             <h3 className="text-xl text-scriptbox-black-1 font-bold pb-3">
               Why invest in mutual funds?
             </h3>
@@ -22,9 +27,9 @@ const SectionFour = props => {
               We have you covered. Let’s take a look at the top mutual funds to invest this year. You can invest in the mutual funds based on broad categories namely equity funds, debt funds, balanced fund, and liquid funds
             </p>
           </div>
-          <div className="mt-8 lg:mt-0">
+          <div className="lg:mt-8 mt-0">
 
-            <figure className="max-w-full sm:max-w-27-875 lg:min-w-27-875 w-full sm:mx-auto">
+            <figure className="sm:max-w-full max-w-27-875 lg:min-w-0 min-w-27-875 w-full sm:mx-0 mx-auto">
               {/* <iframe
                 title="scriptbox youtube"
                 loading="lazy"
@@ -47,14 +52,12 @@ const SectionFour = props => {
             </figure>
           </div>
         </div>
-
-
         {/* invest now */}
         <div className="pt-8">
           <h4 className="text-scriptbox-black-1 text-xl font-bold">
             Invest Now
           </h4>
-          <div className="pt-4 flex flex-col lg:flex-row space-y-8 lg:space-y-0 lg:space-x-8">
+          <div className="pt-4 flex lg:flex-col flex-row lg:space-y-8 space-y-0 lg:space-x-0 space-x-8">
             <div>
               <p className="text-scriptbox-black-1 text-base font-semibold pb-2">
                 Scientifically-chosen funds
@@ -92,8 +95,8 @@ const SectionFour = props => {
         </div>
 
         {/* what are mutual funds */}
-        <div className="pt-16 flex flex-col md:flex-row">
-          <div className="mr-8 md:max-w-lg md:min-w-32 w-full pb-6 md:pb-0">
+        <div className="pt-16 flex lg:flex-col flex-row">
+          <div className="mr-8 lg:mr-0 lg:max-w-none max-w-lg md:min-w-0 min-w-32 w-full md:pb-6 pb-0">
             <h4 className="text-scriptbox-black-1 text-xl font-bold">
               What are mutual funds
             </h4>
@@ -107,7 +110,7 @@ const SectionFour = props => {
               Mutual fund investors are allocated units of the fund against the quantum of investment. These units can be re-invested or redeemed by investors on the maturity of the fund at the NAV.
             </p>
           </div>
-          <div>
+          <div className="lg:pt-6">
             <div className="px-6 pt-6 pb-8 bg-scriptbox-blue-1 rounded-md flex">
               <figure className="h-6 w-6 mr-4 mt-1">
                 <svg className="h-6 w-6" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,7 +135,7 @@ const SectionFour = props => {
 
         {/* how to select */}
         <div className="pt-12">
-          <div className="pb-16 sm:max-w-xl ">
+          <div className="pb-16 sm:max-w-none max-w-xl ">
             <div className={`bg-scriptbox-orange w-10 h-0-125`} />
             <h4 className="text-scriptbox-black-1 text-xl font-bold pt-6 pb-3">
               How to Select the Top Performing Mutual Funds In India in 2020?
@@ -142,8 +145,8 @@ const SectionFour = props => {
             </p>
           </div>
 
-          <div className="flex flex-col md:flex-row">
-            <div className="md:mr-8 w-full md:w-1/2 pb-8 md:pb-0">
+          <div className="flex md:flex-col flex-row">
+            <div className="md:mr-0 mr-8 md:w-full w-1/2 md:pb-8 pb-0">
               <p className="text-scriptbox-black-1 pb-3 font-semibold">
                 Investment Objective
               </p>
@@ -157,7 +160,7 @@ const SectionFour = props => {
                 All the necessary details related to the scheme, its asset allocation, objective, and strategy are available in the key information document and scheme information document.
               </p>
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="md:w-full w-1/2">
               <p className="text-scriptbox-black-1 pb-3 font-semibold">
                 Fund History
               </p>
@@ -176,8 +179,8 @@ const SectionFour = props => {
 
           </div>
 
-          <div className=" mt-16 flex flex-col md:flex-row">
-            <div className="md:mr-8 w-full md:w-1/2 pb-8 md:pb-0">
+          <div className=" mt-16 flex md:flex-col flex-row">
+            <div className="md:mr-0 mr-8 md:w-full w-1/2 md:pb-8 pb-0">
               <p className="text-scriptbox-black-1 pb-3 font-semibold">
               Expense Ratio
               </p>
@@ -189,7 +192,7 @@ const SectionFour = props => {
               </p>
    
             </div>
-            <div className="w-full md:w-1/2">
+            <div className="md:w-full w-1/2">
               <p className="text-scriptbox-black-1 pb-3 font-semibold">
               Performance of fund manager
               </p>
@@ -209,8 +212,8 @@ const SectionFour = props => {
         <div className="pt-16">
          <div className={`bg-scriptbox-orange w-10 h-0-125 mb-6`} />
 
-         <div className="flex flex-col lg:flex-row">
-          <div className="mr-8  lg:max-w-xl lg:min-w-36 w-full">
+         <div className="flex lg:flex-col flex-row">
+          <div className="mr-8  lg:max-w-none max-w-xl lg:min-w-0 min-w-36 w-full">
             <h4 className="pb-3 text-xl font-bold">
               How to invest in Top Performing Mutual Fund?
             </h4>
@@ -224,7 +227,7 @@ const SectionFour = props => {
             Investing through Scripbox is made easy and <b>paperless</b>. All you need to do is follow the 5 easy steps to start investing.
             </p>
           </div>
-          <div className="w-full pt-8 lg:pt-0">
+          <div className="w-full lg:pt-8 pt-0">
 
             <ul className={` max-w-lg mx-auto rounded-md py-8 px-6 ${styles.section_four_shadow } shadow-4`}>
               <li className={`${styles.section_four_li} text-base text-scriptbox-black-1 font-semibold relative leading-1-15 pl-2p pb-6`}>
@@ -249,6 +252,9 @@ const SectionFour = props => {
          </div>
 
         </div>
+        </div>
+
+
       </div>
 
 

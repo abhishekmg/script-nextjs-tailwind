@@ -9,6 +9,8 @@ import {
 import 'what-input';
 
 import styles from "../../styles/Home.module.css"
+import containerStyles from "../../styles/customContainer.module.css";
+
 
 
 const Footer = props => {
@@ -285,11 +287,11 @@ const Footer = props => {
   )
 
   return (
-    <footer className="bg-scriptbox-black-2 lg:px-4  pt-4 sm:pt-16 pb-12">
-      <div className="max-w-screen-lg mx-auto px-4 lg:px-0">
+    <footer className="bg-scriptbox-black-2 sm:pt-4 pt-16 pb-12">
+      <div className={`${containerStyles.container} mx-auto`}>
         {/* first part */}
-        <div className={`hidden sm:grid sm:grid-cols-3 lg:grid-cols-6 pb-12 ${styles.footer_acc_border}`}>
-          <div className="lg:col-span-2">
+        <div className={`sm:hidden grid lg:grid-cols-3 grid-cols-6 pb-12 ${styles.footer_acc_border}`}>
+          <div className="lg:col-span-1 col-span-2">
             <figure className="mb-5">
               {scripboxLogo}
             </figure>
@@ -311,7 +313,7 @@ const Footer = props => {
 
 
           </div>
-          <div className="pt-10 lg:pt-0">
+          <div className="lg:pt-10 pt-0">
             <FirstPartHeading
               name="Terms and Conditions"
             />
@@ -319,7 +321,7 @@ const Footer = props => {
 
 
           </div>
-          <div className="pt-10 lg:pt-0">
+          <div className="lg:pt-10 pt-0">
             <FirstPartHeading
               name="Download app"
             />
@@ -340,8 +342,8 @@ const Footer = props => {
         </div>
 
         {/* second part */}
-        <div className={`hidden sm:block py-12 ${styles.footer_acc_border}`}>
-          <div className={`hidden sm:grid sm:grid-cols-2  lg:grid-cols-4`}>
+        <div className={`sm:hidden block py-12 ${styles.footer_acc_border}`}>
+          <div className={`sm:hidden grid lg:grid-cols-2 grid-cols-4`}>
             <div>
               <SecondPartHeading
                 img={<svg className="w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 16" id="calculators"><g opacity=".5" clip-path="url(#avclip0)"><path d="M13 0H1C.4 0 0 .4 0 1v14c0 .6.4 1 1 1h12c.6 0 1-.4 1-1V1c0-.6-.4-1-1-1zM4 13H2v-2h2v2zm0-4H2V7h2v2zm4 4H6v-2h2v2zm0-4H6V7h2v2zm4 4h-2V7h2v6zm0-8H2V2h10v3z" fill="#fff"></path></g></svg>}
@@ -356,14 +358,14 @@ const Footer = props => {
               />
               {learnList}
             </div>
-            <div className="sm:pt-10 lg:pt-0">
+            <div className="sm:pt-0 lg:pt-10">
               <SecondPartHeading
                 img={<svg className="w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" id="recommended-funds"><g opacity=".5" fill-rule="evenodd" clip-rule="evenodd" fill="#fff"><path d="M0 .01V16h16V0H9.973v2.142h3.848v11.716H2.18V2.152h3.977V.01H0z"></path><path d="M6.338 11.96a5.905 5.905 0 01-1.726-.923l.859-1.282c.455.334.92.587 1.392.758.47.172.924.258 1.36.258.412 0 .734-.08.962-.242a.757.757 0 00.341-.649v-.031a.599.599 0 00-.15-.406 1.365 1.365 0 00-.414-.306 3.65 3.65 0 00-.604-.234 228.57 228.57 0 01-.708-.211 11.049 11.049 0 01-.93-.297 3.398 3.398 0 01-.844-.446 2.247 2.247 0 01-.613-.68c-.158-.271-.238-.605-.238-1.001v-.031c0-.396.077-.748.23-1.055a2.35 2.35 0 01.637-.79c.27-.219.59-.386.954-.5a3.904 3.904 0 011.17-.173c.53 0 1.065.084 1.606.25a5.81 5.81 0 011.48.689l-.764 1.344a6.534 6.534 0 00-1.225-.57 3.586 3.586 0 00-1.145-.211c-.372 0-.66.078-.867.234a.717.717 0 00-.31.594v.031a.53.53 0 00.159.383c.105.11.246.21.421.297.175.09.377.17.604.243.229.073.464.15.708.234.308.095.615.204.923.329.308.125.586.279.835.461.25.183.453.404.612.665.16.26.239.578.239.954v.03c0 .438-.08.819-.239 1.142-.159.324-.379.592-.66.806-.28.213-.612.375-.994.484-.381.11-.79.164-1.224.164a5.745 5.745 0 01-1.837-.312z"></path></g></svg>}
                 name="Recommended Funds"
               />
               {recommendedList}
             </div>
-            <div className="sm:pt-10 lg:pt-0">
+            <div className="sm:pt-0 lg:pt-10">
               <SecondPartHeading
                 img={<svg className="w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" id="amcs"><g opacity=".5" fill="#fff"><path d="M15 9h-2V3c0-.6-.4-1-1-1H9V0H7v2H4c-.6 0-1 .4-1 1v6H1c-.6 0-1 .4-1 1v5c0 .6.4 1 1 1h14c.6 0 1-.4 1-1v-5c0-.6-.4-1-1-1zM5 10V4h6v10H9v-3H7v3H5v-4z"></path><path d="M9 6H7v2h2V6z"></path></g></svg>}
                 name="AMCs"
@@ -383,7 +385,7 @@ const Footer = props => {
 
 
       {/* for mobile */}
-      <div className="block sm:hidden px-4">
+      <div className="sm:block hidden sm:px-2 px-4">
         <figure className="mb-4">
           {scripboxLogo}
         </figure>
@@ -539,7 +541,7 @@ const Footer = props => {
 
 
       {/* last part */}
-      <div className="max-w-screen-lg mx-auto pt-6 sm:text-center px-4">
+      <div className="max-w-screen-lg mx-auto pt-6 sm:text-left text-center px-4 sm:px-2 ">
         <p className=" text-scriptbox-gray-8 text-sm pb-2">
           Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Past performance is not an indicator of future returns.
         </p>

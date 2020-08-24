@@ -13,19 +13,30 @@ module.exports = {
 
     //   },
     // }),
-    
+    // screens: {
+    //   'sm': '576px',
+    //   // => @media (min-width: 640px) { ... }
+
+    //   'md': '768px',
+    //   // => @media (min-width: 1024px) { ... }
+
+    //   'lg': '992px',
+    //   // => @media (min-width: 1280px) { ... }
+    //   'xl': '1200px' 
+    // },
     screens: {
-      'sm': '576px',
-      // => @media (min-width: 640px) { ... }
+      'xl': {'max': '1200px'},
+      // => @media (max-width: 1279px) { ... }
 
-      'md': '768px',
-      // => @media (min-width: 1024px) { ... }
+      'lg': {'max': '992px'},
+      // => @media (max-width: 1023px) { ... }
 
-      'lg': '992px',
-      // => @media (min-width: 1280px) { ... }
-      'xl': '1199px' 
+      'md': {'max': '768px'},
+      // => @media (max-width: 767px) { ... }
+
+      'sm': {'max': '576px'},
+      // => @media (max-width: 639px) { ... }
     },
-
     inset: {
       '0' : '0',
       '0-25' : '0.25rem',
@@ -36,47 +47,48 @@ module.exports = {
       '075' : '0.75rem',
       '50p' : '50%'
     },
-    minWidth: {
-      '0': '0',
-      '32' : '32rem',
-      '36' : '36rem',
-      '24.5' : '24.5rem',
-      '12' : '12rem',
-      '0-0625' : '0.0625rem',
-      '15' : '15rem',
-      '16' : '16rem',
-      '27-875' : '27.875rem',
 
-
-
-
-    },
-    maxWidth: {
-      'full' : '100%',
-      'screen-lg' : '71.25rem',
-      'lg' : '33.5rem',
-      '27' : '27rem',
-      '12' : '12rem',
-      '28-625' : '28.625rem',
-      '23-75' : '23.75rem',
-      '21-875' : '21.875rem',
-      '27-875' : '27.875rem',
-      '15-9' : '15.9rem',
-      '17-815' : '17.815rem',
-      '31-875' : '31.875rem',
-      '13-56' : '13.56rem',
-      '33-5' : '33.5rem',
-      '17-62' : '17.62rem',
-      '48-75' : '48.75rem',
-      '16' : '16rem',
-      '70-375' : '70.375rem'
-
-
-
-
-
-    },
     extend: {
+      minWidth: {
+        '0': '0',
+        '32' : '32rem',
+        '36' : '36rem',
+        '24.5' : '24.5rem',
+        '12' : '12rem',
+        '0-0625' : '0.0625rem',
+        '15' : '15rem',
+        '16' : '16rem',
+        '27-875' : '27.875rem',
+  
+  
+  
+  
+      },
+      maxWidth: {
+        'full' : '100%',
+        'screen-lg' : '71.25rem',
+        'lg' : '33.5rem',
+        '27' : '27rem',
+        '12' : '12rem',
+        '28-625' : '28.625rem',
+        '23-75' : '23.75rem',
+        '21-875' : '21.875rem',
+        '27-875' : '27.875rem',
+        '15-9' : '15.9rem',
+        '17-815' : '17.815rem',
+        '31-875' : '31.875rem',
+        '13-56' : '13.56rem',
+        '33-5' : '33.5rem',
+        '17-62' : '17.62rem',
+        '48-75' : '48.75rem',
+        '16' : '16rem',
+        '70-375' : '70.375rem'
+  
+  
+  
+  
+  
+      },
       colors: {
         // orange
         'scriptbox-orange' : '#f58024',
@@ -147,14 +159,6 @@ module.exports = {
         // violet
         'scriptbox-violet' : '#553c9a',
 
-
-
-
-        
-
-
-        
-
       },
       spacing: {
         '30' : '30rem',
@@ -216,7 +220,32 @@ module.exports = {
   },
 
   variants: {},
+  corePlugins: {
+    container: false
+  },
   plugins: [
-    require('@tailwindcss/custom-forms'),
-  ],
+    function ({ addComponents }) {
+      addComponents({
+        '.container': {
+          maxWidth: '100%',
+          '@screen sm': {
+            maxWidth: '540px',
+          },
+          '@screen md': {
+            maxWidth: '720px',
+          },
+          '@screen lg': {
+            maxWidth: '960px',
+          },
+          '@screen xl': {
+            maxWidth: '1140px',
+          },
+        }
+      })
+    },
+    require('@tailwindcss/custom-forms')
+  ]
+  // plugins: [
+    
+  // ],
 }
