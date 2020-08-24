@@ -1,10 +1,11 @@
 import React from 'react';
 import styles from '../../../styles/Home.module.css'
+import containerStyles from "../../../styles/customContainer.module.css";
 
 const SectionFour = props => {
   return (
-    <section className="pt-32 pb-24 lg:px-4 bg-white ">
-      <div className="max-w-screen-lg mx-auto px-4 lg:px-0">
+    <section className="pt-32 pb-24 bg-white ">
+      <div className={`${containerStyles.container} mx-auto lg:px-0`}>
         <h2 className="text-scriptbox-black-1 text-3xl font-bold text-center">
           What are Best Equity Mutual Funds?
         </h2>

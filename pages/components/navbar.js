@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link'
+import containerStyles from "../../styles/customContainer.module.css";
+
 
 const Navbar = props => {
 
@@ -11,7 +13,7 @@ const Navbar = props => {
   return (
     <>
       <header className="bg-scriptbox-orange w-full">
-        <div className="max-w-screen-lg mx-auto py-2 px-4 flex justify-between items-center">
+        <div className={`${containerStyles.container} mx-auto py-2 flex justify-between items-center`}>
           <div className="flex items-center">
             <div 
               className="block sm:hidden mr-2 cursor-pointer"
