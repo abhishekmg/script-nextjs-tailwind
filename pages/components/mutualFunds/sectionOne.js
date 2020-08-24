@@ -83,7 +83,7 @@ const SectionOne = ({ initialFundsList }) => {
                 >
                   {/* left side */}
                   <div className="flex items-center min-w-0 flex-my1">
-                    <div className={`bg-scriptbox-orange w-1 h-12 rounded-1`} />
+                    <div className={`bg-scriptbox-orange w-1 h-12 rounded-full`} />
                     <figure className="mx-3">
                       <img
                         src={item._source.amc_logo_url}

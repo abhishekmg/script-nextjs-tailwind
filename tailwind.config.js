@@ -13,29 +13,14 @@ module.exports = {
 
     //   },
     // }),
-    // screens: {
-    //   'sm': '576px',
-    //   // => @media (min-width: 640px) { ... }
-
-    //   'md': '768px',
-    //   // => @media (min-width: 1024px) { ... }
-
-    //   'lg': '992px',
-    //   // => @media (min-width: 1280px) { ... }
-    //   'xl': '1200px' 
-    // },
     screens: {
       'xl': {'max': '1200px'},
-      // => @media (max-width: 1279px) { ... }
 
       'lg': {'max': '992px'},
-      // => @media (max-width: 1023px) { ... }
 
       'md': {'max': '768px'},
-      // => @media (max-width: 767px) { ... }
 
       'sm': {'max': '576px'},
-      // => @media (max-width: 639px) { ... }
     },
     inset: {
       '0' : '0',
@@ -58,11 +43,7 @@ module.exports = {
         '0-0625' : '0.0625rem',
         '15' : '15rem',
         '16' : '16rem',
-        '27-875' : '27.875rem',
-  
-  
-  
-  
+        '27-875' : '27.875rem',  
       },
       maxWidth: {
         'full' : '100%',
@@ -82,12 +63,7 @@ module.exports = {
         '17-62' : '17.62rem',
         '48-75' : '48.75rem',
         '16' : '16rem',
-        '70-375' : '70.375rem'
-  
-  
-  
-  
-  
+        '70-375' : '70.375rem'  
       },
       colors: {
         // orange
@@ -173,17 +149,6 @@ module.exports = {
         '0-125': '0.125rem',
         '0-0625': '0.0625rem',
         '1-375': '1.375rem',
-
-
-
-      },
-      maxHeight: {
-        '15-68' : '15.68rem',
-
-      },
-      minHeight: {
-        '15-68' : '15.68rem',
-
       },
       lineHeight: {
         '1-2' : '1.2',
@@ -204,18 +169,10 @@ module.exports = {
       },
       margin: {
         '-50vw' : '-50vw' 
-      },
-      gap: {
-        "0-1": '0 1.5rem',
-        "0-10": '0 10.5rem'
-
-      },
+      },     
       flex: {
         'my1' : '1'
       },
-      borderRadius: {
-        '1' : '1.6875rem'
-      }
     },
   },
 

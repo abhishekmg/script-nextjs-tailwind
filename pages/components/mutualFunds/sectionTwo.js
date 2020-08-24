@@ -489,7 +489,7 @@ const SectionTwo = (props) => {
       <div className={`mx-auto ${containerStyles.container}`}>
         <div className="sm:px-2">
         <div
-          className={`lg:hidden grid grid-cols-2 ${styles.section_two_parent_grid} xl:gap-0-1 gap-0-10`}
+          className={`lg:hidden grid grid-cols-2 ${styles.section_two_parent_grid}`}
         >
           <div className="max-w-23-75">
             {renderHeading()}
