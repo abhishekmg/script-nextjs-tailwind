@@ -279,7 +279,7 @@ const Home = ({ initialFundsList }) => {
                   </div>
                 </a>
               </Link>
-              <div className="xl:block hidden min-w-0-0625 h-3"></div>
+              <div className={`xl:block hidden ${styles.spacing_empty} h-3`}></div>
             </div>
           </div>
         </section>

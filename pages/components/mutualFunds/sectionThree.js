@@ -268,7 +268,7 @@ const SectionThree = (props) => {
               </p>
             </div>
           </div>
-          <div className=" hidden xl:block h-1 min-w-0-0625"></div>
+          <div className={`hidden xl:block h-1 ${styles.spacing_empty}`}></div>
         </div>
       </div>
     </section>

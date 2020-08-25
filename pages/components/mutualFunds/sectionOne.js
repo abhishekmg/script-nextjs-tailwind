@@ -595,7 +595,7 @@ const SectionOne = ({ initialFundsList }) => {
       <div className={`mx-auto ${containerStyles.container}`}>
         <div className="flex">
           {/* funds filters */}
-          <div className={`lg:hidden block mr-12 max-w-17-62 min-w-15 w-full`}>
+          <div className={`lg:hidden block mr-12 max-w-1/4 min-w-1/4 w-full`}>
             <div className="sticky top-0  divide-y ">
               <div className="pb-4 pt-2 flex items-center justify-between">
                 <p className="text-base font-medium text-scriptbox-gray-2">
@@ -638,7 +638,7 @@ const SectionOne = ({ initialFundsList }) => {
           </div>
 
           {/* funds list section */}
-          <div className="w-full pt-2 max-w-48-75 lg:max-w-full min-w-0">
+          <div className="w-full pt-2 max-w-3/4 lg:max-w-full min-w-0">
             <p className="sm:hidden block sm:pb-0 pb-3 font-medium text-base text-scriptbox-gray-2">
               Showing{" "}
               {resolvedData &&
