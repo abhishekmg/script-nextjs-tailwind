@@ -130,7 +130,7 @@ const SectionOne = ({ initialFundsList }) => {
                     </div>
                   </div>
                   {/* right side */}
-                  <div className="px-2 flex items-center">
+                  <div className="px-2 sm:pr-0 flex items-center">
                     <div className="sm:hidden block mr-6">
                       <p className="font-normal text-sm text-scriptbox-black pb-3">
                         {item._source.first_investment_amount} cr
@@ -612,7 +612,7 @@ const SectionOne = ({ initialFundsList }) => {
                   <span className="bg-scriptbox-gray-4 py-2 pl-2 pr-8 text-xs font-medium rounded-md text-scriptbox-gray-3 leading-1-2">
                     Reset Filters
                   </span>
-                  <span className="absolute top-0-3125 right-0-25 text-scriptbox-gray-3 bg-scriptbox-gray-6 font-medium text-xs py-0-125 px-0375 rounded-md leading-1-2">
+                  <span className={`absolute text-scriptbox-gray-3 bg-scriptbox-gray-6 font-medium text-xs py-0-125 px-0375 rounded-md leading-1-2 ${styles.reset_filters_count}`}>
                     {filter.length + state.subAssetFilter.length}
                   </span>
                 </div>
@@ -710,12 +710,12 @@ const SectionOne = ({ initialFundsList }) => {
             </div>
           </div>
         </div>
-        <button
-          className={`lg:block hidden p-3 rounded bg-gray-900 text-white fixed left-39p sm:left-45p bottom-1`}
+        {!state.isFilterModalOpen && <button
+          className={`lg:block hidden px-4 py-3 rounded-md shadow-4 z-10 bg-scriptbox-black text-sm font-medium text-white fixed  bottom-1 ${styles.addfilter_button}`}
           onClick={() => setState({ ...state, isFilterModalOpen: true })}
         >
           Add Filter
-        </button>
+        </button>}
       </div>
 
       <ReactModal

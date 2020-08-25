@@ -7,6 +7,8 @@ import {
   AccordionItemPanel,
 } from 'react-accessible-accordion';
 import 'what-input';
+import AnimateHeight from "react-animate-height";
+
 
 import styles from "../../styles/Home.module.css"
 import containerStyles from "../../styles/customContainer.module.css";
@@ -16,6 +18,8 @@ import containerStyles from "../../styles/customContainer.module.css";
 const Footer = props => {
 
   const [accState, setAccState] = useState(0)
+
+
 
   const scripboxLogo = <svg className="w-20 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 81 22" id="logo-orange"><g clip-path="url(#dnclip0)" fill-rule="evenodd" clip-rule="evenodd" fill="#F58024"><path d="M18.219 12.787l-.094 5.2h3.158v-5.2c0-1.189.958-2.156 2.137-2.156h1.485V7.586L23.42 7.54c-2.873 0-5.201 2.348-5.201 5.247zM56.984 7.54c-2.873 0-5.203 2.348-5.203 5.247 0 2.898 2.33 5.247 5.203 5.247 2.872 0 5.2-2.35 5.2-5.247 0-2.899-2.328-5.247-5.2-5.247zm1.857 5.247a1.868 1.868 0 01-1.857 1.873 1.868 1.868 0 01-1.858-1.873c0-1.034.833-1.875 1.858-1.875 1.023 0 1.857.841 1.857 1.875zM34.998 15.114c-1.17 0-2.12-.96-2.12-2.14 0-1.179.95-2.138 2.12-2.138 1.169 0 2.12.96 2.12 2.139 0 1.18-.952 2.139-2.12 2.139zm-5.158-2.29l-.005 9.221h2.875v-4.402c.69.345 1.466.54 2.288.54 2.85 0 5.161-2.332 5.161-5.208 0-2.876-2.31-5.208-5.161-5.208-2.801 0-5.08 2.251-5.158 5.057zM45.82 15.117c-1.169 0-2.12-.96-2.12-2.14 0-1.179.951-2.138 2.12-2.138s2.12.96 2.12 2.138c0 1.18-.951 2.14-2.12 2.14zm-2.287-6.808V3.907h-2.875v9.222c.084 2.805 2.361 5.056 5.162 5.056 2.85 0 5.162-2.332 5.162-5.207 0-2.876-2.311-5.208-5.162-5.208-.821 0-1.598.195-2.287.54zM25.74 7.575l3.267-.008v10.424h-3.268V7.575zM73.507.005v7.409h7.224V0H78.01v.993h1.737V6.42h-5.256V.997h1.795V.005h-2.78z"></path><path d="M76.368 5.542c-.28-.097-.54-.24-.779-.428l.388-.594c.206.155.415.272.629.352.212.08.417.12.614.12.186 0 .331-.038.434-.113a.354.354 0 00.154-.3v-.015a.282.282 0 00-.068-.189.62.62 0 00-.187-.141 1.626 1.626 0 00-.272-.109l-.32-.098a4.881 4.881 0 01-.42-.137 1.52 1.52 0 01-.381-.206 1.032 1.032 0 01-.277-.316.923.923 0 01-.107-.464V2.89c0-.184.034-.347.104-.489.07-.142.165-.265.287-.366.122-.101.266-.179.431-.232a1.72 1.72 0 01.528-.08 2.593 2.593 0 011.393.435l-.344.623c-.182-.11-.367-.199-.553-.264a1.582 1.582 0 00-.517-.098c-.168 0-.299.036-.392.109a.335.335 0 00-.14.275v.015c0 .067.024.126.072.177.048.05.111.097.19.138.08.04.17.078.273.112.103.034.21.07.32.109.139.043.277.094.416.152.14.058.265.13.377.214.113.084.205.187.277.307a.85.85 0 01.107.443v.014c0 .203-.035.38-.107.529a1.03 1.03 0 01-.298.373 1.33 1.33 0 01-.45.224c-.171.051-.356.077-.552.077-.273 0-.55-.049-.83-.145zM13.852 14.942a2.148 2.148 0 01-2.136-2.155c0-1.189.958-2.156 2.136-2.156.662 0 1.247.312 1.64.79l2.37-1.976a5.173 5.173 0 00-4.01-1.905c-2.873 0-5.202 2.348-5.202 5.247 0 2.898 2.33 5.247 5.202 5.247a5.17 5.17 0 003.992-1.885l-2.36-1.988a2.115 2.115 0 01-1.632.781zM8.211 16.023a3.447 3.447 0 01-.924 1.124 4.115 4.115 0 01-1.352.702c-.515.16-1.064.24-1.649.24-.8 0-1.565-.097-2.295-.288A7.2 7.2 0 010 16.954l1.258-2.403c.177.129.387.247.628.356.241.11.492.205.753.288.26.084.52.148.78.193.261.045.5.067.716.067.723 0 1.085-.224 1.085-.673 0-.217-.11-.384-.333-.5a5.154 5.154 0 00-.828-.326l-1.077-.337a4.261 4.261 0 01-1.077-.51 2.793 2.793 0 01-.829-.854c-.222-.353-.333-.81-.333-1.375 0-.5.105-.95.315-1.354.209-.404.495-.75.856-1.038a4 4 0 011.305-.673 5.415 5.415 0 011.639-.24c.699 0 1.302.06 1.81.182a8.453 8.453 0 011.524.529L7.05 10.632a5.492 5.492 0 00-.933-.385 3.154 3.154 0 00-.934-.154c-.356 0-.635.067-.838.202-.203.135-.305.31-.305.529 0 .18.111.324.333.432.223.11.502.212.839.308.336.096.698.201 1.086.316.387.116.75.28 1.086.491.336.212.615.487.838.827.222.34.333.778.333 1.316 0 .564-.114 1.066-.343 1.51zM29.103 4.236a1.868 1.868 0 01-1.857 1.874 1.868 1.868 0 01-1.858-1.874c0-1.034.833-1.875 1.858-1.875 1.024 0 1.857.841 1.857 1.875zM66.828 10.302L64.817 7.53h-3.635l3.85 5.248-3.775 5.202h3.552l2.02-2.752 2.018 2.752H72.4l-3.775-5.202 3.85-5.248H68.84l-2.012 2.772z"></path></g></svg>
 
@@ -290,7 +294,7 @@ const Footer = props => {
     <footer className="bg-scriptbox-black-2 sm:pt-4 pt-16 pb-12">
       <div className={`${containerStyles.container} mx-auto`}>
         {/* first part */}
-        <div className={`sm:hidden grid lg:grid-cols-3 grid-cols-6 pb-12 ${styles.footer_acc_border}`}>
+        <div className={`sm:hidden grid lg:grid-cols-3 grid-cols-6 pb-12 `}>
           <div className="lg:col-span-1 col-span-2">
             <figure className="mb-5">
               {scripboxLogo}
@@ -389,7 +393,195 @@ const Footer = props => {
         <figure className="mb-4">
           {scripboxLogo}
         </figure>
-        <Accordion allowZeroExpanded
+        <AnimateHeight
+          duration={500}
+          height={accState !== 1 ? 40 : "auto"}
+        >
+          <div className={` cursor-pointer px-2 py-3 text-white font-semibold text-sm `} onClick={() => setAccState(1)}>
+            <div className={`flex items-center justify-between `}>
+              Contacts
+                <img
+                src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                alt="scriptbox"
+              />
+            </div>
+            <div className={`py-2 `}>
+              {contactsList}
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        <AnimateHeight
+          duration={500}
+          height={accState !== 2 ? 40 : "auto"}
+        >
+          <div className={`cursor-pointer px-2 py-3 text-white font-semibold text-sm ${styles.footer_acc_border}`} onClick={() => setAccState(2)}>
+            <div className="flex items-center justify-between">
+             Who we are
+                <img
+                  src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
+                />
+            </div>
+            <div className={`py-2`}>
+              {whoWeAreList}
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        <AnimateHeight
+          duration={500}
+          height={accState !== 3 ? 40 : "auto"}
+        >
+          <div className={`cursor-pointer px-2 py-3 text-white font-semibold text-sm ${styles.footer_acc_border}`} onClick={() => setAccState(3)}>
+            <div className="flex items-center justify-between">
+            What we do
+                <img
+                  src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
+                />
+            </div>
+            <div className={`py-2`}>
+              {whatWeDoList}
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        <AnimateHeight
+          duration={500}
+          height={accState !== 4 ? 40 : "auto"}
+        >
+          <div className={`cursor-pointer px-2 py-3 text-white font-semibold text-sm ${styles.footer_acc_border}`} onClick={() => setAccState(4)}>
+            <div className="flex items-center justify-between">
+            Terms and Conditions
+                <img
+                  src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
+                />
+            </div>
+            <div className={`py-2`}>
+              {termsAndConditionsList}
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        <AnimateHeight
+          duration={500}
+          height={106}
+        >
+          <div className={`cursor-pointer px-2 py-3 text-white font-semibold text-sm ${styles.footer_acc_border}`} onClick={() => setAccState(2)}>
+            <div className="flex items-center justify-between">
+            Download app
+            </div>
+            <div className={`py-2 flex items-center`}>
+              <a
+                href="#"
+                className="flex items-center text-white text-sm py-3 w-full justify-center bg-scriptbox-gray-9 rounded-md mr-3"
+              >
+                <svg className="w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16" id="app-store-button"><g clip-path="url(#amclip0)" fill="#fff"><path d="M14.236 11.017a2.408 2.408 0 01-1.556-2.113c-.066-.942.395-1.778 1.234-2.237l.697-.382-.498-.62C13.277 4.623 12.08 4 10.911 4c-.81 0-1.372.212-1.824.383-.318.12-.57.215-.846.215-.314 0-.625-.11-.985-.238C6.784 4.192 6.249 4 5.563 4c-1.327 0-2.665.793-3.492 2.066-1.234 1.9-.895 5.156.806 7.744.674 1.026 1.618 2.204 2.956 2.216h.026c1.096 0 1.336-.584 2.399-.591 1.161.055 1.308.595 2.393.588 1.307-.012 2.25-1.18 2.999-2.323.443-.671.614-1.022.959-1.785l.292-.647-.665-.251zM10.067 2.3c.433-.556.762-1.34.642-2.143-.708.049-1.534.499-2.018 1.086-.438.532-.8 1.322-.66 2.09.772.024 1.572-.438 2.036-1.033z"></path></g></svg>
+                Apple Store
+              </a>
+              <a
+                href="#"
+                className="flex items-center text-white text-sm py-3 w-full justify-center bg-scriptbox-gray-9 rounded-md"
+              >
+                <svg className="w-4 h-4 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 16" id="play-store-button"><g clip-path="url(#egclip0)"><path d="M0 1.064v13.6c0 .246.018.428.054.545l7-7.315L0 .604v.46zm7.636 6.83L9.975 5.31l.058.061 2.859 1.723c.816.493.816 1.293 0 1.785l-2.917 1.662-2.339-2.647zm-.305.35l-7.04 7.343c.292.308.7.308 1.226.062l8.1-4.902L7.33 8.243zm2.285-3.17L1.516.202C.993-.106.584-.044.293.264l7.046 7.24 2.278-2.43z" fill="#fff"></path></g></svg>
+                Play Store
+              </a>
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        <AnimateHeight
+          duration={500}
+          height={accState !== 5 ? 40 : "auto"}
+        >
+          <div className={`cursor-pointer px-2 py-3 text-white font-semibold text-sm ${styles.footer_acc_border}`} onClick={() => setAccState(5)}>
+            <div className="flex items-center justify-between">
+            Calculators
+                <img
+                  src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
+                
+                />
+            </div>
+            <div className={`py-2`}>
+              {calculatorsList}
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        <AnimateHeight
+          duration={500}
+          height={accState !== 6 ? 40 : "auto"}
+        >
+          <div className={`cursor-pointer px-2 py-3 text-white font-semibold text-sm ${styles.footer_acc_border}`} onClick={() => setAccState(6)}>
+            <div className="flex items-center justify-between">
+            Learn
+                <img
+                  src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
+                />
+            </div>
+            <div className={`py-2`}>
+              {learnList}
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        <AnimateHeight
+          duration={500}
+          height={accState !== 7 ? 40 : "auto"}
+        >
+          <div className={`cursor-pointer px-2 py-3 text-white font-semibold text-sm ${styles.footer_acc_border}`} onClick={() => setAccState(7)}>
+            <div className="flex items-center justify-between">
+            Recommended Funds
+                <img
+                  src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
+                />
+            </div>
+            <div className={`py-2`}>
+              {recommendedList}
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        <AnimateHeight
+          duration={500}
+          height={accState !== 8 ? 40 : "auto"}
+        >
+          <div className={`cursor-pointer px-2 py-3 text-white font-semibold text-sm ${styles.footer_acc_border}`} onClick={() => setAccState(8)}>
+            <div className="flex items-center justify-between">
+            Amcs
+                <img
+                  src="https://deploy-preview-52--evergreen-gulp.netlify.app/assets/images/svg/cheveron-down-white.svg"
+                  alt="scriptbox"
+
+                />
+            </div>
+            <div className={`py-2`}>
+              {amcList}
+            </div>
+
+          </div>
+
+        </AnimateHeight>
+        {/* <Accordion allowZeroExpanded
           onChange={(e) => setAccState(e[0])}
         >
           <AccordionItem>
@@ -536,12 +728,12 @@ const Footer = props => {
               {amcList}
             </AccordionItemPanel>
           </AccordionItem>
-        </Accordion>
+        </Accordion> */}
       </div>
 
 
       {/* last part */}
-      <div className="max-w-screen-lg mx-auto pt-6 sm:text-left text-center px-4 sm:px-2 ">
+      <div className={` max-w-6xl mx-auto pt-6 sm:text-left text-center px-4 sm:px-0 sm:mx-2 ${styles.footer_acc_border}`}>
         <p className=" text-scriptbox-gray-8 text-sm pb-2">
           Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Past performance is not an indicator of future returns.
         </p>
