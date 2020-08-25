@@ -29,7 +29,7 @@ const SectionFour = props => {
           </div>
           <div className="lg:mt-8 mt-0">
 
-            <figure className="sm:max-w-full max-w-27-875 lg:min-w-0 min-w-27-875 w-full sm:mx-0 mx-auto">
+            <figure className={`${styles.iframe_fig} w-full sm:mx-0 mx-auto`}>
               {/* <iframe
                 title="scriptbox youtube"
                 loading="lazy"
@@ -96,7 +96,7 @@ const SectionFour = props => {
 
         {/* what are mutual funds */}
         <div className="pt-16 flex lg:flex-col flex-row">
-          <div className="mr-8 lg:mr-0 lg:max-w-none max-w-lg md:min-w-0 min-w-32 w-full md:pb-6 pb-0">
+          <div className="mr-8 lg:mr-0 max-w-1/2 lg:max-w-full md:pb-6 pb-0">
             <h4 className="text-scriptbox-black-1 text-xl font-bold">
               What are mutual funds
             </h4>
@@ -110,7 +110,7 @@ const SectionFour = props => {
               Mutual fund investors are allocated units of the fund against the quantum of investment. These units can be re-invested or redeemed by investors on the maturity of the fund at the NAV.
             </p>
           </div>
-          <div className="lg:pt-6">
+          <div className="lg:pt-6 max-w-1/2 lg:max-w-full">
             <div className="px-6 pt-6 pb-8 bg-scriptbox-blue-1 rounded-md flex">
               <figure className="h-6 w-6 mr-4 mt-1">
                 <svg className="h-6 w-6" viewBox="0 0 26 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -213,7 +213,7 @@ const SectionFour = props => {
          <div className={`bg-scriptbox-orange w-10 h-0-125 mb-6`} />
 
          <div className="flex lg:flex-col flex-row">
-          <div className="mr-8  lg:max-w-none max-w-xl lg:min-w-0 min-w-36 w-full">
+          <div className={`mr-8  lg:max-w-none ${styles.section_four_listdiv} lg:min-w-0 w-full`}>
             <h4 className="pb-3 text-xl font-bold">
               How to invest in Top Performing Mutual Fund?
             </h4>
@@ -227,7 +227,7 @@ const SectionFour = props => {
             Investing through Scripbox is made easy and <b>paperless</b>. All you need to do is follow the 5 easy steps to start investing.
             </p>
           </div>
-          <div className="w-full lg:pt-8 pt-0">
+          <div className="w-full flex-my1 lg:pt-8 pt-0">
 
             <ul className={` max-w-lg mx-auto rounded-md py-8 px-6 ${styles.section_four_shadow } shadow-4`}>
               <li className={`${styles.section_four_li} text-base text-scriptbox-black-1 font-semibold relative leading-1-15 pl-2p pb-6`}>

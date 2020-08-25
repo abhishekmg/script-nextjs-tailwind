@@ -18,11 +18,12 @@ import SectionFour from "./sectionFour";
 import SectionFive from "./sectionFive";
 
 const Home = ({ initialFundsList }) => {
+
   const FundsCard = ({ figure, title, description, label }) => (
     <Link href="/">
       <a className="mr-2p">
         <div
-          className={`${styles.fund_card_container} relative p-3 bg-white rounded-lg hover:bg-scriptbox-gray-4 max-w-12 min-w-12 shadow-1`}
+          className={`${styles.fund_card_container} relative p-3 bg-white rounded-lg hover:bg-scriptbox-gray-4 shadow-1`}
         >
           <figure>{figure}</figure>
           <h4 className="pt-3 pb-1 text-base font-semibold">{title}</h4>
@@ -250,7 +251,7 @@ const Home = ({ initialFundsList }) => {
               <Link href="/">
                 <a className="mr-8">
                   <div
-                    className={`p-3 rounded-lg bg-scriptbox-gray-4 max-w-12 min-w-12`}
+                    className={`p-3 rounded-lg bg-scriptbox-gray-4 ${styles.fund_card_container}`}
                   >
                     <figure>
                       <svg

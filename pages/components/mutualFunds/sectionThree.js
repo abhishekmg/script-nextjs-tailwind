@@ -7,10 +7,10 @@ const SectionThree = (props) => {
     <section className={`sm:pt-10 pt-20 pb-24 overflow-hidden`}>
       <div className={`mx-auto ${containerStyles.container}`}>
         <div className={`relative ${styles.section_three_header}`}>
-          <h2 className="sm:ml-4 ml-0 sm:max-w-13-56 max-w-full sm:text-left text-center text-scriptbox-black-1 font-bold sm:text-xl text-3xl pb-3">
+          <h2 className={`sm:ml-4 ml-0 ${styles.section_three_heading} max-w-full sm:text-left text-center text-scriptbox-black-1 font-bold sm:text-xl text-3xl pb-3`}>
             How to invest in best mutual funds with Scripbox
           </h2>
-          <p className="sm:hidden block text-base text-scriptbox-gray-5 text-center max-w-28-625 mx-auto">
+          <p className="sm:hidden block text-base text-scriptbox-gray-5 text-center max-w-1/2 mx-auto">
             Investing through Scripbox is made easy and paperless. All you need
             to do is follow the below steps and start investing.
           </p>
@@ -18,7 +18,7 @@ const SectionThree = (props) => {
         {/* card part */}
         <div className="sm:pt-6 pt-12 space-x-6 flex items-center xl:overflow-x-scroll overflow-visible xl:left-50p left-0 relative xl:w-screen w-full xl:-ml-50vw ml-0 pb-2">
           <div
-            className={`sm:ml-4 xl:ml-8 ml-0 w-full rounded-md bg-white shadow-md max-w-16 min-w-16`}
+            className={`sm:ml-4 xl:ml-8 ml-0 w-full rounded-md bg-white shadow-md ${styles.section_three_card}`}
           >
             <figure className="bg-scriptbox-yellow flex justify-center rounded-t-md">
               <svg
@@ -110,7 +110,7 @@ const SectionThree = (props) => {
             </div>
           </div>
           <div
-            className={`w-full rounded-md bg-white shadow-md max-w-16 min-w-16`}
+            className={`w-full rounded-md bg-white shadow-md ${styles.section_three_card}`}
           >
             <figure className="bg-scriptbox-blue-3 flex justify-center rounded-t-md">
               <svg
@@ -176,7 +176,7 @@ const SectionThree = (props) => {
             </div>
           </div>
           <div
-            className={`w-full rounded-md bg-white shadow-md max-w-16 min-w-16`}
+            className={`w-full rounded-md bg-white shadow-md ${styles.section_three_card}`}
           >
             <figure className=" bg-scriptbox-green-1 flex justify-center rounded-t-md">
               <svg
@@ -226,7 +226,7 @@ const SectionThree = (props) => {
             </div>
           </div>
           <div
-            className={`w-full rounded-md bg-white shadow-md max-w-16 min-w-16`}
+            className={`w-full rounded-md bg-white shadow-md  ${styles.section_three_card}`}
           >
             <figure className="bg-scriptbox-violet flex justify-center rounded-t-md">
               <svg
