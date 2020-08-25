@@ -41,14 +41,14 @@ const SectionTwo = (props) => {
   );
 
   const renderHeading = () => (
-    <div className="sm:text-center text-left xl:max-w-33-5 max-w-full mx-auto">
+    <div className="sm:text-center text-left xl:max-w-lg max-w-full mx-auto">
       <h6 className="text-scriptbox-gray-2 text-sm font-medium">
         How does scriptbox rate funds ?
       </h6>
       <h2 className="text-scriptbox-black-1  text-my1 font-bold pt-3 pb-2 leading-tight">
         Proprietary 4-step system to rate mutual funds
       </h2>
-      <p className="text-scriptbox-gray-2 text-base lg:max-w-none max-w-21-875 pb-6">
+      <p className={`text-scriptbox-gray-2 text-base lg:max-w-none ${styles.section_two_desktop_para} pb-6`}>
         We use a proprietary system to rate mutual funds and based on that make
         a recommendation or top ranking
       </p>
@@ -56,7 +56,7 @@ const SectionTwo = (props) => {
   );
 
   const renderTab = () => (
-    <div className={`xl:max-w-none max-w-31-875`}>
+    <div className={`xl:max-w-none max-w-lg`}>
       <div className="w-14-875 mx-auto cursor-pointer mt-4 flex items-center bg-scriptbox-blue-2 rounded-md text-sm">
         <div
           className="p-0-1875"
@@ -91,7 +91,7 @@ const SectionTwo = (props) => {
       {/* first row */}
       <div className="flex  items-center">
         <div
-          className={`rounded-tl-md md:p-4 p-6 bg-white shadow-2 max-w-15-9 w-full relative ${styles.section_two_top_left_div}`}
+          className={`rounded-tl-md md:p-4 p-6 bg-white shadow-2 w-full relative ${styles.section_two_top_left_div}`}
         >
           <svg
             className="sm:hidden block h-8 w-8"
@@ -147,7 +147,7 @@ const SectionTwo = (props) => {
           </p>
         </div>
         <div
-          className={` rounded-tr-md md:p-4 p-6 bg-white relative max-w-17-815 w-full shadow-2 ${styles.section_two_top_right_div}`}
+          className={` rounded-tr-md md:p-4 p-6 bg-white relative w-full shadow-2 ${styles.section_two_top_right_div}`}
         >
           <svg
             className="sm:hidden block  h-8 w-8"
@@ -187,7 +187,7 @@ const SectionTwo = (props) => {
       </div>
       {/* second row */}
       <div className="flex items-center">
-        <div className="rounded-bl-md p-4 md:p-6 bg-white  shadow-2 max-w-15-9 w-full ">
+        <div className={`rounded-bl-md p-4 md:p-6 bg-white  shadow-2 ${styles.section_two_bottom_left_div} w-full `}>
           {state.sectionTwoActiveTab ? (
             <svg
               className="sm:hidden block  h-8 w-8"
@@ -266,7 +266,7 @@ const SectionTwo = (props) => {
             analysis
           </p>
         </div>
-        <div className="rounded-br-md p-4 md:p-6 bg-white shadow-2 max-w-17-815 w-full">
+        <div className={`rounded-br-md p-4 md:p-6 bg-white shadow-2 ${styles.section_two_bottom_right_div} w-full`}>
           {state.sectionTwoActiveTab ? (
             <svg
               className="sm:hidden block  h-8 w-8"
@@ -488,13 +488,14 @@ const SectionTwo = (props) => {
     <section className="pt-24 pb-20 bg-scriptbox-blue-1">
       <div className={`mx-auto ${containerStyles.container}`}>
         <div className="sm:px-2">
+        {/* desktop */}
         <div
           className={`lg:hidden grid grid-cols-2 ${styles.section_two_parent_grid}`}
         >
-          <div className="max-w-23-75">
+          <div className="max-w-sm">
             {renderHeading()}
 
-            <div className="max-w-21-875" style={{ maxHeight: 266 }}>
+            <div className={styles.section_two_desktop_accordian} style={{ maxHeight: 266 }}>
               {renderAccordian()}
             </div>
           </div>
@@ -513,7 +514,7 @@ const SectionTwo = (props) => {
             <h6 className=" font-semibold text-sm py-5 text-scriptbox-black text-center">
               What Scripbox recommendations mean?
             </h6>
-            <div className="xl:max-w-33-5 max-w-full mx-auto">
+            <div className="xl:max-w-lg max-w-full mx-auto">
               {renderAccordian()}
             </div>
           </div>

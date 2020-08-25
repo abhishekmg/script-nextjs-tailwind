@@ -1,3 +1,7 @@
+.spacing_empty {
+  min-width: 0.0625rem;
+}
+
 .iframe {
   border-radius: 6px;
   max-width: 100%;
@@ -5,8 +9,6 @@
   height: 100%;
   max-height: 250.88px;
   min-height: 250.88px;
-
-  
 }
 
 .breadcrumb_list_item:after {
@@ -36,6 +38,11 @@
 
 .fund_card_container:hover .funds_card_label:before {
   border-left-color: #f2f2f2;
+}
+
+.fund_card_container {
+  min-width: 12rem;
+  max-width: 12rem;
 }
 
 
@@ -162,6 +169,16 @@
 
 }
 
+.section_two_desktop_para,
+.section_two_desktop_accordian {
+  max-width: 21.875rem;
+}
+
+.section_two_top_left_div ,
+.section_two_bottom_left_div {
+  max-width: 15.9375rem;
+}
+
 .section_two_top_left_div:after {
   height: 84px;
   width: 2px;
@@ -173,6 +190,11 @@
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 1;
+}
+
+.section_two_top_right_div, 
+.section_two_bottom_right_div {
+  max-width: 17.8125rem;
 }
 
 .section_two_top_right_div:after {
@@ -196,9 +218,25 @@
   right: -19px;
 }
 
+.section_three_card {
+  max-width: 16rem;
+  min-width: 16rem;
+}
+
 /* section 4 */
+
+.iframe_fig {
+  max-width: 27.875rem;
+  min-width: 27.875rem;
+
+}
+
 .section_four_shadow {
   counter-reset: section;
+}
+
+.section_four_listdiv {
+  max-width: 39.6875rem;
 }
 
 .section_four_li:before {
@@ -320,6 +358,13 @@
   }
 }
 
+@media (max-width: 992px) {
+  .section_two_desktop_para {
+    max-width: 100%;
+  
+  }
+}
+
 @media (max-width: 576px) { 
   .section_three_header:after {
     content: "";
@@ -342,7 +387,12 @@
     width: 100%;
   }
 
-  /* .fund_list_item:hover .list_div {
-    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.07);
-  } */
- }
+  .section_three_heading {
+    max-width: 13.5rem;
+  }
+
+  .iframe_fig {
+    max-width: 100%;
+    min-width: 0px;
+  }
+}
