@@ -710,12 +710,12 @@ const SectionOne = ({ initialFundsList }) => {
             </div>
           </div>
         </div>
-        <button
+        {!state.isFilterModalOpen && <button
           className={`lg:block hidden px-4 py-3 rounded-md shadow-4 z-10 bg-scriptbox-black text-sm font-medium text-white fixed  bottom-1 ${styles.addfilter_button}`}
           onClick={() => setState({ ...state, isFilterModalOpen: true })}
         >
           Add Filter
-        </button>
+        </button>}
       </div>
 
       <ReactModal
