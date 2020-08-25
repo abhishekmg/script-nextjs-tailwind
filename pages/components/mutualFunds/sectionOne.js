@@ -612,7 +612,7 @@ const SectionOne = ({ initialFundsList }) => {
                   <span className="bg-scriptbox-gray-4 py-2 pl-2 pr-8 text-xs font-medium rounded-md text-scriptbox-gray-3 leading-1-2">
                     Reset Filters
                   </span>
-                  <span className="absolute top-0-3125 right-0-25 text-scriptbox-gray-3 bg-scriptbox-gray-6 font-medium text-xs py-0-125 px-0375 rounded-md leading-1-2">
+                  <span className={`absolute text-scriptbox-gray-3 bg-scriptbox-gray-6 font-medium text-xs py-0-125 px-0375 rounded-md leading-1-2 ${styles.reset_filters_count}`}>
                     {filter.length + state.subAssetFilter.length}
                   </span>
                 </div>
@@ -711,7 +711,7 @@ const SectionOne = ({ initialFundsList }) => {
           </div>
         </div>
         <button
-          className={`lg:block hidden p-3 rounded bg-gray-900 text-white fixed left-39p sm:left-45p bottom-1`}
+          className={`lg:block hidden px-4 py-3 rounded-md shadow-4 z-10 bg-scriptbox-black text-sm font-medium text-white fixed  bottom-1 ${styles.addfilter_button}`}
           onClick={() => setState({ ...state, isFilterModalOpen: true })}
         >
           Add Filter

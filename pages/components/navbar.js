@@ -80,7 +80,7 @@ const Navbar = props => {
         </div>
       </header>
       {state.showResponsiveNav && 
-      <nav className="w-full absolute hidden sm:block bg-scriptbox-orange p-4">
+      <nav className="z-10 w-full absolute hidden sm:block bg-scriptbox-orange p-4">
         <ul className="space-y-1">
           <li className="w-full text-center py-1">
             <Link href="/">

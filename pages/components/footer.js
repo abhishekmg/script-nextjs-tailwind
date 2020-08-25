@@ -733,7 +733,7 @@ const Footer = props => {
 
 
       {/* last part */}
-      <div className={`max-w-screen-lg mx-auto pt-6 sm:text-left text-center px-4 sm:px-2 ${styles.footer_acc_border}`}>
+      <div className={` max-w-6xl mx-auto pt-6 sm:text-left text-center px-4 sm:px-0 sm:mx-2 ${styles.footer_acc_border}`}>
         <p className=" text-scriptbox-gray-8 text-sm pb-2">
           Mutual Fund investments are subject to market risks. Please read all scheme related documents carefully before investing. Past performance is not an indicator of future returns.
         </p>
