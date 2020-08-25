@@ -130,7 +130,7 @@ const SectionOne = ({ initialFundsList }) => {
                     </div>
                   </div>
                   {/* right side */}
-                  <div className="px-2 flex items-center">
+                  <div className="px-2 sm:pr-0 flex items-center">
                     <div className="sm:hidden block mr-6">
                       <p className="font-normal text-sm text-scriptbox-black pb-3">
                         {item._source.first_investment_amount} cr

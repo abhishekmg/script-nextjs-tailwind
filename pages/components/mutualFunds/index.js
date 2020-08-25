@@ -65,7 +65,7 @@ const Home = ({ initialFundsList }) => {
             <h1 className="sm:px-4 sm:text-2xl text-4xl font-bold py-3">
               Mutual Funds
             </h1>
-            <p className=" sm:hidden block text-lg text-scriptbox-gray-2 max-w-lg font-normal leading-7">
+            <p className=" sm:hidden block text-lg text-scriptbox-gray-2 md:max-w-full max-w-lg font-normal leading-7">
               Invest in the best mutual funds recommended by Scripbox that are
               algorithmically selected that best suit your needs.
             </p>
