@@ -20,7 +20,7 @@ const SectionOne = ({ initialFundsList }) => {
     moreFilters: false,
     isFilterModalOpen: false,
     isFilterModalBasic: true,
-    // sliderValue: 50
+    riskLevel: [],
   });
 
   const [sliderValue, setSliderValue] = useState(50);
@@ -791,12 +791,203 @@ const SectionOne = ({ initialFundsList }) => {
     </>
   );
 
-  const renderAdvancedFilters = () => (
-    <>
-      <div className="py-4">
-        <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">
-          Risk Level
-        </p>
+  const RiskCheckBox = ({ number, img, name }) => (
+    <div
+      onClick={() => {
+        if (!state.riskLevel.includes(number)) {
+          setState({ ...state, riskLevel: state.riskLevel.concat(number) });
+        } else {
+          setState({
+            ...state,
+            riskLevel: state.riskLevel.filter((item) => item !== number),
+          });
+        }
+      }}
+      className={`${
+        state.riskLevel.includes(number)
+          ? `border-2 border-scriptbox-blue ${styles.risk_level}`
+          : "border-2 border-white"
+      }  relative cursor-pointer text-center w-24 p-0-625 rounded-lg bg-white shadow-1`}
+    >
+      {img}
+      <p className=" text-scriptbox-black-1 font-medium leading-1-2 text-sm pt-2">
+        {name}
+      </p>
+    </div>
+  );
+
+  const renderRiskLevelFilter = () => {
+    if (state.isFilterModalOpen) {
+      return (
+        <div className="flex items-center space-x-4">
+          <RiskCheckBox
+            number={0}
+            img={
+              <svg
+                className="h-10 w-10 mx-auto"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 40 40"
+                id="risk-level-low"
+              >
+                <g clip-path="url(#eqclip0)">
+                  <path
+                    d="M36.18 36.756a19.999 19.999 0 003.466-15.504l-4.912.937a15 15 0 01-2.599 11.628l4.045 2.939zM39.349 19.938A20 20 0 0029.555 7.43l-2.389 4.393a15 15 0 017.346 9.38l4.837-1.265zM27.9 6.627a20 20 0 00-15.885.036l1.996 4.584a15 15 0 0111.915-.027L27.9 6.627z"
+                    fill="#E6E6E6"
+                  ></path>
+                  <path
+                    d="M10.597 7.348A20 20 0 00.696 19.771l4.826 1.307a15 15 0 017.426-9.317l-2.35-4.413z"
+                    fill="#E5E5E5"
+                  ></path>
+                  <path
+                    d="M.331 21.375a20 20 0 003.562 15.481l4.027-2.964a15 15 0 01-2.672-11.61l-4.917-.907z"
+                    fill="#13DCAA"
+                  ></path>
+                  <path
+                    d="M24.38 28.923c-.157 2.753-2.618 4.86-5.486 4.699-2.87-.162-11.634-5.594-11.634-5.594s9.332-4.552 12.2-4.39c2.869.162 5.076 2.533 4.92 5.285z"
+                    fill="#737373"
+                  ></path>
+                </g>
+              </svg>
+            }
+            name="Low"
+          />
+          <RiskCheckBox
+            number={1}
+            img={
+              <svg
+                className="h-10 w-10 mx-auto"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 40 40"
+                id="risk-level-moderately-low"
+              >
+                <g clip-path="url(#etclip0)">
+                  <path
+                    d="M36.18 36.756a19.999 19.999 0 003.466-15.504l-4.912.937a15 15 0 01-2.599 11.628l4.045 2.939zM39.349 19.938A20 20 0 0029.555 7.43l-2.389 4.393a15 15 0 017.346 9.38l4.837-1.265zM27.9 6.627a20 20 0 00-15.885.036l1.996 4.584a15 15 0 0111.915-.027L27.9 6.627z"
+                    fill="#E6E6E6"
+                  ></path>
+                  <path
+                    d="M10.597 7.348A20 20 0 00.696 19.771l4.826 1.307a15 15 0 017.426-9.317l-2.35-4.413z"
+                    fill="#F6E05E"
+                  ></path>
+                  <path
+                    d="M.331 21.375a20 20 0 003.562 15.481l4.027-2.964a15 15 0 01-2.672-11.61l-4.917-.907z"
+                    fill="#E5E5E5"
+                  ></path>
+                  <path
+                    d="M23.883 31.205c-1.969 1.93-5.208 1.83-7.22-.22-2.012-2.052-4.834-11.97-4.834-11.97s9.964 2.919 11.976 4.97c2.012 2.051 2.047 5.29.078 7.22z"
+                    fill="#737373"
+                  ></path>
+                </g>
+              </svg>
+            }
+            name="Low"
+          />
+          <RiskCheckBox
+            number={2}
+            img={
+              <svg
+                className="h-10 w-10 mx-auto"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 40 40"
+                id="risk-level-medium"
+              >
+                <g clip-path="url(#erclip0)">
+                  <path
+                    d="M36.18 36.756a19.999 19.999 0 003.466-15.504l-4.912.937a15 15 0 01-2.599 11.628l4.045 2.939z"
+                    fill="#E6E6E6"
+                  ></path>
+                  <path
+                    d="M39.349 19.938A20 20 0 0029.555 7.43l-2.389 4.393a15 15 0 017.346 9.38l4.837-1.265z"
+                    fill="#E5E5E5"
+                  ></path>
+                  <path
+                    d="M27.9 6.627a20 20 0 00-15.885.036l1.996 4.584a15 15 0 0111.915-.027L27.9 6.627z"
+                    fill="#F6AD55"
+                  ></path>
+                  <path
+                    d="M10.597 7.348A20 20 0 00.696 19.771l4.826 1.307a15 15 0 017.426-9.317l-2.35-4.413zM.331 21.375a20 20 0 003.562 15.481l4.027-2.964a15 15 0 01-2.672-11.61l-4.917-.907z"
+                    fill="#E6E6E6"
+                  ></path>
+                  <path
+                    d="M19.979 33.143c-2.757-.012-4.99-2.36-4.979-5.233.012-2.873 4.979-11.91 4.979-11.91S25.012 25.081 25 27.954c-.012 2.873-2.265 5.201-5.021 5.189z"
+                    fill="#737373"
+                  ></path>
+                </g>
+              </svg>
+            }
+            name="Medium"
+          />
+          <RiskCheckBox
+            number={3}
+            img={
+              <svg
+                className="h-10 w-10 mx-auto"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 40 40"
+                id="risk-level-moderately-high"
+              >
+                <g clip-path="url(#esclip0)">
+                  <path
+                    d="M36.18 36.756a19.999 19.999 0 003.466-15.504l-4.912.937a15 15 0 01-2.599 11.628l4.045 2.939z"
+                    fill="#E5E5E5"
+                  ></path>
+                  <path
+                    d="M39.349 19.938A20 20 0 0029.555 7.43l-2.389 4.393a15 15 0 017.346 9.38l4.837-1.265z"
+                    fill="#F58024"
+                  ></path>
+                  <path
+                    d="M27.9 6.627a20 20 0 00-15.885.036l1.996 4.584a15 15 0 0111.915-.027L27.9 6.627zM10.597 7.348A20 20 0 00.696 19.771l4.826 1.307a15 15 0 017.426-9.317l-2.35-4.413zM.331 21.375a20 20 0 003.562 15.481l4.027-2.964a15 15 0 01-2.672-11.61l-4.917-.907z"
+                    fill="#E6E6E6"
+                  ></path>
+                  <path
+                    d="M16.606 30.943c1.885 2.011 5.125 2.05 7.222.086 2.097-1.963 5.339-11.752 5.339-11.752s-10.08 2.492-12.177 4.456c-2.097 1.963-2.27 5.198-.384 7.21z"
+                    fill="#737373"
+                  ></path>
+                </g>
+              </svg>
+            }
+            name="High"
+          />
+          <RiskCheckBox
+            number={4}
+            img={
+              <svg
+                className="h-10 w-10 mx-auto"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 40 40"
+                id="risk-level-high"
+              >
+                <g clip-path="url(#epclip0)">
+                  <path
+                    d="M36.18 36.756a19.999 19.999 0 003.466-15.504l-4.912.937a15 15 0 01-2.599 11.628l4.045 2.939z"
+                    fill="#E53E3E"
+                  ></path>
+                  <path
+                    d="M39.349 19.938A20 20 0 0029.555 7.43l-2.389 4.393a15 15 0 017.346 9.38l4.837-1.265z"
+                    fill="#E5E5E5"
+                  ></path>
+                  <path
+                    d="M27.9 6.627a20 20 0 00-15.885.036l1.996 4.584a15 15 0 0111.915-.027L27.9 6.627zM10.597 7.348A20 20 0 00.696 19.771l4.826 1.307a15 15 0 017.426-9.317l-2.35-4.413zM.331 21.375a20 20 0 003.562 15.481l4.027-2.964a15 15 0 01-2.672-11.61l-4.917-.907z"
+                    fill="#E6E6E6"
+                  ></path>
+                  <path
+                    d="M15.064 28.896c.302 2.74 2.871 4.715 5.727 4.402 2.856-.314 11.32-6.203 11.32-6.203s-9.56-4.05-12.415-3.737c-2.856.313-4.934 2.798-4.632 5.538z"
+                    fill="#737373"
+                  ></path>
+                </g>
+              </svg>
+            }
+            name="High"
+          />
+        </div>
+      );
+    } else {
+      return (
         <div>
           <FilterCheckBox
             name="Low"
@@ -835,6 +1026,17 @@ const SectionOne = ({ initialFundsList }) => {
             // }}
           />
         </div>
+      );
+    }
+  };
+
+  const renderAdvancedFilters = () => (
+    <>
+      <div className="py-4">
+        <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">
+          Risk Level
+        </p>
+        {renderRiskLevelFilter()}
       </div>
       <div className="py-4">
         <p className="font-semibold text-sm text-scriptbox-black-1 pb-2">
